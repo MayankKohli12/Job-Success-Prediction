@@ -1,0 +1,7 @@
+gradio>=5,<7
+scikit-learn==1.9.1
+pandas>=2.2
+numpy
+scipy
+joblib
+openpyxl
