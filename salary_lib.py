@@ -28,7 +28,9 @@ def build_vocab(df, n_skills=200, n_words=150, n_loc=20):
     sk = sk[sk != ""].value_counts()
     lo = df.loc_text.str.split(",").explode().str.strip().value_counts()
     rw = pd.Series([w for t in df.role_text for w in role_words(t)]).value_counts()
-    return {"skills": sk[sk >= 25].head(n_skills).index.tolist(),
+    return {"known_words": rw[rw >= 5].index.tolist(),      # for the in-domain check (broader than model features)
+            "known_skills": sk[sk >= 5].index.tolist(),
+            "skills": sk[sk >= 25].head(n_skills).index.tolist(),
             "words": rw[rw >= 25].head(n_words).index.tolist(),
             "locs": lo.head(n_loc).index.tolist()}
 
@@ -59,9 +61,16 @@ def cum_to_band_probs(cum):
     p = np.hstack([1 - cum[:, :1], cum[:, :-1] - cum[:, 1:], cum[:, -1:]])
     return np.clip(p, 0, 1)
 
-def novelty(row_text_role, row_skills, vocab):
-    """Return what share of the user's input the model actually knows."""
-    w = role_words(row_text_role)
-    s = {x for x in row_skills.split(",") if x}
-    return {"role_known": len(w & set(vocab["words"])), "role_total": len(w),
-            "skills_known": len(s & set(vocab["skills"])), "skills_total": len(s)}
+def novelty(role_text, skills_text, vocab):
+    """How much of the user's input the training data has seen."""
+    w = role_words(role_text)
+    kw, ks = set(vocab["known_words"]), set(vocab["known_skills"])
+    s = {x for x in skills_text.split(",") if x}
+    return {"role_known": len(w & kw), "role_total": len(w),
+            "role_ratio": (len(w & kw) / len(w)) if w else 0.0,
+            "skills_known": len(s & ks), "skills_total": len(s)}
+
+def in_domain(role_text, vocab, min_ratio=0.6):
+    """True if the job title looks like something from the training postings."""
+    n = novelty(role_text, "", vocab)
+    return n["role_total"] > 0 and n["role_ratio"] >= min_ratio
