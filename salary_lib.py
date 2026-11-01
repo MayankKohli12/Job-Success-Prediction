@@ -23,15 +23,15 @@ def parse_experience(s):
 def role_words(text):
     return {w for w in re.findall(r"[a-z]+", (text or "").lower()) if w not in STOP and len(w) > 1}
 
-def build_vocab(df, n_skills=200, n_words=150, n_loc=20):
+def build_vocab(df, n_skills=200, n_words=150, n_loc=20, min_skill=25, min_word=25):
     sk = df.skills_text.str.split(",").explode().str.strip()
     sk = sk[sk != ""].value_counts()
     lo = df.loc_text.str.split(",").explode().str.strip().value_counts()
     rw = pd.Series([w for t in df.role_text for w in role_words(t)]).value_counts()
     return {"known_words": rw[rw >= 5].index.tolist(),      # for the in-domain check (broader than model features)
             "known_skills": sk[sk >= 5].index.tolist(),
-            "skills": sk[sk >= 25].head(n_skills).index.tolist(),
-            "words": rw[rw >= 25].head(n_words).index.tolist(),
+            "skills": sk[sk >= min_skill].head(n_skills).index.tolist(),
+            "words": rw[rw >= min_word].head(n_words).index.tolist(),
             "locs": lo.head(n_loc).index.tolist()}
 
 def featurize(df, vocab):
