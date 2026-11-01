@@ -6,11 +6,9 @@
 <section class="hero" aria-labelledby="hero-h">
   <form class="hero-in" id="hero-form" action="/jobs" method="get" data-pulse>
     <h1 id="hero-h">I work as a
-      <input type="text" name="role" value="{{ hero_role }}" list="hero-roles" placeholder="job title" aria-label="Job title" autocomplete="off">
-      <datalist id="hero-roles">{% for fam in hero_families %}<option value="{{ fam }}">{% endfor %}</datalist>
+      <span class="suggwrap" data-suggest='{{ role_opts|tojson }}'><input type="text" name="role" value="{{ hero_role }}" placeholder="job title" aria-label="Job title" autocomplete="off"></span>
       in
-      <input type="text" name="city" value="{{ hero_city }}" list="hero-cities" placeholder="any city" aria-label="City" autocomplete="off">
-      <datalist id="hero-cities">{% for c in hero_cities %}<option value="{{ c|fmt_city }}">{% endfor %}</datalist>
+      <span class="suggwrap" data-suggest='{{ city_opts_all|tojson }}'><input type="text" name="city" value="{{ hero_city }}" placeholder="any city" aria-label="City" autocomplete="off"></span>
       with
       <input type="number" name="exp" min="0" max="40" value="{{ hero_exp }}" placeholder="–" aria-label="Years of experience">
       years of experience. What does that pay?</h1>

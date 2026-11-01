@@ -8,8 +8,8 @@
     <div class="step">
       <div class="t"><i>1</i>The job title</div>
       <div class="field"><label for="title">Type any title <span class="hint">Pick a suggestion or write your own.</span></label>
-        <input type="text" id="title" name="title" value="{{ v.title }}" list="roles-list" autocomplete="off" placeholder="e.g. Senior Data Engineer">
-        <datalist id="roles-list">{% for r in roles %}<option value="{{ r }}">{% endfor %}</datalist></div>
+        <span class="suggwrap block" data-suggest='{{ title_opts|tojson }}'><input type="text" id="title" name="title" value="{{ v.title }}" autocomplete="off" placeholder="e.g. Senior Data Engineer"></span>
+        </div>
     </div>
 
     <div class="step">
@@ -39,8 +39,8 @@
     <div class="step">
       <div class="t"><i>4</i>Location<small>optional</small></div>
       <div class="field"><label for="city">Type any city <span class="hint">Small cities are judged by their city type.</span></label>
-        <input type="text" id="city" name="city" value="{{ v.city }}" list="city-list" autocomplete="off" placeholder="e.g. Chandigarh">
-        <datalist id="city-list">{% for k, l in city_opts %}<option value="{{ l }}">{% endfor %}</datalist></div>
+        <span class="suggwrap block" data-suggest='{{ city_labels|tojson }}'><input type="text" id="city" name="city" value="{{ v.city }}" autocomplete="off" placeholder="e.g. Chandigarh"></span>
+        </div>
     </div>
     <button class="btn primary lg block" type="submit" data-nojs-show>Estimate salary</button>
     <div class="examples"><b style="font-size:13.5px">Start from an example</b>

@@ -529,3 +529,10 @@ body { --accent: oklch(46% 0.1 var(--hue)); --accent-ink: oklch(37% 0.09 var(--h
 @media (max-width: 900px) { .shell { grid-template-columns: minmax(0, 1fr); } main { min-width: 0; } }
 @media (max-width: 1120px) { .tool { grid-template-columns: minmax(0, 1fr); } .form, .step { min-width: 0; } .seg span { white-space: normal; } }
 @media (max-width: 900px) { main { overflow-x: clip; } }
+
+/* plain-text suggestions */
+.suggwrap { position: relative; display: inline-block; max-width: 100%; }
+.suggwrap.block { display: block; }
+.suggwrap .sugg { right: auto; min-width: 260px; width: max-content; max-width: min(360px, 86vw); font: 400 14.5px/1.3 var(--sans); letter-spacing: 0; padding: 4px; }
+.suggwrap.block .sugg { right: 0; width: auto; max-width: none; }
+.hero .suggwrap .sugg li { color: var(--ink); }

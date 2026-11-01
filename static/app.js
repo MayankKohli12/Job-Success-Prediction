@@ -78,6 +78,35 @@
     });
   }
   $$('[data-combo]').forEach(initCombo);
+  // ---- plain-text suggestions (job title, city): a short popular list when empty, prefix then substring matches while typing
+  $$('[data-suggest]').forEach((wrap) => {
+    let opts = []; try { opts = JSON.parse(wrap.dataset.suggest); } catch (e) {}
+    const input = $('input', wrap), ul = document.createElement('ul');
+    ul.className = 'sugg'; ul.setAttribute('role', 'listbox'); ul.hidden = true; wrap.appendChild(ul);
+    let idx = -1, shown = [];
+    const hide = () => { ul.hidden = true; idx = -1; };
+    const paint = () => $$('li', ul).forEach((li, i) => li.setAttribute('aria-selected', i === idx));
+    const show = () => {
+      const q = input.value.trim().toLowerCase();
+      shown = (q ? [...opts.filter((o) => o.toLowerCase().startsWith(q)), ...opts.filter((o) => !o.toLowerCase().startsWith(q) && o.toLowerCase().includes(q))] : opts).slice(0, 6);
+      if (!shown.length || (shown.length === 1 && shown[0].toLowerCase() === q)) return hide();
+      ul.innerHTML = ''; idx = -1;
+      shown.forEach((o) => { const li = document.createElement('li'); li.setAttribute('role', 'option'); li.textContent = o;
+        li.addEventListener('mousedown', (e) => { e.preventDefault(); pick(o); }); ul.appendChild(li); });
+      ul.hidden = false;
+    };
+    const pick = (o) => { input.value = o; hide(); input.dispatchEvent(new Event('input', { bubbles: true })); input.dispatchEvent(new Event('change', { bubbles: true })); };
+    input.addEventListener('focus', show); input.addEventListener('input', show); input.addEventListener('blur', () => setTimeout(hide, 120));
+    input.addEventListener('keydown', (e) => {
+      if (ul.hidden) return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); idx = (idx + 1) % shown.length; paint(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); idx = (idx - 1 + shown.length) % shown.length; paint(); }
+      else if (e.key === 'Enter' && idx >= 0) { e.preventDefault(); pick(shown[idx]); }
+      else if (e.key === 'Escape') hide();
+    });
+  });
+
+
 
   // ---- live filtering: swap #results without a full reload
   const form = $('form[data-live]');

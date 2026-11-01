@@ -51,6 +51,8 @@ def not_found(request, what="page"):
 
 # ---------------------------------------------------------------------------------------- overview
 HERO_CITIES = ["bengaluru", "hyderabad", "pune", "chennai", "mumbai", "gurgaon", "noida", "delhi ncr", "ahmedabad", "kolkata", "kochi"]
+CITY_OPTS = [mk.fmt_city(c) for c, n in sorted(mk.CITY_COUNT.items(), key=lambda kv: -kv[1])[:60]] + ["Bangalore"]
+ROLE_OPTS = ["Data Scientist", "Data Analyst", "Data Engineer", "Machine Learning Engineer", "AI Engineer", "Business Analyst", "Software Engineer", "DevOps Engineer", "QA Engineer", "Python Developer", "Full Stack Developer", "Analytics Consultant"]
 HERO_DEFAULT = "role=Data+Scientist&exp=3"
 
 
@@ -118,7 +120,7 @@ def overview(request: Request):
     emp_rows = [(c, "/companies/" + mk.COMPANY_SLUG_REV[c], n / emp.iloc[0] * 100, f"{n:,}", "postings") for c, n in emp.items()]
     return page(request, "overview.html", active="overview", fam_rows=fam_rows, skill_rows=skill_rows, pay_rows=pay_rows, city_rows=city_rows,
                 emp_rows=emp_rows, n_companies=p.companyName.nunique(), n_skills=len(mk.SKILL_COUNT), n_cities=len(mk.CITY_COUNT),
-                pulse=pulse, hf=hf, hero_families=[x for x in mk.FAMILY_LIST if x != mk.OTHER], hero_cities=HERO_CITIES, hero_role=hero_role, hero_city=hero_city, hero_city_miss=miss,
+                pulse=pulse, hf=hf, hero_families=[x for x in mk.FAMILY_LIST if x != mk.OTHER], hero_cities=HERO_CITIES, role_opts=ROLE_OPTS, city_opts_all=CITY_OPTS, hero_role=hero_role, hero_city=hero_city, hero_city_miss=miss,
                 hero_skills=[(s, mk.fmt_skill(s)) for s in hf.lists["skill"]], hero_exp=("%g" % hf.exp) if hf.exp is not None else "",
                 roles_strip=[(r.family, r.med, r.n) for r in fam.itertuples()])
 
@@ -284,7 +286,8 @@ def tool_salary(request: Request):
     popular = {k for k, _ in tl.SALARY_POPULAR}
     extra = [(k, mk.fmt_skill(k)) for k in skills if k not in popular]
     return page(request, "tool_salary.html", active="salary", v=dict(title=title, city=city, emin=emin, emax=emax, skills=skills),
-                res=res, roles=tl.SALARY_ROLES, popular=tl.SALARY_POPULAR, extra=extra, city_opts=tl.SALARY_CITIES)
+                res=res, roles=tl.SALARY_ROLES, popular=tl.SALARY_POPULAR, extra=extra, city_opts=tl.SALARY_CITIES,
+                title_opts=ROLE_OPTS, city_labels=CITY_OPTS)
 
 
 TOOL_GROUPS = [("Languages", ["Python", "SQL", "R", "Java", "JavaScript", "TypeScript", "C#", "Go", "Rust"]),
