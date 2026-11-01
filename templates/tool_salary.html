@@ -2,21 +2,14 @@
 {% from "macros.html" import header, combo, icon %}
 {% block title %}Salary estimate{% endblock %}
 {% block content %}
-{{ header("Salary estimate", "Pick a role, your experience and the skills you bring. The estimate updates as you go, using about 5,100 Indian postings that stated pay.", "coin") }}
+{{ header("Salary estimate", "Type a job title, your experience and the skills you bring. The estimate updates as you go, using about 5,100 Indian postings that stated pay.", "coin") }}
 <div class="tool">
   <form class="form" action="/tools/salary" method="get" data-live aria-label="Salary inputs">
     <div class="step">
-      <div class="t"><i>1</i>The role</div>
-      <div class="rolegrid" role="radiogroup" aria-label="Role">
-        {% for r in roles %}<label class="cc"><input type="radio" name="role" value="{{ r }}" {% if r == v.base %}checked{% endif %}><span>{{ r }}</span></label>{% endfor %}
-      </div>
-      <div class="field"><span class="lbl">Seniority in the title</span>
-        <div class="seg full" style="grid-template-columns:repeat(5,1fr)" role="radiogroup" aria-label="Seniority">
-          {% for k, l in levels %}<label><input type="radio" name="lvl" value="{{ k }}" {% if k == v.lvl %}checked{% endif %}><span>{{ l }}</span></label>{% endfor %}
-        </div>
-      </div>
-      <div class="field"><label for="custom">Different title? <span class="hint">Optional. Replaces the choices above.</span></label>
-        <input type="text" id="custom" name="custom" value="{{ v.custom }}" placeholder="e.g. Analytics Consultant"></div>
+      <div class="t"><i>1</i>The job title</div>
+      <div class="field"><label for="title">Type any title <span class="hint">Pick a suggestion or write your own.</span></label>
+        <input type="text" id="title" name="title" value="{{ v.title }}" list="roles-list" autocomplete="off" placeholder="e.g. Senior Data Engineer">
+        <datalist id="roles-list">{% for r in roles %}<option value="{{ r }}">{% endfor %}</datalist></div>
     </div>
 
     <div class="step">
@@ -45,24 +38,21 @@
 
     <div class="step">
       <div class="t"><i>4</i>Location<small>optional</small></div>
-      <fieldset class="picker" data-picker>
-        <legend class="sr">City</legend>
-        <div class="chipgrid">
-          {% for k, l in city_opts %}<label class="cc"><input type="checkbox" name="city" value="{{ k }}" {% if k in v.cities %}checked{% endif %}><span>{{ l }}</span></label>{% endfor %}
-        </div>
-      </fieldset>
+      <div class="field"><label for="city">Type any city <span class="hint">Cities the model has not seen are left out of the estimate.</span></label>
+        <input type="text" id="city" name="city" value="{{ v.city }}" list="city-list" autocomplete="off" placeholder="e.g. Chandigarh">
+        <datalist id="city-list">{% for k, l in city_opts %}<option value="{{ l }}">{% endfor %}</datalist></div>
     </div>
     <button class="btn primary lg block" type="submit" data-nojs-show>Estimate salary</button>
     <div class="examples"><b style="font-size:13.5px">Start from an example</b>
-      <a href="/tools/salary?role=Data+Analyst&skill=sql&skill=excel&skill=power+bi&city=mumbai+(all+areas)&emin=1&emax=3">Data Analyst, Mumbai, 1 to 3 years</a>
-      <a href="/tools/salary?role=Data+Engineer&lvl=Senior&skill=spark&skill=python&skill=aws&city=hyderabad&emin=5&emax=9">Senior Data Engineer, Hyderabad, 5 to 9 years</a>
-      <a href="/tools/salary?role=Machine+Learning+Engineer&skill=deep+learning&skill=python&city=pune&emin=4&emax=8">ML Engineer, Pune, 4 to 8 years</a>
+      <a href="/tools/salary?title=Data+Analyst&skill=sql&skill=excel&skill=power+bi&city=Mumbai&emin=1&emax=3">Data Analyst, Mumbai, 1 to 3 years</a>
+      <a href="/tools/salary?title=Senior+Data+Engineer&skill=spark&skill=python&skill=aws&city=Hyderabad&emin=5&emax=9">Senior Data Engineer, Hyderabad, 5 to 9 years</a>
+      <a href="/tools/salary?title=Machine+Learning+Engineer&skill=deep+learning&skill=python&city=Pune&emin=4&emax=8">ML Engineer, Pune, 4 to 8 years</a>
     </div>
   </form>
 
   <div class="result" id="results" aria-live="polite">
   {% if res.error %}
-    <div class="callout err"><b>{{ res.error }}</b>{% if res.hint %}<br>Pick one of the roles on the left, or type a data or software title such as “Analytics Engineer”.{% endif %}</div>
+    <div class="callout err"><b>{{ res.error }}</b>{% if res.hint %}<br>Type a data or software title such as “Analytics Engineer”.{% endif %}</div>
   {% else %}
     <div class="resultcard">
       <span class="lab">Typical salary for a {{ v.title|lower }}</span>

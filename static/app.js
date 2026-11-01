@@ -105,7 +105,7 @@
     };
     const queue = () => { clearTimeout(t); t = setTimeout(run, 280); };
     form.addEventListener('change', queue);
-    form.addEventListener('input', (e) => { if (e.target.matches('input[type=search],input[type=number]')) queue(); });
+    form.addEventListener('input', (e) => { if (e.target.matches('input[type=search],input[type=number],input[type=text]')) queue(); });
     form.addEventListener('submit', (e) => { e.preventDefault(); run(); });
     results.addEventListener('change', (e) => { if (e.target.name === 'sort') queue(); });
   }

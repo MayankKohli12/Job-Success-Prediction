@@ -247,19 +247,16 @@ def _num(v, default, lo, hi):
 @app.get("/tools/salary")
 def tool_salary(request: Request):
     qp = request.query_params
-    has = any(k in qp for k in ("role", "skill", "city", "emin", "emax", "custom"))
-    base = qp.get("role") if qp.get("role") in tl.SALARY_ROLES else "Data Scientist"
-    lvl = qp.get("lvl") if qp.get("lvl") in [k for k, _ in tl.SALARY_LEVELS] else ""
-    custom = (qp.get("custom") or "").strip()
+    has = any(k in qp for k in ("title", "skill", "city", "emin", "emax"))
+    title = (qp.get("title") or "").strip() if has else "Data Scientist"
     emin = _num(qp.get("emin"), 3, 0, 30); emax = max(_num(qp.get("emax"), 6, 0, 35), emin)
     skills = list(dict.fromkeys(s for s in qp.getlist("skill") if s)) if has else ["python", "machine learning", "sql"]
-    cities = list(dict.fromkeys(c for c in qp.getlist("city") if c)) if has else ["bengaluru"]
-    title = custom or f"{lvl} {base}".strip()
-    res = tl.salary_estimate(title, skills, cities, emin, emax)
+    city = (qp.get("city") or "").strip() if has else "Bengaluru"
+    res = tl.salary_estimate(title, skills, [city], emin, emax)
     popular = {k for k, _ in tl.SALARY_POPULAR}
     extra = [(k, mk.fmt_skill(k)) for k in skills if k not in popular]
-    return page(request, "tool_salary.html", active="salary", v=dict(base=base, lvl=lvl, custom=custom, emin=emin, emax=emax, skills=skills, cities=cities, title=title),
-                res=res, roles=tl.SALARY_ROLES, levels=tl.SALARY_LEVELS, popular=tl.SALARY_POPULAR, extra=extra, city_opts=tl.SALARY_CITIES)
+    return page(request, "tool_salary.html", active="salary", v=dict(title=title, city=city, emin=emin, emax=emax, skills=skills),
+                res=res, roles=tl.SALARY_ROLES, popular=tl.SALARY_POPULAR, extra=extra, city_opts=tl.SALARY_CITIES)
 
 
 TOOL_GROUPS = [("Languages", ["Python", "SQL", "R", "Java", "JavaScript", "TypeScript", "C#", "Go", "Rust"]),

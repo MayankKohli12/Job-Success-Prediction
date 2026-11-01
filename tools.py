@@ -32,6 +32,24 @@ SALARY_POPULAR = sorted(SALARY_SKILLS, key=lambda kv: -SKILL_COUNT.get(kv[0], 0)
 SALARY_CITIES = [(c, c.replace(" (all areas)", "").title().replace("Ncr", "NCR")) for c in art["vocab"]["locs"] if c]
 
 
+CITY_ALIAS = {"bangalore": "bengaluru", "bengaluru": "bengaluru", "gurugram": "gurgaon", "delhi": "delhi ncr", "new delhi": "delhi ncr", "ncr": "delhi ncr",
+              "mumbai": "mumbai,mumbai (all areas)", "bombay": "mumbai,mumbai (all areas)", "cochin": "kochi", "calcutta": "kolkata", "madras": "chennai"}
+_KNOWN_LOCS = {c for c in art["vocab"]["locs"] if c}
+
+
+def parse_cities(raw):
+    """Free-text cities (comma separated) -> (model location text, list of cities the model has no data for)."""
+    out, unknown = [], []
+    for c in [x.strip().lower() for x in raw if x and x.strip()]:
+        for part in c.split(","):
+            part = part.strip()
+            if not part: continue
+            m = CITY_ALIAS.get(part, part)
+            hit = [x for x in m.split(",") if x in _KNOWN_LOCS or x == "mumbai (all areas)"]
+            (out.extend(hit) if hit else unknown.append(part.title()))
+    return ",".join(dict.fromkeys(out)), unknown
+
+
 def _predict(rows):
     X = featurize(pd.DataFrame(rows), art["vocab"])[art["columns"]]
     q = np.exp(np.column_stack([art["models"][k].predict(X) for k in (0.1, 0.5, 0.9)]))
@@ -40,7 +58,8 @@ def _predict(rows):
 
 
 def salary_estimate(role, skills, cities, exp_min, exp_max):
-    role_l, sk, lc = (role or "").lower().strip(), norm_list(",".join(skills)), norm_list(",".join(cities))
+    role_l, sk = (role or "").lower().strip(), norm_list(",".join(skills))
+    lc, unknown_cities = parse_cities(cities)
     if exp_max < exp_min: return {"error": "Maximum experience must be at least the minimum."}
     if not in_domain(role_l, art["vocab"]):
         why = ("Enter a job title to get an estimate." if not role_l else
@@ -54,6 +73,8 @@ def salary_estimate(role, skills, cities, exp_min, exp_max):
     near = posts[(posts.exp_mid - em).abs() <= 1.5]
     if len(near) < 30: near = posts[(posts.exp_mid - em).abs() <= 3]
     notes, nv = [], novelty(role_l, sk, art["vocab"])
+    if unknown_cities:
+        notes.append(f"No postings from {', '.join(unknown_cities)} in the training data, so location is left out. The estimate comes from the title, skills and experience.")
     if nv["role_ratio"] < 1.0: notes.append("Part of this job title is unfamiliar to the model, so it is mostly judged from the familiar words.")
     if nv["skills_total"] and nv["skills_known"] == 0: notes.append("None of these skills are common in the training data, so they add little to the estimate.")
     if exp_max > S["exp_max_trained"] or exp_min > S["exp_min_trained"]:
