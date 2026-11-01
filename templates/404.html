@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Not found{% endblock %}
+{% block content %}
+<div class="empty" style="padding-top:96px">
+  <h3>We couldn't find that {{ what }}</h3>
+  <p>The link may be old, or the item isn't in this dataset.</p>
+  <span style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn primary" href="/jobs">Browse jobs</a><a class="btn" href="/">Back to overview</a></span>
+</div>
+{% endblock %}

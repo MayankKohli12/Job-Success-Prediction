@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% from "macros.html" import crumbs, job_row, deco %}
+{% block title %}{{ j.title }}{% endblock %}
+{% block content %}
+{% call crumbs([('/jobs', 'Jobs')]) %}{{ j.title }}{% endcall %}
+<header class="ph">{{ deco("briefcase") }}<h1>{{ j.title }}</h1>
+<p><a href="/companies/{{ co_slug }}">{{ j.companyName }}</a>{% if j.agency %} <span class="tag">Agency</span>{% endif %} · {{ (j.cities|map('fmt_city')|join(', ')) or 'Location not listed' }}</p></header>
+
+<dl class="facts">
+  <div class="fact"><dt>Stated salary</dt><dd>{{ '%g' % (j.sal_lo|round(1)) }}–{{ '%g' % (j.sal_hi|round(1)) }}<small>LPA</small></dd></div>
+  <div class="fact"><dt>Experience asked</dt><dd>{{ j|yrs }}</dd></div>
+  <div class="fact"><dt>Level</dt><dd style="font-size:26px">{{ j.level }}</dd></div>
+  <div class="fact"><dt>Role family</dt><dd style="font-size:22px;line-height:1.3"><a href="/roles/{{ fam_slug }}" style="text-decoration:none;color:var(--ink)">{{ j.family }}</a></dd></div>
+</dl>
+
+<div class="split section" style="margin-top:56px">
+  <section>
+    <h2 style="font:500 24px var(--serif);margin-bottom:20px">Skills listed</h2>
+    {% if j.skills %}<div class="chips">{% for s in j.skills %}{% if s in SKILL_SLUG_REV %}<a class="chip" href="/skills/{{ SKILL_SLUG_REV[s] }}">{{ s|fmt_skill }}</a>{% else %}<span class="chip">{{ s|fmt_skill }}</span>{% endif %}{% endfor %}</div>
+    {% else %}<p class="sub" style="color:var(--muted)">This posting lists no skills.</p>{% endif %}
+  </section>
+  <aside class="panel">
+    <h3>How this pay compares</h3>
+    <p class="sub">{{ same_n|num }} {{ j.family }} postings asking for a similar amount of experience</p>
+    <dl class="kv">
+      <dt>This posting</dt><dd class="num"><b>{{ '%g' % (j.sal_mid|round(1)) }} LPA</b> (midpoint)</dd>
+      <dt>Similar median</dt><dd class="num">{{ '%g' % (med|round(1)) }} LPA</dd>
+      <dt>Middle half</dt><dd class="num">{{ '%g' % (q1|round(0)) }}–{{ '%g' % (q3|round(0)) }} LPA</dd>
+      <dt>Verdict</dt><dd>{% if j.sal_mid > q3 %}Above the middle half{% elif j.sal_mid < q1 %}Below the middle half{% else %}Within the middle half{% endif %}</dd>
+    </dl>
+  </aside>
+</div>
+
+<section class="section">
+  <h2>Pay across similar postings</h2>
+  <p class="lede">Where this posting sits among {{ j.family }} roles with comparable experience.</p>
+  <div class="panel">{{ charts.histogram(counts, bins, j.sal_mid, q1, q3) }}<div class="legend"><span><i style="background:var(--ink);height:3px"></i>This posting</span><span><i style="background:var(--accent);opacity:.25"></i>Middle half of similar postings</span></div></div>
+</section>
+
+{% set sims = similar|list %}
+{% if sims %}
+<section class="section">
+  <h2>Similar postings</h2>
+  <p class="lede">Same role family, sharing at least two skills.</p>
+  <div class="jobs">{% for s in sims %}{{ job_row(s) }}{% endfor %}</div>
+</section>
+{% endif %}
+{% endblock %}

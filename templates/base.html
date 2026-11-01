@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}SkillPulse{% endblock %} · SkillPulse</title>
+<meta name="description" content="{% block desc %}Explore Indian tech hiring: filter jobs, companies and skills, and estimate salary, success odds and career fit.{% endblock %}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("sp-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d5a66'/%3E%3Cpath d='M5 18h5l3-8 5 14 3-9 2 3h4' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body data-sec="{{ active }}">
+{% from "macros.html" import icon %}
+<div class="shell">
+  <div class="topbar">
+    <a class="brand" href="/">{{ icon('logo') }}SkillPulse</a>
+    <button type="button" id="nav-open" aria-label="Open menu" aria-controls="rail" aria-expanded="false">{{ icon('menu') }}</button>
+  </div>
+  <aside class="rail" id="rail">
+    <a class="brand" href="/">{{ icon('logo') }}SkillPulse</a>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-group">
+        <div class="nav-label">Explore</div>
+        {% for key, href, label, ic, h in [('overview','/','Overview','home',205),('jobs','/jobs','Jobs','briefcase',205),('companies','/companies','Companies','building',255),('skills','/skills','Skills','layers',62),('roles','/roles','Roles','compass',300)] %}
+        <a href="{{ href }}" style="--h:{{ h }}" {% if active == key %}aria-current="page"{% endif %}>{{ icon(ic) }}{{ label }}</a>
+        {% endfor %}
+      </div>
+      <div class="nav-group" style="margin-top:28px">
+        <div class="nav-label">Estimate</div>
+        {% for key, href, label, ic, h in [('salary','/tools/salary','Salary estimate','coin',160),('success','/tools/success','Success odds','trend',335),('career','/tools/career','Career fit','target',28)] %}
+        <a href="{{ href }}" style="--h:{{ h }}" {% if active == key %}aria-current="page"{% endif %}>{{ icon(ic) }}{{ label }}</a>
+        {% endfor %}
+      </div>
+    </nav>
+    <div class="rail-foot">
+      <div>
+        <a href="/about">About the data</a><br>
+        Naukri postings, Dec 2024. Stack Overflow survey 2026. O*NET 31.
+      </div>
+      <button type="button" class="theme" id="theme" aria-pressed="false" aria-label="Dark mode">
+        <span class="l">{{ icon('moon') }}Dark mode</span><span class="sw" aria-hidden="true"></span>
+      </button>
+    </div>
+  </aside>
+  <main id="main" class="{% block mainclass %}{% endblock %}">{% block content %}{% endblock %}</main>
+</div>
+<div class="scrim" id="scrim"></div>
+<script src="/static/app.js" defer></script>
+</body>
+</html>

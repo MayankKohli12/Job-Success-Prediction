@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% from "macros.html" import header, combo, job_row, icon %}
+{% block title %}Jobs{% endblock %}
+{% block content %}
+{{ header("Jobs", "Every posting here states its salary. Narrow by what matters to you; the numbers beside your results update with each choice.", "briefcase") }}
+
+<div class="workspace">
+  <form class="filters" id="filters" action="/jobs" method="get" data-live aria-label="Filters">
+    <div class="fhead"><h2>Filters</h2><span style="display:flex;gap:8px;align-items:center"><a href="/jobs" class="btn quiet">Reset</a><button type="button" class="btn quiet filter-toggle" data-close-filters aria-label="Close filters">{{ icon('x') }}</button></span></div>
+
+    <div class="fgroup">
+      <div class="field"><label for="q">Search</label>
+        <input type="search" id="q" name="q" value="{{ f.q }}" placeholder="Title, company or skill"></div>
+    </div>
+
+    <fieldset class="fgroup">
+      <legend class="t">Role family</legend>
+      <div>
+      {% for fam in families %}{% set n = fam_c.get(fam, 0) %}
+        {% if n or fam in f.lists.family %}<label class="check{% if not n %} zero{% endif %}"><input type="checkbox" name="family" value="{{ fam }}" {% if fam in f.lists.family %}checked{% endif %}><span>{{ fam }}</span><span class="ct num">{{ n|num }}</span></label>{% endif %}
+      {% endfor %}
+      </div>
+    </fieldset>
+
+    <div class="fgroup">
+      <div class="t">Skills</div>
+      {{ combo('skill', 'Must have', f.lists.skill|skill_tokens, 'skill', 'Add a skill, e.g. Python') }}
+      <div class="field">
+        <span class="lbl">Match</span>
+        <div class="seg" role="radiogroup" aria-label="Skill match mode">
+          <label><input type="radio" name="mode" value="all" {% if f.mode == 'all' %}checked{% endif %}><span>All of them</span></label>
+          <label><input type="radio" name="mode" value="any" {% if f.mode == 'any' %}checked{% endif %}><span>Any of them</span></label>
+        </div>
+      </div>
+      {{ combo('xskill', 'Leave out', f.lists.xskill|skill_tokens, 'skill', 'Skills you want to avoid', neg=True) }}
+    </div>
+
+    <div class="fgroup">
+      <div class="t">Company</div>
+      {{ combo('company', 'Employer', f.lists.company|plain_tokens, 'company', 'Search companies') }}
+      <label class="toggle"><input type="checkbox" name="agency" value="hide" {% if f.hide_agency %}checked{% endif %}><span>Hide recruiting agencies<small>Guessed from names such as “consulting” or “staffing”.</small></span></label>
+    </div>
+
+    <fieldset class="fgroup">
+      <legend class="t">City</legend>
+      <div>
+      {% for c, n in city_c %}
+        <label class="check{% if not n %} zero{% endif %}"><input type="checkbox" name="city" value="{{ c }}" {% if c in f.lists.city %}checked{% endif %}><span>{{ c|fmt_city }}</span><span class="ct num">{{ n|num if n else '' }}</span></label>
+      {% endfor %}
+      </div>
+      {{ combo('city', 'Another city', [], 'city', 'Search cities') }}
+    </fieldset>
+
+    <fieldset class="fgroup">
+      <legend class="t">Level</legend>
+      <div>
+      {% for l in LEVELS %}{% set n = lvl_c.get(l, 0) %}
+        <label class="check{% if not n %} zero{% endif %}"><input type="checkbox" name="level" value="{{ l }}" {% if l in f.lists.level %}checked{% endif %}><span>{{ l }}</span><span class="ct num">{{ n|num }}</span></label>
+      {% endfor %}
+      </div>
+    </fieldset>
+
+    <div class="fgroup">
+      <div class="t">Experience and pay</div>
+      <div class="field"><label for="exp">Your experience (years)</label>
+        <input type="number" id="exp" name="exp" min="0" max="40" step="1" value="{{ '%g' % f.exp if f.exp is not none else '' }}" placeholder="Show roles that accept me">
+        <span class="hint">Keeps postings whose experience range includes this number.</span></div>
+      <div class="field"><span class="lbl">Salary (LPA)</span>
+        <div class="pair dash"><input type="number" name="smin" min="0" step="1" placeholder="Min" aria-label="Minimum salary" value="{{ '%g' % f.smin if f.smin is not none else '' }}"><span>to</span><input type="number" name="smax" min="0" step="1" placeholder="Max" aria-label="Maximum salary" value="{{ '%g' % f.smax if f.smax is not none else '' }}"></div>
+        <div class="chips" style="margin-top:4px">
+          <a class="chip" href="{{ u('/jobs', P, set={'smin': '0', 'smax': '8'}) }}">Under 8</a>
+          <a class="chip" href="{{ u('/jobs', P, set={'smin': '8', 'smax': '15'}) }}">8–15</a>
+          <a class="chip" href="{{ u('/jobs', P, set={'smin': '15', 'smax': '30'}) }}">15–30</a>
+          <a class="chip" href="{{ u('/jobs', P, set={'smin': '30', 'smax': None}) }}">30+</a>
+        </div>
+      </div>
+    </div>
+    <div class="fgroup" style="border:0" data-nojs-show><button class="btn primary block" type="submit">Apply filters</button></div>
+  </form>
+
+  <div id="results" aria-live="polite">
+    <div class="resultbar">
+      <div>
+        <button type="button" class="btn filter-toggle" data-open-filters style="margin-bottom:14px">{{ icon('filter') }}Filters{% if f.active() %} ({{ f.active()|length }}){% endif %}</button>
+        <h2>{{ df_n|num }} posting{{ '' if df_n == 1 else 's' }}{% if df_n %}<small>{{ start }}–{{ end }} shown</small>{% endif %}</h2>
+      </div>
+      <label class="sortbox">Sort by
+        <select name="sort" form="filters" aria-label="Sort results">{% for k, v in SORTS.items() %}<option value="{{ k }}" {% if f.sort == k %}selected{% endif %}>{{ v }}</option>{% endfor %}</select>
+      </label>
+    </div>
+
+    <div class="active">
+      {% for label, drop in f.active() %}<a class="chip" href="{{ u('/jobs', P, drop=drop) }}" title="Remove this filter">{{ label }}{{ icon('x') }}</a>{% endfor %}
+      {% if f.active() %}<a class="clear" href="/jobs">Clear all</a>{% endif %}
+    </div>
+
+    {% if df_n %}
+    <details class="insight" {% if f.active() %}open{% endif %}>
+      <summary>{{ icon('chev') }}What these {{ df_n|num }} postings look like<span>median {{ '%g' % (ins.med|round(1)) }} LPA</span></summary>
+      <div class="insight-body">
+        <dl class="facts" style="margin:0">
+          <div class="fact"><dt>Median salary</dt><dd>{{ '%g' % (ins.med|round(1)) }}<small>LPA</small></dd></div>
+          <div class="fact"><dt>Middle half earn</dt><dd>{{ '%g' % (ins.q1|round(0)) }}–{{ '%g' % (ins.q3|round(0)) }}<small>LPA</small></dd></div>
+          <div class="fact"><dt>Typical experience</dt><dd>{{ '%g' % (ins.exp_med|round(0)) }}<small>yrs</small></dd></div>
+          <div class="fact"><dt>Employers</dt><dd>{{ ins.companies_n|num }}</dd></div>
+        </dl>
+        <div>
+          <h3 style="font-size:15px;margin-bottom:12px">How salaries are spread</h3>
+          {{ charts.histogram(ins.counts, ins.bins, ins.med, ins.q1, ins.q3) }}
+          <div class="legend"><span><i style="background:oklch(78% .06 205)"></i>Postings</span><span><i style="background:var(--accent);opacity:.25"></i>Middle half</span><span><i style="background:var(--ink);height:3px"></i>Median</span></div>
+        </div>
+        <div class="insight-cols">
+          <div><h4>Skills in these postings. Click to require one.</h4><div class="pill-list">{% for s, n in ins.skills %}<a href="{{ u('/jobs', P, add={'skill': s}) }}">{{ s|fmt_skill }}<span class="num">{{ n }}</span></a>{% endfor %}</div></div>
+          <div><h4>Cities. Click to narrow.</h4><div class="pill-list">{% for c, n in ins.cities %}<a href="{{ u('/jobs', P, add={'city': c}) }}">{{ c|fmt_city }}<span class="num">{{ n }}</span></a>{% endfor %}</div></div>
+          <div><h4>Employers. Click to focus.</h4><div class="pill-list">{% for c, n in ins.companies %}<a href="{{ u('/jobs', P, add={'company': c}) }}">{{ c }}<span class="num">{{ n }}</span></a>{% endfor %}</div></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="jobs">{% for j in rows %}{{ job_row(j) }}{% endfor %}</div>
+
+    {% if total_pages > 1 %}
+    <nav class="pager" aria-label="Pagination">
+      <span>Page {{ pg }} of {{ total_pages }}</span>
+      <span style="display:flex;gap:10px">
+        <a class="btn" href="{{ u('/jobs', P, set={'page': pg - 1}) }}" {% if pg == 1 %}aria-disabled="true"{% endif %}>Previous</a>
+        <a class="btn" href="{{ u('/jobs', P, set={'page': pg + 1}) }}" {% if pg == total_pages %}aria-disabled="true"{% endif %}>Next</a>
+      </span>
+    </nav>
+    {% endif %}
+    {% else %}
+    <div class="empty">
+      <h3>No postings match all of these filters</h3>
+      <p>Try removing a skill, widening the salary range, or switching skill matching to “any of them”.</p>
+      <a class="btn primary" href="/jobs">Clear all filters</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

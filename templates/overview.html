@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% from "macros.html" import rank, combo, icon %}
+{% block title %}Overview{% endblock %}
+{% block mainclass %}bleed{% endblock %}
+{% block content %}
+<section class="hero" aria-labelledby="hero-h">
+  <form class="hero-in" id="hero-form" action="/jobs" method="get" data-pulse>
+    <h1 id="hero-h">I work as a
+      <select name="family" aria-label="Role">
+        <option value="">tech professional</option>
+        {% for fam in hero_families %}<option value="{{ fam }}" {% if fam in hf.lists.family %}selected{% endif %}>{{ fam }}</option>{% endfor %}
+      </select>
+      in
+      <select name="city" aria-label="City">
+        <option value="">any city</option>
+        {% for c in hero_cities %}<option value="{{ c }}" {% if c in hf.lists.city %}selected{% endif %}>{{ c|fmt_city }}</option>{% endfor %}
+      </select>
+      with
+      <input type="number" name="exp" min="0" max="40" value="{{ hero_exp }}" placeholder="–" aria-label="Years of experience">
+      years of experience. What does that pay?</h1>
+    <div class="skills-line"><span>and I know</span>{{ combo('skill', 'Skills', hero_skills, 'skill', 'Add a skill, e.g. SQL') }}</div>
+
+    <div class="pulse" aria-live="polite">
+      <div class="pulse-head">
+        <div class="pulse-fig" id="p-fig">{% if pulse.n %}₹{{ '%g' % (pulse.med|round(1)) }}<small>LPA median</small>{% else %}–{% endif %}</div>
+        <div class="pulse-meta" id="p-meta">
+          {% if pulse.n %}<div><b>{{ pulse.n|num }}</b>postings</div><div><b>{{ '%g' % (pulse.q1|round(0)) }}–{{ '%g' % (pulse.q3|round(0)) }}</b>LPA, middle half</div><div><b>{{ pulse.companies|num }}</b>employers</div>{% endif %}
+        </div>
+      </div>
+      <div class="pulse-chart" id="p-chart">
+        {% if pulse.n %}{{ pulse.svg|safe }}{% else %}<p class="none">No postings match that combination. Try a broader city or fewer skills.</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <button type="submit" class="btn go lg" id="p-go">See these postings {{ icon('arrow') }}</button>
+      <a class="btn ghost lg" href="/companies">Compare employers</a>
+      <a class="btn ghost lg" href="/skills?sort=premium">Skills that pay</a>
+    </div>
+  </form>
+  <div style="height:56px"></div>
+</section>
+
+<div class="roles-strip">
+  <div class="wrap">
+    {% for name, med, n in roles_strip %}<a href="/roles/{{ name|lower|replace(' / ', '-')|replace(' ', '-') }}"><b>{{ '%g' % (med|round(1)) }} LPA</b><span>{{ name }} · {{ n|num }} postings</span></a>{% endfor %}
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="band section" style="margin-top:0">
+    <h2>Pay by role family</h2>
+    <p class="lede">Median disclosed salary across {{ TOTAL|num }} postings from {{ n_companies|num }} employers, highest first. Open a role for its experience curve and skills.</p>
+    <div class="panel">{{ rank(fam_rows) }}</div>
+    <p style="margin-top:16px"><a href="/roles">Compare all roles</a></p>
+  </section>
+
+  <section class="section">
+    <h2>What employers ask for</h2>
+    <p class="lede">The most requested skills, and the ones whose postings pay furthest above the median.</p>
+    <div class="grid-2">
+      <div class="panel"><h3>Most requested</h3><p class="sub">Number of postings listing the skill</p>{{ rank(skill_rows) }}</div>
+      <div class="panel"><h3>Largest pay premium</h3><p class="sub">Median salary of postings with the skill, minus the overall median</p>{{ rank(pay_rows) }}</div>
+    </div>
+    <p style="margin-top:16px"><a href="/skills">Explore all {{ n_skills|num }} skills</a></p>
+  </section>
+
+  <section class="section">
+    <h2>Where the openings are</h2>
+    <p class="lede">Cities and employers with the most postings in this dataset.</p>
+    <div class="grid-2">
+      <div class="panel"><h3>Cities</h3><p class="sub">Postings naming the city</p>{{ rank(city_rows) }}</div>
+      <div class="panel"><h3>Employers</h3><p class="sub">Postings with a stated salary</p>{{ rank(emp_rows) }}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Estimate your own numbers</h2>
+    <p class="lede">Three models built on public data. Each states its error and where it should not be trusted.</p>
+    <div class="tools-grid">
+      <a href="/tools/salary" style="--hue:160"><span class="ic">{{ icon('coin') }}</span><b>Salary estimate</b><span class="d">A likely salary range for a role, skills, city and experience in India.</span><span class="go">Estimate {{ icon('arrow') }}</span></a>
+      <a href="/tools/success" style="--hue:335"><span class="ic">{{ icon('trend') }}</span><b>Success odds</b><span class="d">How likely a developer profile is to out-earn peers in the same country.</span><span class="go">Check odds {{ icon('arrow') }}</span></a>
+      <a href="/tools/career" style="--hue:28"><span class="ic">{{ icon('target') }}</span><b>Career fit</b><span class="d">Rate your skills and see which data and IT occupations match.</span><span class="go">Find my fit {{ icon('arrow') }}</span></a>
+    </div>
+  </section>
+</div>
+{% endblock %}

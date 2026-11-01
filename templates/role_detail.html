@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% from "macros.html" import crumbs, rank, deco %}
+{% block title %}{{ fam }}{% endblock %}
+{% block content %}
+{% call crumbs([('/roles', 'Roles')]) %}{{ fam }}{% endcall %}
+<header class="ph">{{ deco("compass") }}<h1>{{ fam }}</h1>
+<p>{{ n|num }} postings from {{ n_comp|num }} employers state a salary. The middle half pay {{ '%g' % (q1|round(0)) }}–{{ '%g' % (q3|round(0)) }} LPA.</p>
+<div><a class="btn primary" href="/jobs?family={{ fam|urlencode }}">Browse these postings</a></div></header>
+
+<dl class="facts">
+  <div class="fact"><dt>Median salary</dt><dd>{{ '%g' % (med|round(1)) }}<small>LPA</small></dd></div>
+  <div class="fact"><dt>Typical experience asked</dt><dd>{{ '%g' % (exp_med|round(0)) }}<small>yrs</small></dd></div>
+  <div class="fact"><dt>Employers</dt><dd>{{ n_comp|num }}</dd></div>
+</dl>
+
+<section class="section">
+  <h2>Pay as experience grows</h2>
+  <p class="lede">The middle half of salaries in each experience band, with the median marked.</p>
+  <div class="panel">{% if bands %}{{ charts.band_ranges(bands) }}<div class="legend"><span><i style="background:oklch(78% .06 205)"></i>Middle half</span><span><i style="background:var(--ink);height:3px"></i>Median</span></div>{% else %}<p class="sub">Not enough postings to split by experience.</p>{% endif %}</div>
+</section>
+
+<section class="section">
+  <h2>How salaries are spread</h2>
+  <div class="panel" style="margin-top:24px">{{ charts.histogram(counts, bins, med, q1, q3) }}</div>
+</section>
+
+<section class="section">
+  <h2>Skills this role asks for</h2>
+  <p class="lede">Most requested skills in this family, with the pay gap against the family median.</p>
+  <div class="panel">{{ rank(skill_rows) }}</div>
+</section>
+
+<section class="section">
+  <h2>Who hires and where</h2>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="panel"><h3>Employers</h3><p class="sub">Postings with a stated salary</p>{{ rank(co_rows) }}</div>
+    <div class="panel"><h3>Cities</h3><p class="sub">Postings naming the city</p>{{ rank(city_rows) }}</div>
+    <div class="panel"><h3>Seniority</h3><p class="sub">Read from the job title</p>{{ rank(lvl_rows) }}</div>
+    {% if cs is not none %}<div class="panel"><h3>Hiring volume, all postings</h3><p class="sub">Including those that hide pay</p>
+      <dl class="kv"><dt>Postings</dt><dd class="num">{{ cs.postings|int|num }}</dd><dt>Companies</dt><dd class="num">{{ cs.companies|int|num }}</dd><dt>Median experience</dt><dd>{{ '%g' % cs.exp_med }}+ yrs</dd><dt>Median pay</dt><dd>{{ '%g' % cs.median_salary_lpa }} LPA of {{ cs.disclosed|int|num }} that state it</dd></dl></div>{% endif %}
+  </div>
+</section>
+
+{% if hire %}
+<section class="section">
+  <h2>Largest hirers across all postings</h2>
+  <p class="lede">From the wider December 2024 snapshot, including postings that do not state pay.</p>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>Company</th><th class="r">Postings</th><th>Experience asked</th><th>Cities</th><th>Skills requested</th></tr></thead>
+    <tbody>{% for h in hire %}<tr><td><b>{{ h.companyName }}</b></td><td class="r num">{{ h.postings }}</td><td>{{ h.experience }}</td><td>{{ h.city }}</td><td>{{ h.skills }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+{% endif %}
+{% endblock %}

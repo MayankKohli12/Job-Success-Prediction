@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% from "macros.html" import header, combo, icon %}
+{% block title %}Companies{% endblock %}
+{% block content %}
+{{ header("Companies", "Who is hiring and what they pay, drawn from postings with a stated salary. Filter by what you do, where, and which skills you bring.", "building") }}
+
+<div class="workspace">
+  <form class="filters" id="filters" action="/companies" method="get" data-live aria-label="Filters">
+    <div class="fhead"><h2>Filters</h2><span style="display:flex;gap:8px;align-items:center"><a href="/companies" class="btn quiet">Reset</a><button type="button" class="btn quiet filter-toggle" data-close-filters aria-label="Close filters">{{ icon('x') }}</button></span></div>
+    <div class="fgroup"><div class="field"><label for="name">Company name</label><input type="search" id="name" name="name" value="{{ name_q }}" placeholder="Search by name"></div></div>
+    <fieldset class="fgroup"><legend class="t">Hires for</legend>
+      <div>{% for fam in families %}{% set n = fam_c.get(fam, 0) %}{% if n or fam in f.lists.family %}<label class="check{% if not n %} zero{% endif %}"><input type="checkbox" name="family" value="{{ fam }}" {% if fam in f.lists.family %}checked{% endif %}><span>{{ fam }}</span><span class="ct num">{{ n|num }}</span></label>{% endif %}{% endfor %}</div>
+    </fieldset>
+    <div class="fgroup"><div class="t">Skills and place</div>
+      {{ combo('skill', 'Posts asking for', f.lists.skill|skill_tokens, 'skill', 'Add a skill') }}
+      {{ combo('city', 'Hiring in', f.lists.city|city_tokens, 'city', 'Add a city') }}
+    </div>
+    <div class="fgroup"><div class="t">Size and type</div>
+      <div class="field"><label for="min">Minimum postings</label>
+        <select id="min" name="min">{% for v in [1, 2, 3, 5, 10, 20] %}<option value="{{ v }}" {% if min_n == v %}selected{% endif %}>{{ v }}{{ '+' if v > 1 else '' }}</option>{% endfor %}</select></div>
+      <label class="toggle"><input type="checkbox" name="agency" value="hide" {% if f.hide_agency %}checked{% endif %}><span>Hide recruiting agencies<small>Guessed from names such as “consulting” or “staffing”.</small></span></label>
+    </div>
+    <div class="fgroup"><div class="t">Experience</div>
+      <div class="field"><label for="exp">Your experience (years)</label><input type="number" id="exp" name="exp" min="0" max="40" value="{{ '%g' % f.exp if f.exp is not none else '' }}" placeholder="Only postings that accept me"></div>
+    </div>
+    <div class="fgroup" style="border:0" data-nojs-show><button class="btn primary block" type="submit">Apply filters</button></div>
+  </form>
+
+  <div id="results" aria-live="polite">
+    <div class="resultbar">
+      <div>
+        <button type="button" class="btn filter-toggle" data-open-filters style="margin-bottom:14px">{{ icon('filter') }}Filters</button>
+        <h2>{{ total|num }} compan{{ 'y' if total == 1 else 'ies' }}<small>from {{ sub_n|num }} postings{% if shown < total %}, top {{ shown }} shown{% endif %}</small></h2>
+      </div>
+      <label class="sortbox">Sort by
+        <select name="sort" form="filters" aria-label="Sort companies">
+          {% for k, v in [('postings','Most postings'),('pay','Highest median pay'),('top','Highest single offer'),('exp','Least experience asked'),('az','Name A–Z')] %}<option value="{{ k }}" {% if sort == k %}selected{% endif %}>{{ v }}</option>{% endfor %}
+        </select>
+      </label>
+    </div>
+    <div class="active">
+      {% for label, drop in f.active() %}<a class="chip" href="{{ u('/companies', P, drop=drop) }}">{{ label }}{{ icon('x') }}</a>{% endfor %}
+      {% if name_q %}<a class="chip" href="{{ u('/companies', P, drop={'name': None}) }}">“{{ name_q }}”{{ icon('x') }}</a>{% endif %}
+    </div>
+
+    {% if rows %}
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Company</th><th class="r">Postings</th><th class="r">Median pay</th><th class="r">Top offer</th><th>Typically asks for</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+        <tr>
+          <td><a class="nm" href="/companies/{{ r.slug }}">{{ r.name }}</a>{% if r.agency %} <span class="tag">Agency</span>{% endif %}
+            <div class="sub">{{ r.cities|join(', ') or 'Location not listed' }} · {{ '%g' % (r.exp|round(0)) }} yrs typical</div></td>
+          <td class="r num"><b>{{ r.n }}</b></td>
+          <td class="r num">{{ '%g' % (r.med|round(1)) }} LPA</td>
+          <td class="r num">{{ '%g' % (r.top|round(1)) }} LPA</td>
+          <td><div class="chips">{% for s in r.skills %}<a class="chip" href="{{ u('/companies', P, add={'skill': s|lower}) }}">{{ s }}</a>{% endfor %}</div></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    {% else %}
+    <div class="empty"><h3>No companies match</h3><p>Loosen the minimum postings, remove a skill, or clear the name search.</p><a class="btn primary" href="/companies">Clear all filters</a></div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% from "macros.html" import crumbs, rank, job_row, deco %}
+{% block title %}{{ name }}{% endblock %}
+{% block content %}
+{% call crumbs([('/companies', 'Companies')]) %}{{ name }}{% endcall %}
+<header class="ph">{{ deco("building") }}<h1>{{ name }}</h1>
+<p>{{ n }} posting{{ '' if n == 1 else 's' }} with a stated salary, paying a median of {{ '%g' % (med|round(1)) }} LPA.{% if agency %} The name suggests a recruiting agency, so the roles may be for its clients.{% endif %}</p>
+<div><a class="btn primary" href="/jobs?company={{ name|urlencode }}">Browse {{ n }} posting{{ '' if n == 1 else 's' }}</a></div></header>
+
+<dl class="facts">
+  <div class="fact"><dt>Median salary</dt><dd>{{ '%g' % (med|round(1)) }}<small>LPA</small></dd></div>
+  <div class="fact"><dt>Salary range</dt><dd>{{ '%g' % (q1|round(0)) }}–{{ '%g' % (q3|round(0)) }}<small>LPA</small><span class="note">middle half of postings</span></dd></div>
+  <div class="fact"><dt>Typical experience</dt><dd>{{ '%g' % (exp_med|round(0)) }}<small>yrs</small></dd></div>
+</dl>
+
+<section class="section">
+  <h2>What they hire for</h2>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="panel"><h3>Skills requested</h3><p class="sub">Postings naming the skill</p>{{ rank(skill_rows) }}</div>
+    <div class="panel"><h3>Role families</h3><p class="sub">Postings by family</p>{{ rank(fam_rows) }}{% if city_rows %}<h3 style="margin-top:32px">Cities</h3><p class="sub">Postings naming the city</p>{{ rank(city_rows) }}{% endif %}</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Highest paying postings</h2>
+  <div class="jobs" style="margin-top:24px">{% for j in rows %}{{ job_row(j) }}{% endfor %}</div>
+  {% if n > 8 %}<p style="margin-top:24px"><a href="/jobs?company={{ name|urlencode }}">See all {{ n }} postings</a></p>{% endif %}
+</section>
+{% endblock %}

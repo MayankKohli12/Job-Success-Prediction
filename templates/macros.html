@@ -1,0 +1,84 @@
+{% set ICONS = {
+ 'home': 'M3 10.5 12 3l9 7.5M5 9.5V20h5v-6h4v6h5V9.5',
+ 'briefcase': 'M4 8h16v11H4zM9 8V5h6v3M4 13h16',
+ 'building': 'M5 21V4h9v17M14 9h5v12M3 21h18M8 8h2M8 12h2M8 16h2',
+ 'layers': 'm12 3 9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5',
+ 'compass': 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM15.5 8.5l-2 5-5 2 2-5z',
+ 'coin': 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM14.5 9.2c-.6-.8-1.5-1.2-2.5-1.2-1.4 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1 0-2-.4-2.5-1.2M12 6.5V8m0 8v1.5',
+ 'trend': 'M3 17l6-6 4 4 8-8M15 7h6v6',
+ 'target': 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM12 12h.01',
+ 'menu': 'M4 7h16M4 12h16M4 17h16',
+ 'x': 'M6 6l12 12M18 6 6 18',
+ 'pin': 'M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z',
+ 'clock': 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2',
+ 'filter': 'M4 6h16M7 12h10M10 18h4',
+ 'chev': 'm9 6 6 6-6 6',
+ 'arrow': 'M5 12h14M13 6l6 6-6 6',
+ 'search': 'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4',
+ 'moon': 'M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z',
+ 'info': 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 7.5h.01',
+ 'sparkle': 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z',
+ 'tool': 'M14.5 6.5a4 4 0 0 0-5 5L4 17l3 3 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z'
+} %}
+
+{% macro icon(name) -%}
+{%- if name == 'logo' -%}
+<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="oklch(45% .095 205)"/><path d="M5 18h5l3-8 5 14 3-9 2 3h4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+{%- else -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ ICONS[name] }}"/></svg>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro deco(ic) -%}
+<div class="tile">{{ icon(ic) }}</div>
+<svg class="motif" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true"><rect x="10" y="78" width="22" height="42" rx="4"/><rect x="42" y="58" width="22" height="62" rx="4"/><rect x="74" y="34" width="22" height="86" rx="4"/><rect x="106" y="14" width="22" height="106" rx="4"/><rect x="138" y="30" width="22" height="90" rx="4"/><rect x="170" y="50" width="22" height="70" rx="4"/><rect x="202" y="70" width="22" height="50" rx="4"/><rect x="234" y="88" width="22" height="32" rx="4"/><rect x="266" y="100" width="22" height="20" rx="4"/></svg>
+{%- endmacro %}
+
+{% macro header(title, lede, ic='compass') -%}
+<header class="ph">{{ deco(ic) }}<h1>{{ title }}</h1>{% if lede %}<p>{{ lede }}</p>{% endif %}</header>
+{%- endmacro %}
+
+{% macro crumbs(items) -%}
+<nav class="crumbs" aria-label="Breadcrumb">{% for href, label in items %}<a href="{{ href }}">{{ label }}</a><span aria-hidden="true">/</span>{% endfor %}<span aria-current="page">{{ caller() }}</span></nav>
+{%- endmacro %}
+
+{% macro combo(name, label, tokens, kind, placeholder='Type to search', neg=False, hint='') -%}
+<div class="field">
+  <label for="c-{{ name }}">{{ label }}</label>
+  <div class="combo" data-combo data-name="{{ name }}" data-kind="{{ kind }}">
+    <div class="combo-box">
+      {% for value, text in tokens %}<span class="token{% if neg %} neg{% endif %}" data-value="{{ value }}">{{ text }}<input type="hidden" name="{{ name }}" value="{{ value }}"><button type="button" aria-label="Remove {{ text }}">{{ icon('x') }}</button></span>{% endfor %}
+      <input type="text" id="c-{{ name }}" autocomplete="off" placeholder="{{ placeholder }}" role="combobox" aria-expanded="false" aria-autocomplete="list">
+    </div>
+    <ul class="sugg" role="listbox" hidden></ul>
+  </div>
+  {% if hint %}<span class="hint">{{ hint }}</span>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro rank(items) -%}
+<ol class="rank">
+{% for name, href, pct, val, sub in items %}
+  <li>{% if href %}<a class="nm" href="{{ href }}">{{ name }}</a>{% else %}<span class="nm">{{ name }}</span>{% endif %}
+  <div class="bar"><i style="width:{{ '%.1f' % pct }}%"></i></div>
+  <div class="val">{{ val }}{% if sub %}<small>{{ sub }}</small>{% endif %}</div></li>
+{% endfor %}
+</ol>
+{%- endmacro %}
+
+{% macro job_row(j) -%}
+<article class="job">
+  <div>
+    <h3><a href="/jobs/{{ j.jobId }}">{{ j.title }}</a></h3>
+    <div class="who"><a href="/companies/{{ COMPANY_SLUG_REV[j.companyName] }}">{{ j.companyName }}</a>{% if j.agency %}<span class="tag">Agency</span>{% endif %}</div>
+    <div class="meta">
+      <span>{{ icon('pin') }}{{ (j.cities[:3]|map('fmt_city')|join(', ')) or 'Location not listed' }}{% if j.cities|length > 3 %} +{{ j.cities|length - 3 }}{% endif %}</span>
+      <span>{{ icon('clock') }}{{ j|yrs }}</span>
+      <span>{{ j.level }}</span>
+    </div>
+    {% set shown = j.skills|select('in', SKILL_SLUG_REV)|list %}
+    {% if shown %}<div class="chips">{% for s in shown[:5] %}<a class="chip" href="/jobs?skill={{ s|urlencode }}">{{ s|fmt_skill }}</a>{% endfor %}</div>{% endif %}
+  </div>
+  <div class="pay"><b class="num">{{ '%g' % (j.sal_lo|round(1)) }}–{{ '%g' % (j.sal_hi|round(1)) }}</b><small>LPA</small></div>
+</article>
+{%- endmacro %}

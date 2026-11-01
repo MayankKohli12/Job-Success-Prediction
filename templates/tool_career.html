@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% from "macros.html" import header, rank %}
+{% block title %}Career fit{% endblock %}
+{% block content %}
+{{ header("Career fit", "Rate how strong you are in each skill from 0 to 5. The occupations that match you best update as you go.", "target") }}
+<div class="tool">
+  <form class="form" action="/tools/career" method="get" data-live aria-label="Skill ratings">
+    <div class="step">
+      <div class="t"><i>★</i>Start from a profile</div>
+      <div class="presets" style="margin-top:-6px"><span>Pre-fill like a</span>{% for n, vals in presets %}<button type="button" data-ratings='{{ vals }}'>{{ n }}</button>{% endfor %}</div>
+      <p class="hint" style="margin-top:-8px">Then adjust anything that doesn't sound like you.</p>
+    </div>
+    {% for g, items in groups %}
+    <div class="step">
+      <div class="t"><i>{{ loop.index }}</i>{{ g }}</div>
+      <div>
+      {% for i, s, d, r in items %}
+        <div class="rate">
+          <div class="rt"><b>{{ s }}</b><span>{{ d }}</span></div>
+          <div class="seg six" role="radiogroup" aria-label="{{ s }}">{% for n in range(6) %}<label><input type="radio" name="r{{ i }}" value="{{ n }}" {% if n == r %}checked{% endif %}><span>{{ n }}</span></label>{% endfor %}</div>
+          <div class="scale" aria-hidden="true"><span>None</span><span>Basic</span><span>Working</span><span>Expert</span></div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <button class="btn primary lg block" type="submit" data-nojs-show>Find my fit</button>
+  </form>
+
+  <div class="result" id="results" aria-live="polite">
+  {% if empty %}<div class="callout err"><b>Rate at least one skill above 0</b> to see your closest occupations.</div>
+  {% else %}
+    <div class="resultcard">
+      <span class="lab">Your closest match</span>
+      <div class="big" style="font-size:clamp(34px,4.6vw,56px);line-height:1.08">{{ res.best }}</div>
+      <p>{{ '%.0f' % (res.ranked[0][1] * 100) }}% fit. {% if res.gaps %}Your biggest gap is {{ res.gaps[0][0] }}.{% else %}You already meet the typical level in every skill it needs.{% endif %}</p>
+    </div>
+    <section class="rsec">
+      <h3>Your closest occupations</h3>
+      <p class="sub">Fit combines how closely the shape of your skills matches each occupation, and whether you reach the level it needs.</p>
+      <div class="panel">{{ rank(rank_rows) }}</div>
+    </section>
+    <section class="rsec">
+      <h3>You against {{ res.best }}</h3>
+      <p class="sub">The dark marker is the level this occupation typically needs, from most to least important skill. The bar is your rating.</p>
+      <div class="panel"><div class="cmp">
+        {% for s, need, you in res.compare %}
+        <div class="cmp-row"><div class="top"><b style="font-weight:600">{{ s }}</b><span>needs about {{ '%.1f' % need }} · you {{ '%.1f' % you }}</span></div>
+          <div class="cmp-bars"><i style="width:{{ you / 5 * 100 }}%"></i><b style="left:{{ [need / 5 * 100, 100]|min }}%"></b></div></div>
+        {% endfor %}
+      </div></div>
+    </section>
+    <section class="rsec">
+      <h3>About this occupation</h3>
+      <p class="sub">What O*NET experts say it involves.</p>
+      <dl class="kv panel"><dt>Knowledge areas</dt><dd>{{ res.knowledge }}</dd><dt>Work styles that matter</dt><dd>{{ res.styles }}</dd><dt>Tools in demand</dt><dd>{{ res.tools or 'Not listed' }}</dd></dl>
+    </section>
+    <p class="method">Based on U.S. Department of Labor O*NET expert ratings for {{ res.n_occ }} data, analytics and IT occupations. It shows fit, not a job offer or salary.</p>
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

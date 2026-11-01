@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% from "macros.html" import header, combo, icon %}
+{% block title %}Salary estimate{% endblock %}
+{% block content %}
+{{ header("Salary estimate", "Pick a role, your experience and the skills you bring. The estimate updates as you go, using about 5,100 Indian postings that stated pay.", "coin") }}
+<div class="tool">
+  <form class="form" action="/tools/salary" method="get" data-live aria-label="Salary inputs">
+    <div class="step">
+      <div class="t"><i>1</i>The role</div>
+      <div class="rolegrid" role="radiogroup" aria-label="Role">
+        {% for r in roles %}<label class="cc"><input type="radio" name="role" value="{{ r }}" {% if r == v.base %}checked{% endif %}><span>{{ r }}</span></label>{% endfor %}
+      </div>
+      <div class="field"><span class="lbl">Seniority in the title</span>
+        <div class="seg full" style="grid-template-columns:repeat(5,1fr)" role="radiogroup" aria-label="Seniority">
+          {% for k, l in levels %}<label><input type="radio" name="lvl" value="{{ k }}" {% if k == v.lvl %}checked{% endif %}><span>{{ l }}</span></label>{% endfor %}
+        </div>
+      </div>
+      <div class="field"><label for="custom">Different title? <span class="hint">Optional. Replaces the choices above.</span></label>
+        <input type="text" id="custom" name="custom" value="{{ v.custom }}" placeholder="e.g. Analytics Consultant"></div>
+    </div>
+
+    <div class="step">
+      <div class="t"><i>2</i>Experience asked<small>years</small></div>
+      <div>
+        <div class="dual" data-dual style="--lo:{{ v.emin / 30 * 100 }};--hi:{{ v.emax / 30 * 100 }}">
+          <div class="rail-track"><div class="rail-fill"></div></div>
+          <input type="range" name="emin" min="0" max="30" value="{{ '%g' % v.emin }}" aria-label="Minimum years">
+          <input type="range" name="emax" min="0" max="30" value="{{ '%g' % v.emax }}" aria-label="Maximum years">
+        </div>
+        <div class="ticks" aria-hidden="true"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span></div>
+        <div class="dual-read" style="margin-top:10px"><span>Postings usually ask for a range</span><b data-dual-read>{{ '%g' % v.emin }} to {{ '%g' % v.emax }} yrs</b></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="t"><i>3</i>Your skills<small data-count>{{ v.skills|length }} selected</small></div>
+      <fieldset class="picker" data-picker>
+        <legend class="sr">Skills</legend>
+        <div class="chipgrid">
+          {% for k, l in popular %}<label class="cc"><input type="checkbox" name="skill" value="{{ k }}" {% if k in v.skills %}checked{% endif %}><span>{{ l }}</span></label>{% endfor %}
+        </div>
+      </fieldset>
+      {{ combo('skill', 'Not listed? Search more skills', extra, 'mskill', 'Search skills the model knows') }}
+    </div>
+
+    <div class="step">
+      <div class="t"><i>4</i>Location<small>optional</small></div>
+      <fieldset class="picker" data-picker>
+        <legend class="sr">City</legend>
+        <div class="chipgrid">
+          {% for k, l in city_opts %}<label class="cc"><input type="checkbox" name="city" value="{{ k }}" {% if k in v.cities %}checked{% endif %}><span>{{ l }}</span></label>{% endfor %}
+        </div>
+      </fieldset>
+    </div>
+    <button class="btn primary lg block" type="submit" data-nojs-show>Estimate salary</button>
+    <div class="examples"><b style="font-size:13.5px">Start from an example</b>
+      <a href="/tools/salary?role=Data+Analyst&skill=sql&skill=excel&skill=power+bi&city=mumbai+(all+areas)&emin=1&emax=3">Data Analyst, Mumbai, 1 to 3 years</a>
+      <a href="/tools/salary?role=Data+Engineer&lvl=Senior&skill=spark&skill=python&skill=aws&city=hyderabad&emin=5&emax=9">Senior Data Engineer, Hyderabad, 5 to 9 years</a>
+      <a href="/tools/salary?role=Machine+Learning+Engineer&skill=deep+learning&skill=python&city=pune&emin=4&emax=8">ML Engineer, Pune, 4 to 8 years</a>
+    </div>
+  </form>
+
+  <div class="result" id="results" aria-live="polite">
+  {% if res.error %}
+    <div class="callout err"><b>{{ res.error }}</b>{% if res.hint %}<br>Pick one of the roles on the left, or type a data or software title such as “Analytics Engineer”.{% endif %}</div>
+  {% else %}
+    <div class="resultcard">
+      <span class="lab">Typical salary for a {{ v.title|lower }}</span>
+      <div class="big num">₹{{ '%g' % (res.mid|round(0)) }}<small>LPA</small></div>
+      <div>
+        {% set top = [res.hi * 1.15, 10]|max %}
+        <div class="range-viz"><i style="left:{{ res.lo / top * 100 }}%;width:{{ (res.hi - res.lo) / top * 100 }}%"></i><b style="left:{{ res.mid / top * 100 }}%"></b></div>
+        <div class="range-lbls"><span>₹0</span><span>₹{{ '%g' % (top|round(0)) }} LPA</span></div>
+      </div>
+      <p>Four in five similar postings pay between <b class="num">₹{{ '%g' % (res.lo|round(0)) }}</b> and <b class="num">₹{{ '%g' % (res.hi|round(0)) }} LPA</b>. The range is wide because advertised pay varies a lot.</p>
+    </div>
+    {% for n in res.notes %}<div class="callout">{{ n }}</div>{% endfor %}
+    <section class="rsec">
+      <h3>Real postings at your experience level</h3>
+      <p class="sub">{{ res.near_n|num }} postings, median {{ '%g' % (res.near_med|round(0)) }} LPA at about {{ '%g' % (res.em|round(0)) }} years.</p>
+      <div class="panel">{{ charts.histogram(res.hcounts, res.hbins, res.mid, res.lo, res.hi) }}
+        <div class="legend"><span><i class="lg-bar"></i>Real postings</span><span><i class="lg-range"></i>80% range</span><span><i class="lg-med"></i>Typical</span></div></div>
+    </section>
+    <section class="rsec">
+      <h3>How the estimate moves with experience</h3>
+      <p class="sub">Same role, skills and city, changing only the experience asked.</p>
+      <div class="panel">{{ charts.experience_curve(res.xs, res.curve, res.exp_min, res.exp_max, res.mid) }}
+        <div class="legend"><span><i class="lg-range"></i>80% range</span><span><i class="lg-line"></i>Typical</span><span><i class="lg-amber"></i>Your experience</span></div></div>
+    </section>
+    <p class="method">Checked on unseen postings, the average error was ₹{{ '%.1f' % res.mae }} LPA; always guessing the median would miss by ₹{{ '%.1f' % res.base_mae }} LPA. The 80% range held the true salary {{ '%.0f' % (res.coverage * 100) }}% of the time. Built from {{ res.n|num }} postings that disclosed a range, so employers who hide pay may differ.</p>
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

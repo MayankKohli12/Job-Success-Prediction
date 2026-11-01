@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% from "macros.html" import header %}
+{% block title %}About the data{% endblock %}
+{% block content %}
+{{ header("About the data", "Where the numbers come from, what they can and cannot tell you, and how the estimates were checked.", "info") }}
+<div class="prose">
+  <h2>Job postings</h2>
+  <p>Jobs, companies, skills and roles come from Naukri.com postings captured in December 2024. Only the {{ TOTAL|num }} postings that state a salary range and are based in India are used here (overseas roles, whose pay is not in rupees, are left out), with each posting's pay taken as the midpoint of its range. Employers that hide pay are under-represented, so figures describe advertised pay, not what people are finally paid.</p>
+  <ul>
+    <li><b>Role families</b> are assigned from keywords in the job title. Each posting belongs to one family.</li>
+    <li><b>Level</b> (junior, senior, lead, manager) is read from words in the title.</li>
+    <li><b>Recruiting agencies</b> are guessed from company names containing words such as “consulting”, “staffing” or “talent”. Some direct employers will be caught and some agencies missed.</li>
+    <li><b>Generic skill tags</b> such as “development” or “software” are hidden because they say nothing about a candidate.</li>
+  </ul>
+  <h2>Salary estimate</h2>
+  <p>Gradient-boosting quantile models trained on the same postings. On postings the model had not seen, the average error was ₹{{ '%.1f' % R.mae_lpa }} LPA, against ₹{{ '%.1f' % S.results.median_baseline_mae_lpa }} LPA for always guessing the median. The stated 80% range contained the true salary {{ '%.0f' % (R.range80_coverage * 100) }}% of the time.</p>
+  <h2>Success odds</h2>
+  <p>A classifier trained on {{ so_n|num }} respondents of the Stack Overflow Developer Survey 2026 from {{ SU.countries }} countries. “Success” means earning more than the typical developer in the same country with similar experience. Tool effects are associations in survey data, not proof that learning a tool raises pay.</p>
+  <h2>Career fit</h2>
+  <p>Matches your self-ratings to U.S. Department of Labor O*NET skill ratings for {{ onet_n }} data, analytics and IT occupations. It reflects U.S. occupation definitions.</p>
+  <h2>Licences</h2>
+  <ul>
+    <li>Naukri job postings, December 2024 (Hugging Face <i>muhammetakkurt/naukri-jobs-dataset</i>, CC BY-NC 4.0)</li>
+    <li>Stack Overflow Developer Survey 2026 (ODbL 1.0)</li>
+    <li>O*NET 31.x database, U.S. Department of Labor, Employment and Training Administration (CC BY 4.0)</li>
+  </ul>
+</div>
+{% endblock %}

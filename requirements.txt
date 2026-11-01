@@ -1,6 +1,8 @@
-gradio>=5.20,<6
-scikit-learn==1.9.1
+fastapi>=0.115
+uvicorn>=0.30
+jinja2>=3.1
 pandas>=2.2
 numpy
 scipy
 joblib
+scikit-learn==1.9.1

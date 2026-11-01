@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "macros.html" import header %}
+{% block title %}Roles{% endblock %}
+{% block content %}
+{{ header("Roles", "Role families grouped from job titles. Compare how much each pays, how experienced it asks you to be, and which skills define it.", "compass") }}
+<div class="tblwrap">
+<table class="tbl">
+  <thead><tr><th>Role family</th><th class="r">Postings</th><th>Middle half earn</th><th class="r">Experience asked</th><th>Defining skills</th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+    <tr>
+      <td><a class="nm" href="/roles/{{ r.slug }}">{{ r.name }}</a><div class="sub">{{ r.companies|num }} employers</div></td>
+      <td class="r num"><b>{{ r.n|num }}</b></td>
+      <td class="barcell" style="min-width:220px">
+        <div style="position:relative;height:8px;background:var(--sunken);border-radius:6px;margin-top:8px"><i style="position:absolute;top:0;bottom:0;left:{{ '%.1f' % (r.q1 / vmax * 100) }}%;width:{{ '%.1f' % ((r.q3 - r.q1) / vmax * 100) }}%;background:oklch(70% .08 205);border-radius:6px"></i><b style="position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);left:{{ '%.1f' % (r.med / vmax * 100) }}%"></b></div>
+        <div class="sub num">{{ '%g' % (r.q1|round(0)) }}–{{ '%g' % (r.q3|round(0)) }} LPA, median {{ '%g' % (r.med|round(1)) }}</div></td>
+      <td class="r num">{{ '%g' % (r.exp|round(0)) }} yrs</td>
+      <td><div class="chips">{% for s in r.skills %}<span class="chip">{{ s }}</span>{% endfor %}</div></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<p class="method" style="margin-top:32px">Families are assigned from keywords in the job title, so one posting belongs to exactly one family. “Other tech” collects titles that match none.</p>
+{% endblock %}

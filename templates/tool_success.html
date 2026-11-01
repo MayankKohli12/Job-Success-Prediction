@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% from "macros.html" import header, combo, icon %}
+{% block title %}Success odds{% endblock %}
+{% block content %}
+{{ header("Success odds", "Describe your profile and see how likely it is to out-earn developers in your country with similar experience. It updates as you change anything.", "trend") }}
+<div class="tool">
+  <form class="form" action="/tools/success" method="get" data-live aria-label="Profile inputs">
+    <div class="step">
+      <div class="t"><i>1</i>About you</div>
+      <div class="field"><label for="country">Country</label><select id="country" name="country">{% for c in C.country %}<option {% if c == v.country %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div>
+      <div class="field"><label for="exp">Years of work experience</label>
+        <div class="range-row"><input type="range" id="exp" name="exp" min="0" max="40" value="{{ '%g' % v.exp }}"><output>{{ '%g' % v.exp }}</output></div>
+        <div class="ticks" aria-hidden="true"><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span></div></div>
+      <div class="field"><label for="role">Role</label><select id="role" name="role">{% for c in C.role %}<option {% if c == v.role %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div>
+      <div class="field"><label for="edu">Education</label><select id="edu" name="edu">{% for c in C.education %}<option {% if c == v.edu %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div>
+    </div>
+
+    <div class="step">
+      <div class="t"><i>2</i>Where you work</div>
+      <div class="field"><label for="org">Company size (employees)</label><select id="org" name="org">{% for c in C.org_size %}<option {% if c == v.org %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div>
+      <div class="field"><span class="lbl">Work mode</span>
+        <div class="seg full" style="grid-template-columns:repeat({{ C.work_mode|length }},1fr)">{% for c in C.work_mode %}<label><input type="radio" name="mode" value="{{ c }}" {% if c == v.mode %}checked{% endif %}><span>{{ c }}</span></label>{% endfor %}</div></div>
+      <div class="field"><span class="lbl">Do you manage people?</span>
+        <div class="seg full" style="grid-template-columns:repeat({{ C.manager|length }},1fr)">{% for c in C.manager %}<label><input type="radio" name="mgr" value="{{ c }}" {% if c == v.mgr %}checked{% endif %}><span>{{ c }}</span></label>{% endfor %}</div></div>
+    </div>
+
+    <div class="step">
+      <div class="t"><i>3</i>Your toolkit<small data-count>{{ v.tools|length }} selected</small></div>
+      <fieldset class="picker" data-picker>
+        <legend class="sr">Tools you use</legend>
+        <div class="picker-bar"><input type="search" placeholder="Filter tools" aria-label="Filter tools" data-picker-search><button type="button" class="btn quiet" data-picker-clear>Clear</button></div>
+        <div class="presets"><span>Start from</span>{% for n, vals in presets %}<button type="button" data-preset="{{ vals }}">{{ n }}</button>{% endfor %}</div>
+        {% for g, ts in groups %}
+        <div class="pgroup"><h4>{{ g }}</h4><div class="chipgrid">
+          {% for t in ts %}<label class="cc"><input type="checkbox" name="tool" value="{{ t }}" {% if t in v.tools %}checked{% endif %}><span>{{ t }}</span></label>{% endfor %}
+        </div></div>
+        {% endfor %}
+      </fieldset>
+    </div>
+
+    <div class="step">
+      <div class="t"><i>4</i>Other skills<small>pay signal only</small></div>
+      {{ combo('xt', 'Search any skill', extra_tokens, 'skill', 'e.g. Spark, Tableau, React') }}
+      <p class="hint" style="margin-top:-6px">The survey model learned from the tools above. Skills you add here are looked up in Indian job postings instead and shown beside your result, without changing the odds.</p>
+    </div>
+    <button class="btn primary lg block" type="submit" data-nojs-show>Estimate my odds</button>
+  </form>
+
+  <div class="result" id="results" aria-live="polite">
+    <div class="resultcard">
+      <span class="lab">Chance of out-earning peers in {{ v.country }}</span>
+      <div class="big num">{{ '%.0f' % (res.p * 100) }}<small>%</small></div>
+      <div><div class="meter" role="img" aria-label="{{ '%.0f' % (res.p * 100) }} percent"><i style="width:{{ '%.0f' % (res.p * 100) }}%"></i><b></b></div>
+      <div class="meter-lbl"><span>0%</span><span>50%, even with peers</span><span>100%</span></div></div>
+      <p>{{ res.verdict }}.</p>
+    </div>
+
+    <dl class="facts" style="margin:0">
+      <div class="fact"><dt>Typical peer pay</dt><dd>${{ '{:,.0f}'.format(res.peer_pay) }}<small>per year</small><span class="note">median of {{ res.peer_n|num }} developers {{ res.scope }}</span></dd></div>
+      <div class="fact"><dt>Highly satisfied in role</dt><dd>{{ '%.0f' % (res.sat * 100) }}<small>%</small><span class="note">of {{ res.sat_n|num }} {{ res.sscope }} rate their job 8 or higher out of 10</span></dd></div>
+    </dl>
+
+    <section class="rsec">
+      <h3>Tools that would lift your odds</h3>
+      <p class="sub">What adding each tool changes, other things equal. Associations in survey data, not guaranteed causes. Click one to add it.</p>
+      {% if tips %}<div class="panel"><div class="pill-list">{% for t, d, href in tips %}<a href="{{ href }}"><b style="font-weight:600">+ {{ t }}</b><span class="num" style="color:var(--pos);font-weight:600">+{{ '%.1f' % (d * 100) }} points</span></a>{% endfor %}</div></div>
+      {% else %}<div class="panel flat">Your tool mix already covers the tools most linked to higher pay in this survey.</div>{% endif %}
+    </section>
+
+    {% if ex %}
+    <section class="rsec">
+      <h3>Your other skills in Indian postings</h3>
+      <p class="sub">Not part of the odds above. Median pay of postings naming the skill, against postings that don't.</p>
+      <div class="panel"><div class="pill-list">{% for e in ex %}<a style="pointer-events:none"><b style="font-weight:600">{{ e.label }}</b><span class="num">{{ '%g' % (e.med|round(1)) }} LPA · <span style="color:{{ 'var(--pos)' if e.prem >= 0 else 'var(--neg)' }};font-weight:600">{{ e.prem|signed }}</span> · {{ e.n }} postings</span></a>{% endfor %}</div></div>
+    </section>
+    {% endif %}
+
+    <p class="method"><b>Success</b> means earning more than the typical developer in the same country with similar experience. On held-out respondents the model was right {{ '%.0f' % (res.acc * 100) }}% of the time (guessing: {{ '%.0f' % (res.guess * 100) }}%; knowing only country and experience: {{ '%.0f' % (res.ce * 100) }}%). Built from {{ res.n|num }} respondents in {{ res.countries }} countries. The model uses 17 tools because that is what the survey table recorded. Satisfaction is shown as a survey statistic because profile data predicts it only weakly.</p>
+  </div>
+</div>
+{% endblock %}

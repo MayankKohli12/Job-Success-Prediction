@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% from "macros.html" import header, combo, icon %}
+{% block title %}Skills{% endblock %}
+{% block content %}
+{{ header("Skills", "How often each skill is asked for, and what postings that mention it pay compared with the rest. Narrow to a role, city or level to compare like with like.", "layers") }}
+
+<div class="workspace">
+  <form class="filters" id="filters" action="/skills" method="get" data-live aria-label="Filters">
+    <div class="fhead"><h2>Filters</h2><span style="display:flex;gap:8px;align-items:center"><a href="/skills" class="btn quiet">Reset</a><button type="button" class="btn quiet filter-toggle" data-close-filters aria-label="Close filters">{{ icon('x') }}</button></span></div>
+    <div class="fgroup"><div class="field"><label for="name">Skill name</label><input type="search" id="name" name="name" value="{{ name_q }}" placeholder="Search skills"></div></div>
+    <fieldset class="fgroup"><legend class="t">Within role family</legend>
+      <div>{% for fam in families %}{% set n = fam_c.get(fam, 0) %}{% if n or fam in f.lists.family %}<label class="check{% if not n %} zero{% endif %}"><input type="checkbox" name="family" value="{{ fam }}" {% if fam in f.lists.family %}checked{% endif %}><span>{{ fam }}</span><span class="ct num">{{ n|num }}</span></label>{% endif %}{% endfor %}</div>
+    </fieldset>
+    <fieldset class="fgroup"><legend class="t">Level</legend>
+      <div>{% for l in LEVELS %}<label class="check"><input type="checkbox" name="level" value="{{ l }}" {% if l in f.lists.level %}checked{% endif %}><span>{{ l }}</span><span></span></label>{% endfor %}</div>
+    </fieldset>
+    <div class="fgroup"><div class="t">Place and experience</div>
+      {{ combo('city', 'City', f.lists.city|city_tokens, 'city', 'Add a city') }}
+      <div class="field"><label for="exp">Your experience (years)</label><input type="number" id="exp" name="exp" min="0" max="40" value="{{ '%g' % f.exp if f.exp is not none else '' }}" placeholder="Any"></div>
+      <label class="toggle"><input type="checkbox" name="agency" value="hide" {% if f.hide_agency %}checked{% endif %}><span>Hide recruiting agencies</span></label>
+    </div>
+    <div class="fgroup"><div class="t">Evidence</div>
+      <div class="field"><label for="min">Minimum postings per skill</label>
+        <select id="min" name="min">{% for v in [3, 5, 10, 20, 40, 80] %}<option value="{{ v }}" {% if min_n == v %}selected{% endif %}>{{ v }}+</option>{% endfor %}</select>
+        <span class="hint">Skills seen in only a few postings give unreliable pay figures.</span></div>
+    </div>
+    <div class="fgroup" style="border:0" data-nojs-show><button class="btn primary block" type="submit">Apply filters</button></div>
+  </form>
+
+  <div id="results" aria-live="polite">
+    <div class="resultbar">
+      <div>
+        <button type="button" class="btn filter-toggle" data-open-filters style="margin-bottom:14px">{{ icon('filter') }}Filters</button>
+        <h2>{{ rows|length }} skill{{ '' if rows|length == 1 else 's' }}<small>across {{ sub_n|num }} postings · median {{ '%g' % (base|round(1)) }} LPA</small></h2>
+      </div>
+      <label class="sortbox">Sort by
+        <select name="sort" form="filters" aria-label="Sort skills">
+          {% for k, v in [('demand','Most requested'),('premium','Biggest pay premium'),('pay','Highest median pay'),('az','Name A–Z')] %}<option value="{{ k }}" {% if sort == k %}selected{% endif %}>{{ v }}</option>{% endfor %}
+        </select>
+      </label>
+    </div>
+    <div class="active">
+      {% for label, drop in f.active() %}<a class="chip" href="{{ u('/skills', P, drop=drop) }}">{{ label }}{{ icon('x') }}</a>{% endfor %}
+      {% if name_q %}<a class="chip" href="{{ u('/skills', P, drop={'name': None}) }}">“{{ name_q }}”{{ icon('x') }}</a>{% endif %}
+    </div>
+
+    {% if rows %}
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Skill</th><th>Demand</th><th class="r">Median pay</th><th class="r">Versus median</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+        <tr>
+          <td><a class="nm" href="/skills/{{ r.slug }}">{{ r.label }}</a><div class="sub"><a href="/jobs?skill={{ r.name|urlencode }}">View {{ r.n }} postings</a></div></td>
+          <td class="barcell"><div class="bar"><i style="width:{{ '%.1f' % (r.n / vmax * 100) }}%"></i></div><div class="sub num">{{ r.n|num }} postings · {{ '%.0f' % (r.share * 100) }}% of these</div></td>
+          <td class="r num">{{ '%g' % (r.med|round(1)) }} LPA</td>
+          <td class="r num {{ 'pos' if r.premium >= 0.5 else 'neg' if r.premium <= -0.5 else '' }}">{{ r.premium|signed }} LPA</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    {% else %}
+    <div class="empty"><h3>No skills match</h3><p>Lower the minimum postings or clear a filter.</p><a class="btn primary" href="/skills">Clear all filters</a></div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
