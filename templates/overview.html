@@ -6,15 +6,11 @@
 <section class="hero" aria-labelledby="hero-h">
   <form class="hero-in" id="hero-form" action="/jobs" method="get" data-pulse>
     <h1 id="hero-h">I work as a
-      <select name="family" aria-label="Role">
-        <option value="">tech professional</option>
-        {% for fam in hero_families %}<option value="{{ fam }}" {% if fam in hf.lists.family %}selected{% endif %}>{{ fam }}</option>{% endfor %}
-      </select>
+      <input type="text" name="role" value="{{ hero_role }}" list="hero-roles" placeholder="job title" aria-label="Job title" autocomplete="off">
+      <datalist id="hero-roles">{% for fam in hero_families %}<option value="{{ fam }}">{% endfor %}</datalist>
       in
-      <select name="city" aria-label="City">
-        <option value="">any city</option>
-        {% for c in hero_cities %}<option value="{{ c }}" {% if c in hf.lists.city %}selected{% endif %}>{{ c|fmt_city }}</option>{% endfor %}
-      </select>
+      <input type="text" name="city" value="{{ hero_city }}" list="hero-cities" placeholder="any city" aria-label="City" autocomplete="off">
+      <datalist id="hero-cities">{% for c in hero_cities %}<option value="{{ c|fmt_city }}">{% endfor %}</datalist>
       with
       <input type="number" name="exp" min="0" max="40" value="{{ hero_exp }}" placeholder="–" aria-label="Years of experience">
       years of experience. What does that pay?</h1>
@@ -28,7 +24,7 @@
         </div>
       </div>
       <div class="pulse-chart" id="p-chart">
-        {% if pulse.n %}{{ pulse.svg|safe }}{% else %}<p class="none">No postings match that combination. Try a broader city or fewer skills.</p>{% endif %}
+        {% if pulse.n %}{{ pulse.svg|safe }}{% else %}<p class="none">{% if hero_city_miss %}There are no postings from “{{ hero_city }}” in this dataset. Try a nearby city, or clear the city.{% else %}No postings match that combination. Try a broader title or fewer skills.{% endif %}</p>{% endif %}
       </div>
     </div>
 

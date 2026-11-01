@@ -374,7 +374,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 6px 0 0;
 .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(1100px 520px at 12% -10%, oklch(36% 0.08 205 / .55), transparent 65%), radial-gradient(800px 420px at 100% 30%, oklch(34% 0.09 255 / .4), transparent 70%); z-index: -1; }
 .hero-in { max-width: 1240px; display: grid; gap: 26px; }
 .hero h1 { font: 400 clamp(30px, 3.5vw, 50px)/1.28 var(--serif); letter-spacing: -0.02em; max-width: 31ch; text-wrap: pretty; }
-.hero h1 select, .hero h1 input[type=number] { width: auto; display: inline-block; font: 500 1em/1.1 var(--serif); letter-spacing: -0.01em; color: oklch(86% 0.13 195); background-color: oklch(100% 0 0 / .07); border: 0; border-bottom: 2px solid oklch(80% 0.1 195 / .7); border-radius: 8px 8px 0 0; padding: 0.02em 1.3em 0.02em 0.28em; cursor: pointer; transition: background-color .2s; }
+.hero h1 select, .hero h1 input[type=number], .hero h1 input[type=text] { width: auto; display: inline-block; font: 500 1em/1.1 var(--serif); letter-spacing: -0.01em; color: oklch(86% 0.13 195); background-color: oklch(100% 0 0 / .07); border: 0; border-bottom: 2px solid oklch(80% 0.1 195 / .7); border-radius: 8px 8px 0 0; padding: 0.02em 1.3em 0.02em 0.28em; cursor: pointer; transition: background-color .2s; }
+.hero h1 input[type=text] { width: 9em; min-width: 5em; max-width: 100%; padding: 0.02em .3em; cursor: text; field-sizing: content; }
+.hero h1 input[type=text]::placeholder { color: oklch(86% 0.13 195 / .5); }
 .hero h1 input[type=number] { width: 2.4em; padding: 0.02em .25em; text-align: center; -moz-appearance: textfield; }
 .hero h1 input[type=number]::-webkit-inner-spin-button { display: none; }
 .hero h1 select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23a8e6e3' stroke-width='1.8'%3E%3Cpath d='M1 1.5 7 7.5l6-6'/%3E%3C/svg%3E"); background-position: right .3em center; }

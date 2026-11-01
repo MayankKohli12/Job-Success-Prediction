@@ -10,12 +10,19 @@
         "range80_coverage": 0.8086359175662414,
         "range80_median_width_x": 3.334351978653028
       },
+      "no_city_model": {
+        "mae_lpa": 4.9849560696117114,
+        "r2_log": 0.5899729484455887,
+        "within_30pct": 0.5544651619234544,
+        "range80_coverage": 0.774288518155054,
+        "range80_median_width_x": 2.9481165866068717
+      },
       "full_model": {
-        "mae_lpa": 4.992752842301062,
-        "r2_log": 0.5973537276792086,
-        "within_30pct": 0.5417075564278705,
-        "range80_coverage": 0.7870461236506379,
-        "range80_median_width_x": 2.8533824975843607
+        "mae_lpa": 4.956336877016218,
+        "r2_log": 0.6045807809366053,
+        "within_30pct": 0.5436702649656526,
+        "range80_coverage": 0.7733071638861629,
+        "range80_median_width_x": 2.79648531376043
       }
     },
     "exp_max_trained": 30.0,
@@ -36,7 +43,13 @@
       "navi mumbai",
       "bangalore rural",
       "kochi"
-    ]
+    ],
+    "n_cities": 225,
+    "tier_idx": {
+      "2": 0.09793208320765683,
+      "1": -0.35422034558051535,
+      "0": -0.401889646778761
+    }
   },
   "success": {
     "results": {

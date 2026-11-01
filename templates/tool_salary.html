@@ -38,7 +38,7 @@
 
     <div class="step">
       <div class="t"><i>4</i>Location<small>optional</small></div>
-      <div class="field"><label for="city">Type any city <span class="hint">Cities the model has not seen are left out of the estimate.</span></label>
+      <div class="field"><label for="city">Type any city <span class="hint">Small cities are judged by their city type.</span></label>
         <input type="text" id="city" name="city" value="{{ v.city }}" list="city-list" autocomplete="off" placeholder="e.g. Chandigarh">
         <datalist id="city-list">{% for k, l in city_opts %}<option value="{{ l }}">{% endfor %}</datalist></div>
     </div>
@@ -55,7 +55,7 @@
     <div class="callout err"><b>{{ res.error }}</b>{% if res.hint %}<br>Type a data or software title such as “Analytics Engineer”.{% endif %}</div>
   {% else %}
     <div class="resultcard">
-      <span class="lab">Typical salary for a {{ v.title|lower }}</span>
+      <span class="lab">Typical salary for {{ 'an' if v.title[:1]|lower in 'aeiou' else 'a' }} {{ v.title|lower }}</span>
       <div class="big num">₹{{ '%g' % (res.mid|round(0)) }}<small>LPA</small></div>
       <div>
         {% set top = [res.hi * 1.15, 10]|max %}
@@ -64,6 +64,7 @@
       </div>
       <p>Four in five similar postings pay between <b class="num">₹{{ '%g' % (res.lo|round(0)) }}</b> and <b class="num">₹{{ '%g' % (res.hi|round(0)) }} LPA</b>. The range is wide because advertised pay varies a lot.</p>
     </div>
+    {% if res.cities %}<p class="method" style="margin:-4px 0 0">Location used: {% for c in res.cities %}<b>{{ c.name }}</b> ({{ c.tier }}, {{ c.n }} postings){% if not loop.last %}; {% endif %}{% endfor %}. Cities with few postings borrow strength from similar cities.</p>{% endif %}
     {% for n in res.notes %}<div class="callout">{{ n }}</div>{% endfor %}
     <section class="rsec">
       <h3>Real postings at your experience level</h3>

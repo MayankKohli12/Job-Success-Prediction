@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np, pandas as pd
 from sklearn.ensemble import HistGradientBoostingRegressor
 from sklearn.model_selection import GroupShuffleSplit, cross_val_score
-from salary_lib import build_vocab, featurize, mono_vector
+from salary_lib import build_vocab, featurize, mono_vector, city_table, city_columns, city_feats, city_list
 
 warnings.filterwarnings("ignore")
 D, OUT, RS = Path("data"), Path("models"), 42
@@ -36,20 +36,33 @@ def evaluate(F, cols):
     return {"mae_lpa": float(np.abs(p - t).mean()), "r2_log": float(r2), "within_30pct": float(np.mean(np.abs(p - t) / t <= 0.3)),
             "range80_coverage": float(np.mean((y[te] >= lo) & (y[te] <= hi))), "range80_median_width_x": float(np.median(np.exp(hi - lo)))}
 
-F = featurize(a, vocab)
+def with_city(tr_idx, te_idx):
+    """City features: out-of-fold on the training rows, plain lookup (from training rows only) on the test rows."""
+    tab = city_table(a.iloc[tr_idx], y[tr_idx])
+    Z = np.zeros((len(a), 2)); Z[tr_idx] = city_columns(a.iloc[tr_idx], y[tr_idx])[:, :2]
+    Z[te_idx] = [city_feats(city_list(t), tab)[:2] for t in a.iloc[te_idx].loc_text]
+    G = a.copy(); G["city_tier"], G["city_idx"] = Z[:, 0], Z[:, 1]
+    return featurize(G, vocab)
+
+F = with_city(tr, te)
 ecols = ["exp_min", "exp_max", "exp_mid", "exp_span"]
 res = {"median_baseline_mae_lpa": float(np.abs(np.median(a.sal_mid.values[tr]) - a.sal_mid.values[te]).mean()),
-       "experience_only": evaluate(F, ecols), "full_model": evaluate(F, list(F.columns))}
+       "experience_only": evaluate(F, ecols), "no_city_model": evaluate(F, [c for c in F.columns if not c.startswith(("loc_", "city_", "n_locs"))]),
+       "full_model": evaluate(F, list(F.columns))}
 print(json.dumps(res, indent=1))
 
 # final model on all data, vocab from all data; scope vocab from ALL postings (not just the salaried ones)
 vocab = build_vocab(a, **KW)
 vocab["known_words"] = pd.read_csv(D / "known_words.csv").iloc[:, 0].tolist()
 vocab["known_skills"] = pd.read_csv(D / "known_skills.csv").iloc[:, 0].tolist()
-F = featurize(a, vocab); cols = list(F.columns)
+tab = city_table(a, y)
+Z = city_columns(a, y); G = a.copy(); G["city_tier"], G["city_idx"] = Z[:, 0], Z[:, 1]
+F = featurize(G, vocab); cols = list(F.columns)
+vocab["city_table"] = tab
 joblib.dump({"models": {q: fit(F, y, cols, q) for q in (0.1, 0.5, 0.9)}, "vocab": vocab, "columns": cols}, OUT / "salary_range.joblib", compress=3)
 report["salary"] = {"n": len(a), "results": res, "exp_max_trained": float(a.exp_max.max()), "exp_min_trained": float(a.exp_min.max()),
-                    "locations": vocab["locs"]}
+                    "locations": vocab["locs"], "n_cities": len(tab["cnt"]),
+                    "tier_idx": {str(k): v for k, v in tab["tier_idx"].items()}}
 
 # ------------------------------------------------------------------ 2. above-peer-pay model (Stack Overflow survey, global)
 from sklearn.compose import ColumnTransformer

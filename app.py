@@ -51,10 +51,34 @@ def not_found(request, what="page"):
 
 # ---------------------------------------------------------------------------------------- overview
 HERO_CITIES = ["bengaluru", "hyderabad", "pune", "chennai", "mumbai", "gurgaon", "noida", "delhi ncr", "ahmedabad", "kolkata", "kochi"]
-HERO_DEFAULT = "family=Data+Scientist&exp=3"
+HERO_DEFAULT = "role=Data+Scientist&exp=3"
+
+
+CITY_ALIAS = {"bangalore": "bengaluru", "gurugram": "gurgaon", "delhi": "delhi ncr", "new delhi": "delhi ncr", "ncr": "delhi ncr", "bombay": "mumbai",
+              "cochin": "kochi", "calcutta": "kolkata", "madras": "chennai", "trivandrum": "trivandrum", "thiruvananthapuram": "trivandrum"}
+_FAM = {f.lower(): f for f in mk.FAMILY_LIST}
+
+
+def hero_qp(qp):
+    """Free-text 'role' and 'city' from the home sentence -> the filters the data layer understands."""
+    if "role" not in qp and "city" not in qp:
+        return qp
+    items = [(k, v) for k, v in qp.multi_items() if k not in ("role", "city", "q", "family")]
+    role = (qp.get("role") or "").strip()
+    if role:
+        fam = _FAM.get(role.lower())
+        items.append(("family", fam) if fam else ("q", role))
+    else:
+        items += [("family", v) for v in qp.getlist("family") if v]
+        if qp.get("q"): items.append(("q", qp.get("q")))
+    for c in qp.getlist("city"):
+        c = c.strip().lower()
+        if c: items.append(("city", CITY_ALIAS.get(c, c)))
+    return QueryParams(items)
 
 
 def pulse_data(qp):
+    qp = hero_qp(qp)
     f = mk.Filters(qp)
     df = mk.apply(f)
     href = "/jobs" + ("?" + str(qp) if str(qp) else "")
@@ -72,9 +96,13 @@ def api_pulse(request: Request):
 @app.get("/")
 def overview(request: Request):
     p = mk.posts
-    qp = request.query_params if any(k in request.query_params for k in ("family", "city", "exp", "skill")) else QueryParams(HERO_DEFAULT)
+    raw = request.query_params if any(k in request.query_params for k in ("family", "role", "city", "exp", "skill")) else QueryParams(HERO_DEFAULT)
+    qp = hero_qp(raw)
     hf = mk.Filters(qp)
-    pulse = pulse_data(qp)
+    pulse = pulse_data(raw)
+    hero_role = (raw.get("role") or raw.get("family") or "").strip()
+    hero_city = (raw.get("city") or "").strip()
+    miss = hero_city and CITY_ALIAS.get(hero_city.lower(), hero_city.lower()) not in mk.CITY_COUNT
     fam = p.groupby("family").agg(n=("jobId", "size"), med=("sal_mid", "median")).reset_index()
     fam = fam[fam.family != mk.OTHER].sort_values("med", ascending=False)
     fmax = float(fam.med.max())
@@ -90,7 +118,7 @@ def overview(request: Request):
     emp_rows = [(c, "/companies/" + mk.COMPANY_SLUG_REV[c], n / emp.iloc[0] * 100, f"{n:,}", "postings") for c, n in emp.items()]
     return page(request, "overview.html", active="overview", fam_rows=fam_rows, skill_rows=skill_rows, pay_rows=pay_rows, city_rows=city_rows,
                 emp_rows=emp_rows, n_companies=p.companyName.nunique(), n_skills=len(mk.SKILL_COUNT), n_cities=len(mk.CITY_COUNT),
-                pulse=pulse, hf=hf, hero_families=[x for x in mk.FAMILY_LIST if x != mk.OTHER], hero_cities=HERO_CITIES,
+                pulse=pulse, hf=hf, hero_families=[x for x in mk.FAMILY_LIST if x != mk.OTHER], hero_cities=HERO_CITIES, hero_role=hero_role, hero_city=hero_city, hero_city_miss=miss,
                 hero_skills=[(s, mk.fmt_skill(s)) for s in hf.lists["skill"]], hero_exp=("%g" % hf.exp) if hf.exp is not None else "",
                 roles_strip=[(r.family, r.med, r.n) for r in fam.itertuples()])
 
@@ -103,7 +131,7 @@ def _facet(f, key, col):
 
 @app.get("/jobs")
 def jobs(request: Request):
-    f = mk.Filters(request.query_params)
+    f = mk.Filters(hero_qp(request.query_params))
     df = mk.apply(f)
     ins = mk.insights(df, f)
     total_pages = max(1, -(-len(df) // PAGE)); pg = min(f.page, total_pages)

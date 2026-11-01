@@ -182,7 +182,7 @@
           chart.innerHTML = d.svg; go.disabled = false;
         } else {
           fig.textContent = '–'; meta.innerHTML = '';
-          chart.innerHTML = '<p class="none">No postings match that combination. Try a broader city or fewer skills.</p>'; go.disabled = true;
+          chart.innerHTML = '<p class="none">No postings match that combination. Try a broader title, another city or fewer skills.</p>'; go.disabled = true;
         }
         history.replaceState(null, '', '/?' + p);
       } catch (e) { if (e.name !== 'AbortError') console.error(e); }
@@ -190,7 +190,7 @@
     };
     const queue = () => { clearTimeout(t); t = setTimeout(run, 220); };
     hero.addEventListener('change', queue);
-    hero.addEventListener('input', (e) => { if (e.target.matches('input[type=number]')) queue(); });
+    hero.addEventListener('input', (e) => { if (e.target.matches('input[type=number],input[type=text]')) queue(); });
   }
 
   // ---- theme toggle

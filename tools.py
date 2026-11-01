@@ -6,7 +6,7 @@ import joblib
 import numpy as np
 import pandas as pd
 
-from salary_lib import featurize, norm_list, novelty, in_domain
+from salary_lib import featurize, norm_list, novelty, in_domain, canon_city, city_feats, TIER_NAME
 from market import posts, fmt_skill, hist, SKILL_COUNT, GENERIC
 
 M, D = Path("models"), Path("data")
@@ -32,22 +32,20 @@ SALARY_POPULAR = sorted(SALARY_SKILLS, key=lambda kv: -SKILL_COUNT.get(kv[0], 0)
 SALARY_CITIES = [(c, c.replace(" (all areas)", "").title().replace("Ncr", "NCR")) for c in art["vocab"]["locs"] if c]
 
 
-CITY_ALIAS = {"bangalore": "bengaluru", "bengaluru": "bengaluru", "gurugram": "gurgaon", "delhi": "delhi ncr", "new delhi": "delhi ncr", "ncr": "delhi ncr",
-              "mumbai": "mumbai,mumbai (all areas)", "bombay": "mumbai,mumbai (all areas)", "cochin": "kochi", "calcutta": "kolkata", "madras": "chennai"}
-_KNOWN_LOCS = {c for c in art["vocab"]["locs"] if c}
+CITY_TAB = art["vocab"]["city_table"]
 
 
-def parse_cities(raw):
-    """Free-text cities (comma separated) -> (model location text, list of cities the model has no data for)."""
-    out, unknown = [], []
-    for c in [x.strip().lower() for x in raw if x and x.strip()]:
-        for part in c.split(","):
-            part = part.strip()
-            if not part: continue
-            m = CITY_ALIAS.get(part, part)
-            hit = [x for x in m.split(",") if x in _KNOWN_LOCS or x == "mumbai (all areas)"]
-            (out.extend(hit) if hit else unknown.append(part.title()))
-    return ",".join(dict.fromkeys(out)), unknown
+def city_info(raw):
+    """Typed cities -> model location text, model city features, and a plain-words description of what the model knows about each."""
+    cities = [c for c in dict.fromkeys(canon_city(x) for part in raw for x in (part or "").split(",")) if c]
+    tier, idx, n = city_feats(cities, CITY_TAB)
+    info = []
+    for c in cities:
+        t, _, k = city_feats([c], CITY_TAB)
+        info.append({"name": c.title().replace("Ncr", "NCR"), "tier": TIER_NAME[int(t)], "n": k, "seen": k >= 30})
+    loc = ",".join(c for c in cities if c in set(art["vocab"]["locs"]))
+    if "mumbai" in cities: loc = ",".join(dict.fromkeys(loc.split(",") + ["mumbai", "mumbai (all areas)"])).strip(",")
+    return loc, tier, idx, info
 
 
 def _predict(rows):
@@ -59,13 +57,13 @@ def _predict(rows):
 
 def salary_estimate(role, skills, cities, exp_min, exp_max):
     role_l, sk = (role or "").lower().strip(), norm_list(",".join(skills))
-    lc, unknown_cities = parse_cities(cities)
+    lc, c_tier, c_idx, cinfo = city_info(cities)
     if exp_max < exp_min: return {"error": "Maximum experience must be at least the minimum."}
     if not in_domain(role_l, art["vocab"]):
         why = ("Enter a job title to get an estimate." if not role_l else
                f"“{role.strip()}” isn't a role this model knows. It learned from Indian tech and data postings, and this title matches none of them.")
         return {"error": why, "hint": True}
-    base = {"role_text": role_l, "skills_text": sk, "loc_text": lc}
+    base = {"role_text": role_l, "skills_text": sk, "loc_text": lc, "city_tier": c_tier, "city_idx": c_idx}
     lo, mid, hi = _predict([{**base, "exp_min": exp_min, "exp_max": exp_max}])[0]
     span, xs = exp_max - exp_min, np.arange(0, 26)
     curve = _predict([{**base, "exp_min": float(x), "exp_max": float(x + span)} for x in xs])
@@ -73,15 +71,16 @@ def salary_estimate(role, skills, cities, exp_min, exp_max):
     near = posts[(posts.exp_mid - em).abs() <= 1.5]
     if len(near) < 30: near = posts[(posts.exp_mid - em).abs() <= 3]
     notes, nv = [], novelty(role_l, sk, art["vocab"])
-    if unknown_cities:
-        notes.append(f"No postings from {', '.join(unknown_cities)} in the training data, so location is left out. The estimate comes from the title, skills and experience.")
+    for c in cinfo:
+        if c["n"] < 30:
+            notes.append(f"Only {c['n']} postings from {c['name']} in the training data, so it is treated as a {c['tier']} and the estimate is approximate.")
     if nv["role_ratio"] < 1.0: notes.append("Part of this job title is unfamiliar to the model, so it is mostly judged from the familiar words.")
     if nv["skills_total"] and nv["skills_known"] == 0: notes.append("None of these skills are common in the training data, so they add little to the estimate.")
     if exp_max > S["exp_max_trained"] or exp_min > S["exp_min_trained"]:
         notes.append(f"Experience is beyond the training data (maximum seen: {S['exp_max_trained']:.0f} years); the model holds the top level flat here.")
     hc, hb = hist(near.sal_mid.values)
     return {"hcounts": hc, "hbins": hb, "near_n": len(near), "near_med": float(near.sal_mid.median()), "lo": float(lo), "mid": float(mid), "hi": float(hi), "xs": xs, "curve": curve, "em": em, "notes": notes,
-            "exp_min": exp_min, "exp_max": exp_max, "mae": R["mae_lpa"], "base_mae": S["results"]["median_baseline_mae_lpa"],
+            "cities": cinfo, "exp_min": exp_min, "exp_max": exp_max, "mae": R["mae_lpa"], "base_mae": S["results"]["median_baseline_mae_lpa"],
             "coverage": R["range80_coverage"], "n": S["n"]}
 
 
