@@ -1,241 +1,151 @@
-category,companyName,postings,openings,disclosed,median_salary_lpa
-Business Analyst,Accenture,127,127.0,0,
-Business Analyst,Diverse Lynx,33,33.0,0,
-Business Analyst,Fusion Plus Solutions,24,24.0,0,
-Business Analyst,Pramerica Life Insurance,24,24.0,0,
-Business Analyst,Genpact,18,18.0,0,
-Business Analyst,Alp Consulting Limited,16,16.0,0,
-Business Analyst,Qualitykiosk Technologies,14,14.0,0,
-Business Analyst,Capgemini,13,13.0,0,
-Business Analyst,Capital Aim,13,13.0,0,
-Business Analyst,Photon,8,8.0,0,
-Business Analyst,mycityindore,8,8.0,0,
-Business Analyst,Coders Brain Pvt Ltd,7,7.0,0,
-Business Analyst,Vaibhav Global,7,7.0,0,
-Business Analyst,IDESLABS,6,6.0,0,
-Business Analyst,Red Symbol Technologies,6,6.0,0,
-Business Analyst,Response Informatics,6,6.0,0,
-Business Analyst,Right Step Consulting,6,6.0,0,
-Business Analyst,Ascendion,5,5.0,0,
-Business Analyst,Maruti Suzuki,5,5.0,0,
-Business Analyst,Pradeepit Consulting Services,5,5.0,0,
-Business Analyst,Varuna Integrated Logistics,5,5.0,0,
-Business Analyst,ABK Software Services Pvt. Ltd.,4,4.0,0,
-Business Analyst,CONTUS TECH,4,4.0,0,
-Business Analyst,E Solutions,4,55.0,3,4.2
-Business Analyst,Intuitive Apps,4,4.0,0,
-Business Analyst,Prakhar Software,4,4.0,0,
-Business Analyst,Pricewaterhouse Coopers Private Limited,4,4.0,0,
-Business Analyst,Smartncode,4,4.0,3,3.1
-Business Analyst,Systechcorp Inc,4,8.0,0,
-Business Analyst,Veetechnologies,4,4.0,0,
-Business Analyst,ABM Knowledgeware,3,12.0,2,7.8
-Business Analyst,Assurecare Healthtech,3,3.0,0,
-Business Analyst,Bacentric,3,3.0,0,
-Business Analyst,BizKonnect Solutions Pvt Ltd.,3,3.0,0,
-Business Analyst,Broccoli And Carrots Global Services Private Limit,3,56.0,3,3.9
-Business Analyst,CR2 Technologies,3,3.0,0,
-Business Analyst,Citco,3,3.0,0,
-Business Analyst,Codvo,3,3.0,0,
-Business Analyst,Coreinsightsai,3,3.0,0,
-Business Analyst,Crisil,3,3.0,0,
-Data Analyst,Diverse Lynx,49,49.0,0,
-Data Analyst,Pricewaterhouse Coopers Private Limited,31,31.0,0,
-Data Analyst,Alp Consulting Limited,16,16.0,0,
-Data Analyst,Coders Brain Pvt Ltd,15,15.0,0,
-Data Analyst,Mount Talent Consulting,14,331.0,7,12.5
-Data Analyst,Response Informatics,11,11.0,0,
-Data Analyst,Ixie Gaming,10,10.0,0,
-Data Analyst,Robosoft Technologies,10,10.0,0,
-Data Analyst,ION,9,9.0,0,
-Data Analyst,Fusion Plus Solutions,8,8.0,0,
-Data Analyst,Infosys,7,301.0,0,
-Data Analyst,Pradeepit Consulting Services,7,7.0,0,
-Data Analyst,Accenture,6,6.0,0,
-Data Analyst,Cognizant,6,33.0,0,
-Data Analyst,Prakhar Software,6,6.0,0,
-Data Analyst,Sanofi,6,6.0,0,
-Data Analyst,Amgen Inc,5,5.0,0,
-Data Analyst,Busisol Sourcing (India),5,5.0,0,
-Data Analyst,Genpact,5,6.0,0,
-Data Analyst,Institutional Shareholder Services,5,5.0,0,
-Data Analyst,JPMorgan Chase Bank,5,5.0,0,
-Data Analyst,KPMG India,5,5.0,0,
-Data Analyst,Keylent,5,5.0,0,
-Data Analyst,Photon,5,5.0,0,
-Data Analyst,Virtusa,5,5.0,0,
-Data Analyst,Aeries Technology,4,4.0,0,
-Data Analyst,BP INCORPORATE INTERNATIONAL.,4,4.0,0,
-Data Analyst,Epiq Systems,4,4.0,0,
-Data Analyst,Ignitho,4,11.0,1,
-Data Analyst,NITYO INFOTECH,4,4.0,0,
-Data Analyst,Nsight Consulting,4,4.0,0,
-Data Analyst,Right Step Consulting,4,4.0,0,
-Data Analyst,Stem,4,4.0,0,
-Data Analyst,Turing,4,4.0,0,
-Data Analyst,Yash Technologies,4,4.0,0,
-Data Analyst,Aloola,3,3.0,0,
-Data Analyst,AstraZeneca India Pvt. Ltd,3,3.0,0,
-Data Analyst,Black And White Business Solutions,3,3.0,3,16.0
-Data Analyst,CGI,3,3.0,0,
-Data Analyst,Capco,3,3.0,0,
-Data Engineer,Accenture,128,128.0,0,
-Data Engineer,IBM,77,77.0,0,
-Data Engineer,Coders Brain Pvt Ltd,59,59.0,0,
-Data Engineer,Diverse Lynx,57,57.0,0,
-Data Engineer,Pricewaterhouse Coopers Private Limited,57,57.0,0,
-Data Engineer,Response Informatics,43,43.0,0,
-Data Engineer,Alp Consulting Limited,37,37.0,0,
-Data Engineer,Fusion Plus Solutions,32,32.0,0,
-Data Engineer,Amgen Inc,26,26.0,0,
-Data Engineer,E Solutions,25,207.0,15,14.5
-Data Engineer,Pradeepit Consulting Services,25,25.0,0,
-Data Engineer,Genpact,23,24.0,0,
-Data Engineer,Mount Talent Consulting Private Limited,23,23.0,0,
-Data Engineer,Capgemini,20,20.0,0,
-Data Engineer,Virtusa,20,20.0,0,
-Data Engineer,Encora,17,17.0,0,
-Data Engineer,Repucom,17,17.0,0,
-Data Engineer,CBA,15,15.0,0,
-Data Engineer,Infogain,15,16.0,2,19.0
-Data Engineer,Mount Talent Consulting,15,114.0,9,15.0
-Data Engineer,Mount Talent Consulting Private Limited ,15,15.0,8,21.5
-Data Engineer,Oportun,15,15.0,0,
-Data Engineer,Changeleaders Consulting,12,322.0,11,25.0
-Data Engineer,Maxim Integrated,12,12.0,0,
-Data Engineer,Analog Devices,11,11.0,0,
-Data Engineer,Forward Eye Technologies,11,11.0,0,
-Data Engineer,Walmart,11,11.0,0,
-Data Engineer,Acenet,10,10.0,0,
-Data Engineer,Rarr Technologies,10,10.0,0,
-Data Engineer,Tetrahed Inc,10,10.0,0,
-Data Engineer,Verizon,10,10.0,0,
-Data Engineer,Weitglobal,10,10.0,0,
-Data Engineer,Infosys,9,206.0,1,
-Data Engineer,Oakton GTSCI Pvt Ltdd,9,9.0,0,
-Data Engineer,Triangle Global,9,9.0,0,
-Data Engineer,UST,9,9.0,0,
-Data Engineer,AVE-Promagne Business Solutions,8,8.0,0,
-Data Engineer,Aboitiz Data Innovation,8,8.0,0,
-Data Engineer,CGI,8,8.0,0,
-Data Engineer,Centrilogic,8,8.0,0,
-Data Scientist,Walmart,25,25.0,0,
-Data Scientist,Accenture,24,24.0,0,
-Data Scientist,Pramerica Life Insurance,22,22.0,0,
-Data Scientist,Response Informatics,20,20.0,0,
-Data Scientist,Mount Talent Consulting,19,19.0,3,10.8
-Data Scientist,Genpact,17,120.0,0,
-Data Scientist,Adani Group,15,18.0,0,
-Data Scientist,Diverse Lynx,15,15.0,0,
-Data Scientist,Benovymed Healthcare,14,14.0,0,
-Data Scientist,IBM,14,14.0,0,
-Data Scientist,Winning Edge,12,12.0,0,
-Data Scientist,Alp Consulting Limited,11,11.0,0,
-Data Scientist,Maruti Suzuki,10,10.0,0,
-Data Scientist,Target,10,10.0,0,
-Data Scientist,Capgemini,9,12.0,1,
-Data Scientist,Aeries Technology,8,8.0,1,
-Data Scientist,Tredence,8,31.0,0,
-Data Scientist,Turing,8,8.0,0,
-Data Scientist,Xoom,8,8.0,0,
-Data Scientist,Zoom Start India,8,8.0,0,
-Data Scientist,Aspyra Hr Services,7,49.0,7,27.5
-Data Scientist,Bajaj Finserv Ltd.,7,7.0,0,
-Data Scientist,Dunnhumby,7,7.0,0,
-Data Scientist,Grazitti Interactive,7,7.0,0,
-Data Scientist,ION,7,7.0,0,
-Data Scientist,Next Sphere Technologies,7,7.0,0,
-Data Scientist,Tiger Analytics,7,44.0,1,
-Data Scientist,Uplers,7,7.0,3,17.0
-Data Scientist,AMERICAN EXPRESS,6,6.0,0,
-Data Scientist,EY,6,6.0,0,
-Data Scientist,Patanjali Research Foundation,6,6.0,0,
-Data Scientist,Quantium Analytics,6,6.0,0,
-Data Scientist,Sandoz,6,6.0,0,
-Data Scientist,AVE-Promagne Business Solutions,5,5.0,0,
-Data Scientist,Birdeye,5,5.0,0,
-Data Scientist,Coders Brain Pvt Ltd,5,5.0,0,
-Data Scientist,E Solutions,5,158.0,3,22.5
-Data Scientist,Encora,5,5.0,0,
-Data Scientist,Flipkart,5,5.0,0,
-Data Scientist,Infosys,5,7.0,0,
-Machine Learning / AI Engineer,Accenture,55,55.0,0,
-Machine Learning / AI Engineer,EY,47,47.0,0,
-Machine Learning / AI Engineer,Winning Edge,23,23.0,0,
-Machine Learning / AI Engineer,Mount Talent Consulting,19,171.0,3,18.8
-Machine Learning / AI Engineer,IBM,17,17.0,0,
-Machine Learning / AI Engineer,Turing,17,17.0,0,
-Machine Learning / AI Engineer,AVE-Promagne Business Solutions,15,15.0,0,
-Machine Learning / AI Engineer,Diverse Lynx,14,14.0,0,
-Machine Learning / AI Engineer,JPMorgan Chase Bank,12,12.0,0,
-Machine Learning / AI Engineer,Crowdstrike,11,11.0,0,
-Machine Learning / AI Engineer,ANTI.AI,9,9.0,0,
-Machine Learning / AI Engineer,Techup Labs,9,9.0,0,
-Machine Learning / AI Engineer,Response Informatics,8,8.0,0,
-Machine Learning / AI Engineer,Tetrahed Inc,8,8.0,0,
-Machine Learning / AI Engineer,Genpact,7,7.0,0,
-Machine Learning / AI Engineer,Oracle,7,7.0,1,
-Machine Learning / AI Engineer,Adobe Systems India Pvt. Ltd.,6,6.0,0,
-Machine Learning / AI Engineer,"Advanced Micro Devices, Inc",6,6.0,0,
-Machine Learning / AI Engineer,Alp Consulting Limited,6,6.0,0,
-Machine Learning / AI Engineer,Blueoptima,6,6.0,0,
-Machine Learning / AI Engineer,Candid Recruitments,6,6.0,0,
-Machine Learning / AI Engineer,Capgemini,6,25.0,1,
-Machine Learning / AI Engineer,Infosys,6,55.0,1,
-Machine Learning / AI Engineer,Reuters News Agency,6,6.0,0,
-Machine Learning / AI Engineer,Boomi Software,5,5.0,0,
-Machine Learning / AI Engineer,Crisil,5,5.0,0,
-Machine Learning / AI Engineer,Encora,5,5.0,0,
-Machine Learning / AI Engineer,Glance,5,5.0,0,
-Machine Learning / AI Engineer,Morningstar,5,8.0,0,
-Machine Learning / AI Engineer,Oportun,5,5.0,0,
-Machine Learning / AI Engineer,Schneider Electric,5,5.0,0,
-Machine Learning / AI Engineer,ServiceNow,5,5.0,0,
-Machine Learning / AI Engineer,T2 Innovations,5,5.0,0,
-Machine Learning / AI Engineer,Virtusa,5,5.0,0,
-Machine Learning / AI Engineer,Cloud Counselage,4,4.0,0,
-Machine Learning / AI Engineer,Cotocus Com,4,4.0,0,
-Machine Learning / AI Engineer,Evnek,4,4.0,0,
-Machine Learning / AI Engineer,Hiresquad Resources,4,11.0,4,30.0
-Machine Learning / AI Engineer,Hubino Technologies,4,4.0,0,
-Machine Learning / AI Engineer,HyrEzy Talent Solution,4,4.0,0,
-Software Engineer / Developer,Accenture,5346,5346.0,0,
-Software Engineer / Developer,Diverse Lynx,1138,1138.0,0,
-Software Engineer / Developer,Coders Brain Pvt Ltd,655,655.0,0,
-Software Engineer / Developer,IBM,407,407.0,0,
-Software Engineer / Developer,Alp Consulting Limited,346,346.0,0,
-Software Engineer / Developer,Fusion Plus Solutions,345,345.0,0,
-Software Engineer / Developer,Oracle,336,366.0,6,25.6
-Software Engineer / Developer,RGB Webtech,292,292.0,0,
-Software Engineer / Developer,UST,231,260.0,5,20.0
-Software Engineer / Developer,Pradeepit Consulting Services,221,221.0,0,
-Software Engineer / Developer,Photon,203,232.0,6,14.0
-Software Engineer / Developer,Virtusa,191,191.0,0,
-Software Engineer / Developer,Capgemini,188,346.0,14,13.0
-Software Engineer / Developer,Response Informatics,182,182.0,0,
-Software Engineer / Developer,Cognizant,179,5603.0,8,16.2
-Software Engineer / Developer,Walmart,178,181.0,2,25.6
-Software Engineer / Developer,IDESLABS,168,168.0,0,
-Software Engineer / Developer,Infosys,167,18217.0,6,9.8
-Software Engineer / Developer,Finite HR Consulting Private Limited,127,127.0,0,
-Software Engineer / Developer,Pleasant Inc.,126,126.0,0,
-Software Engineer / Developer,JPMorgan Chase Bank,120,120.0,1,
-Software Engineer / Developer,Quest Global Technologies,115,115.0,0,
-Software Engineer / Developer,Siemens,115,115.0,0,
-Software Engineer / Developer,Coventine Digital,112,112.0,58,7.5
-Software Engineer / Developer,Taurus Hard Soft Solutions,111,111.0,0,
-Software Engineer / Developer,Epam Systems,106,133.0,0,
-Software Engineer / Developer,Prakhar Software,104,104.0,0,
-Software Engineer / Developer,Genpact,102,111.0,1,
-Software Engineer / Developer,Mount Talent Consulting,100,434.0,31,14.0
-Software Engineer / Developer,Addis Infotech.,93,93.0,0,
-Software Engineer / Developer,Right Step Consulting,89,89.0,0,
-Software Engineer / Developer,Sigma Allied Services private Limited,83,83.0,0,
-Software Engineer / Developer,Diensten Tech Limited,82,82.0,0,
-Software Engineer / Developer,Techasoft,82,82.0,0,
-Software Engineer / Developer,MM STAFFING CAREER CONSULTANTS PRIVATE LIMITED,81,81.0,0,
-Software Engineer / Developer,Tech Mahindra,81,336.0,31,14.0
-Software Engineer / Developer,Wissda Consulting,80,80.0,0,
-Software Engineer / Developer,Zeta Inc.,80,80.0,0,
-Software Engineer / Developer,TechTammina LLC,77,77.0,0,
-Software Engineer / Developer,Turing,77,77.0,0,
+category,companyName,postings,experience,city,skills
+Business Analyst,Accenture,127,5–10 yrs,"Bengaluru, Pune","project management, business analysis, gap analysis, data analysis"
+Business Analyst,Diverse Lynx,33,1–5 yrs,"Bengaluru, Pune","Business analysis, Agile, Analytical, Data analysis"
+Business Analyst,Fusion Plus Solutions,24,1–4 yrs,Hyderabad,"Agile, Business analysis, Banking, PLSQL"
+Business Analyst,Pramerica Life Insurance,24,4–7 yrs,"Gurgaon, Delhi Ncr","business analysis, relationship management, production support, Ticketing Management"
+Business Analyst,Genpact,18,0–6 yrs,"Gurgaon, Bengaluru","Diversity and Inclusion, project management, Purchase, Analytical"
+Business Analyst,Alp Consulting Limited,16,3–7 yrs,"India, Bengaluru","business analysis, project management, data analysis, gap analysis"
+Business Analyst,Qualitykiosk Technologies,14,6–8 yrs,"Mumbai, Navi Mumbai","Business analysis, Test cases, project management, Test design"
+Business Analyst,Capgemini,13,5–8 yrs,"Pune, Bengaluru","business analysis, project management, agile, Business Analytics"
+Business Analyst,Capital Aim,13,2–5 yrs,Indore,"Financial advisory, Advisory, Commodities, Business Executive"
+Business Analyst,Photon,8,2–6 yrs,"Bengaluru, Chennai","Analytical, Data analysis, Project management, Business analysis"
+Business Analyst,mycityindore,8,1–4 yrs,Indore,"Business analysis, assembly language, Six Sigma, PMP"
+Business Analyst,Coders Brain Pvt Ltd,7,1–5 yrs,"Chennai, Bengaluru","Agile, Business analysis, Manager Technology, JIRA"
+Business Analyst,Vaibhav Global,7,3–8 yrs,Jaipur,"Social media, SEZ, Renewable energy, Agile"
+Business Analyst,IDESLABS,6,4–8 yrs,"Chennai, Hyderabad","Business analysis, Payroll, Consulting, Root cause analysis"
+Business Analyst,Red Symbol Technologies,6,3–8 yrs,Jaipur,"online marketing, bidding, grammar, english"
+Business Analyst,Response Informatics,6,2–5 yrs,"Chennai, Hyderabad","business analysis, project management, Linux, charts"
+Business Analyst,Right Step Consulting,6,2–6 yrs,"Gurgaon, Noida","ERP, Application programming, System design, Business analysis"
+Business Analyst,Ascendion,5,1–3 yrs,"Vadodara, Bengaluru","Business analysis, Project management, Process improvement, Data analysis"
+Business Analyst,Maruti Suzuki,5,2–6 yrs,"Gurgaon, Chennai","Dms, Change management, Automation, Manager Technology"
+Business Analyst,Pradeepit Consulting Services,5,5–8 yrs,"Bengaluru, Pune","Training, Change management, Data analysis, Report generation"
+Business Analyst,Varuna Integrated Logistics,5,2–5 yrs,"Gurgaon, Hyderabad","Training, Business requirement analysis, Manager Technology, Feasibility analysis"
+Business Analyst,ABK Software Services Pvt. Ltd.,4,5–8 yrs,Bengaluru,"Project management, Healthcare, Workflow, VISIO"
+Business Analyst,CONTUS TECH,4,2–7 yrs,Chennai,"analytical, consulting, attention to detail, excellent communication skills"
+Business Analyst,E Solutions,4,2–5 yrs,"Hyderabad, Delhi Ncr","Brd, Business analysis, FRD, Stakeholder Management"
+Business Analyst,Intuitive Apps,4,3–7 yrs,"Chennai, Navi Mumbai","Stored procedures, SDLC, Due diligence, Agile methodology"
+Data Analyst,Diverse Lynx,49,2–7 yrs,"Bengaluru, Chennai","power bi, Bi, Data analysis, SQL"
+Data Analyst,Pricewaterhouse Coopers Private Limited,31,3–7 yrs,"Bengaluru, Mumbai","power bi, Data management, data warehousing, Bi"
+Data Analyst,Alp Consulting Limited,16,3–7 yrs,"Bengaluru, India","python, power bi, data analysis, sql"
+Data Analyst,Coders Brain Pvt Ltd,15,4–7 yrs,"Chennai, Mumbai","Business solutions, power bi, Manager Technology, Networking"
+Data Analyst,Mount Talent Consulting,14,3–7 yrs,"Bengaluru, Pune","Data Analysis, Python, Data Bricks, Azure Data Factory"
+Data Analyst,Response Informatics,11,2–6 yrs,"Chennai, Hyderabad","power bi, data visualization, SQL, microsoft"
+Data Analyst,Ixie Gaming,10,4–8 yrs,"Hyderabad, Chennai","SOC, SAN, CRM, SQL"
+Data Analyst,Robosoft Technologies,10,10–12 yrs,"Mumbai, Bengaluru","PMP, Data modeling, Project management, Information security"
+Data Analyst,ION,9,2–5 yrs,Mumbai,"Supply chain, electronic trading, Finance, Automation"
+Data Analyst,Fusion Plus Solutions,8,2–5 yrs,Hyderabad,"Data analysis, SQL, power bi, Agile"
+Data Analyst,Infosys,7,3–8 yrs,"Chennai, Bengaluru","Power Bi, Bi, agile methodology, Adobe Analytics"
+Data Analyst,Pradeepit Consulting Services,7,4–6 yrs,"Bengaluru, Pune","Data analysis, power bi, Troubleshooting, SQL queries"
+Data Analyst,Accenture,6,5–10 yrs,"Bengaluru, Mumbai","python, data analysis, data mining, microsoft power bi"
+Data Analyst,Cognizant,6,6–9 yrs,"Kolkata, Bhubaneshwar","Power Bi, Bi, Microsoft, Microsoft Power Bi"
+Data Analyst,Prakhar Software,6,3–7 yrs,Delhi,"Data analysis, Data modeling, Data quality, Data processing"
+Data Analyst,Sanofi,6,2–5 yrs,Hyderabad,"Analytical, Data management, Healthcare, Life sciences"
+Data Analyst,Amgen Inc,5,3–6 yrs,Hyderabad,"data analytics, technology management, anaplan, SAP"
+Data Analyst,Busisol Sourcing (India),5,4–8 yrs,"Mumbai, Bellary","Data warehousing, SQL, Bi, SSIS"
+Data Analyst,Genpact,5,2–5 yrs,"Bengaluru, Noida","Power Bi, Dax, Analytical, Data modeling"
+Data Analyst,Institutional Shareholder Services,5,0–3 yrs,Mumbai,"Corporate governance, Diversity and Inclusion, ISS, Business research"
+Data Analyst,JPMorgan Chase Bank,5,6–9 yrs,Bengaluru,"Analytical, Due diligence, Quality standards, Compliance"
+Data Analyst,KPMG India,5,4–7 yrs,"Bengaluru, Mumbai","Business objects, SAP, Troubleshooting, ABAP"
+Data Analyst,Keylent,5,2–6 yrs,"Hyderabad, India","Data analysis, Data modeling, Data management, MySQL"
+Data Analyst,Photon,5,4–9 yrs,"Bengaluru, Chennai","Data analysis, Analytical, linear regression, Predictive modeling"
+Data Analyst,Virtusa,5,1–5 yrs,"Chennai, Hyderabad","Data migration, Data analysis, Data mining, Data modeling"
+Data Engineer,Accenture,128,5–8 yrs,"Bengaluru, Pune","python, sql, data warehousing, hive"
+Data Engineer,IBM,77,2–5 yrs,"Bengaluru, Pune","python, hive, sql, java"
+Data Engineer,Coders Brain Pvt Ltd,59,5–10 yrs,"Bengaluru, India","Business solutions, SQL, Data modeling, SCALA"
+Data Engineer,Diverse Lynx,57,2–7 yrs,"Bengaluru, Pune","big data, Microsoft Azure, SQL, Cloud"
+Data Engineer,Pricewaterhouse Coopers Private Limited,57,2–6 yrs,"Bengaluru, Hyderabad","Analytical, Data management, Data modeling, Agile"
+Data Engineer,Response Informatics,43,3–6 yrs,"Chennai, Bengaluru","Data warehousing, SQL, python, AWS"
+Data Engineer,Alp Consulting Limited,37,3–7 yrs,"Bengaluru, India","python, hive, sql, data warehousing"
+Data Engineer,Fusion Plus Solutions,32,3–6 yrs,Hyderabad,"SQL, Python, Microsoft Azure, Azure Data Factory"
+Data Engineer,Amgen Inc,26,4–6 yrs,Hyderabad,"data modeling, data warehousing, data analysis, Databricks"
+Data Engineer,E Solutions,25,5–10 yrs,"Bengaluru, Chennai","Python, SQL, Pyspark, AWS"
+Data Engineer,Pradeepit Consulting Services,25,4–7 yrs,"Bengaluru, India","Data modeling, SQL, Monitoring, Data quality"
+Data Engineer,Genpact,23,3–8 yrs,"Bengaluru, Noida","SQL, Diversity and Inclusion, Purchase, Data quality"
+Data Engineer,Mount Talent Consulting Private Limited,23,4–9 yrs,"Bengaluru, Gurgaon","Python, Pyspark, ETL, Data Management"
+Data Engineer,Capgemini,20,4–6 yrs,"Bengaluru, Pune","python, pyspark, sql, azure databricks"
+Data Engineer,Virtusa,20,2–5 yrs,"Hyderabad, Bengaluru","AWS, Python, Oracle, Data analysis"
+Data Engineer,Encora,17,5–10 yrs,"Bengaluru, Chennai","Data modeling, metadata, Schema, Data quality"
+Data Engineer,Repucom,17,2–5 yrs,"Bengaluru, Mumbai","Social media, Unix, Linux, Monitoring"
+Data Engineer,CBA,15,7–11 yrs,Bengaluru,"Information technology, Data management, Automation, Computer science"
+Data Engineer,Infogain,15,6–8 yrs,"Bengaluru, Gurgaon","SQL, MySQL, Troubleshooting, Python"
+Data Engineer,Mount Talent Consulting,15,5–10 yrs,"Bengaluru, Pune","Pyspark, DBT, Data Bricks, Building"
+Data Engineer,Mount Talent Consulting Private Limited ,15,4–9 yrs,"Bengaluru, Gurgaon","Pyspark, ETL, python, Data Management"
+Data Engineer,Oportun,15,3–7 yrs,"Chennai, India","Agile, Postgresql, MySQL, Scrum"
+Data Engineer,Changeleaders Consulting,12,5–10 yrs,Chennai,"GCP, Bigquery, Azure, Azure Data Factory"
+Data Engineer,Maxim Integrated,12,3–5 yrs,Bengaluru,"Healthcare, Automation, Database design, Analog"
+Data Engineer,Analog Devices,11,6–8 yrs,Bengaluru,"Healthcare, Automation, Analog, Data analysis"
+Data Scientist,Walmart,25,7–13 yrs,Bengaluru,"Machine learning, Information technology, Consulting, Networking"
+Data Scientist,Accenture,24,4–9 yrs,"Bengaluru, Gurgaon","python, microsoft azure, aws, hypothesis testing"
+Data Scientist,Pramerica Life Insurance,22,5–10 yrs,"Bahadurgarh, Bhiwani","Data Science, Insurance, Natural Language Processing, Machine Learning"
+Data Scientist,Response Informatics,20,3–8 yrs,"Chennai, Hyderabad","Machine learning, Python, data science, Natural language processing"
+Data Scientist,Mount Talent Consulting,19,4–9 yrs,"Bengaluru, Mumbai (All Areas)","Natural Language Processing, Machine Learning, Data Science, Python"
+Data Scientist,Genpact,17,4–9 yrs,"Bengaluru, Pune","Natural Language Processing, Predictive Modeling, Machine Learning, Data Science"
+Data Scientist,Adani Group,15,3–7 yrs,"Kolkata, Ahmedabad","Machine learning, Analytical, Data analysis, Neural networks"
+Data Scientist,Diverse Lynx,15,2–7 yrs,"Pune, Bengaluru","Machine learning, data science, Data mining, Computer science"
+Data Scientist,Benovymed Healthcare,14,0–5 yrs,"Delhi Ncr, Noida","Machine Learning, Data Science, NLP, Artificial Intelligence"
+Data Scientist,IBM,14,6–10 yrs,"Bengaluru, Pune","python, algorithms, data analysis, data analytics"
+Data Scientist,Winning Edge,12,8–11 yrs,Bengaluru,"Python, Pytorch, NLP, Azure"
+Data Scientist,Alp Consulting Limited,11,3–7 yrs,"Bengaluru, India","python, natural language processing, data mining, mathematics"
+Data Scientist,Maruti Suzuki,10,4–7 yrs,"Gurgaon, Bengaluru","Machine learning, data science, Neural networks, Telematics"
+Data Scientist,Target,10,4–8 yrs,Bengaluru,"Machine learning, Data analysis, Supply chain, Data structures"
+Data Scientist,Capgemini,9,6–11 yrs,"Mumbai, Pune","python, Data Science, natural language processing, SQL"
+Data Scientist,Aeries Technology,8,2–7 yrs,"Bengaluru, Mumbai","Machine Learning, LLM, Data Science, Artificial Intelligence"
+Data Scientist,Tredence,8,5–8 yrs,"Bengaluru, Chennai","Python, Data Science, Forecasting, Deep Learning"
+Data Scientist,Turing,8,3–5 yrs,India,"Data analysis, Data analytics, SQL, data science"
+Data Scientist,Xoom,8,4–8 yrs,"Chennai, Bengaluru","Wellness, Analytical, Computer science, Machine learning"
+Data Scientist,Zoom Start India,8,2–3 yrs,"Bengaluru, Delhi","Interpersonal skills, GCP, SOC, Machine learning"
+Data Scientist,Aspyra Hr Services,7,3–8 yrs,"Pune, Delhi Ncr","Python, Predictive Modeling, Logistic Regression, Risk Modeling"
+Data Scientist,Bajaj Finserv Ltd.,7,6–8 yrs,Pune,"Data analysis, Manager Quality Assurance, Trend analysis, Data quality"
+Data Scientist,Dunnhumby,7,2–6 yrs,Gurgaon,"Agile, data science, Diversity and Inclusion, Machine learning"
+Data Scientist,Grazitti Interactive,7,5–9 yrs,"Panchkula, Mohali","Neural Networks, System Design, Data Structures, Natural Language Processing"
+Data Scientist,ION,7,2–6 yrs,"Noida, Mumbai","Supply chain, Automation, Machine learning, SQL"
+Machine Learning / AI Engineer,Accenture,55,4–8 yrs,"Bengaluru, Gurgaon","python, sql, machine learning, artificial intelligence"
+Machine Learning / AI Engineer,EY,47,3–7 yrs,"Kochi, Pune","Consulting, Assurance, Data analysis, Data processing"
+Machine Learning / AI Engineer,Winning Edge,23,5–10 yrs,Bengaluru,"MLOps, Python, Github, Machine Learning"
+Machine Learning / AI Engineer,Mount Talent Consulting,19,6–11 yrs,"Bengaluru, Pune","Machine Learning, Artificial Intelligence, Natural Language Processing, NLP"
+Machine Learning / AI Engineer,IBM,17,5–10 yrs,"Bengaluru, Hyderabad","python, kubernetes, machine learning, natural language processing"
+Machine Learning / AI Engineer,Turing,17,4–7 yrs,India,"Machine learning, Natural language processing, Python, Automation"
+Machine Learning / AI Engineer,AVE-Promagne Business Solutions,15,4–8 yrs,"Chennai, Bengaluru","Machine Learning, PySpark, python, MLOps"
+Machine Learning / AI Engineer,Diverse Lynx,14,2–6 yrs,"Bengaluru, Chennai","Machine learning, model development, Deployment, Automation"
+Machine Learning / AI Engineer,JPMorgan Chase Bank,12,3–8 yrs,"Bengaluru, Hyderabad","Agile, Machine learning, Coding, Data structures"
+Machine Learning / AI Engineer,Crowdstrike,11,4–9 yrs,"India, Bengaluru","Development Manager, GCP, Analytical, Machine learning"
+Machine Learning / AI Engineer,ANTI.AI,9,2–6 yrs,"Bengaluru, Delhi",Artificial Intelligence
+Machine Learning / AI Engineer,Techup Labs,9,0–1 yrs,"Bengaluru, Ahmedabad","Computer science, Computer vision, Data analysis, PDF"
+Machine Learning / AI Engineer,Response Informatics,8,1–4 yrs,"Chennai, Ahmedabad","Machine learning, Computer science, deep learning, Analytical"
+Machine Learning / AI Engineer,Tetrahed Inc,8,9–12 yrs,"Noida, Chennai","Generative AI, Artificial Intelligence, AWS, TensorFlow"
+Machine Learning / AI Engineer,Genpact,7,4–9 yrs,"Hyderabad, Bengaluru","Machine learning, Diversity and Inclusion, GCP, SQL"
+Machine Learning / AI Engineer,Oracle,7,10–15 yrs,Bengaluru,"python, project management, program management, machine learning"
+Machine Learning / AI Engineer,Adobe Systems India Pvt. Ltd.,6,8–12 yrs,"Noida, Bengaluru","Machine learning, Adobe, Programming, Cloud"
+Machine Learning / AI Engineer,"Advanced Micro Devices, Inc",6,4–10 yrs,"Bengaluru, Hyderabad","C++, Artificial Intelligence, Gaming, Computer science"
+Machine Learning / AI Engineer,Alp Consulting Limited,6,3–7 yrs,"Bengaluru, Pune","python, algorithms, artificial intelligence, natural language processing"
+Machine Learning / AI Engineer,Blueoptima,6,4–8 yrs,Bengaluru,"Coding, Postgresql, Artificial Intelligence, Machine learning"
+Machine Learning / AI Engineer,Candid Recruitments,6,2–6 yrs,"Jaipur, Noida","ML Ops, Docker, Dev Ops, Machine Learning"
+Machine Learning / AI Engineer,Capgemini,6,4–8 yrs,"Chennai, Mumbai","Machine Learning, python, data analysis, natural language processing"
+Machine Learning / AI Engineer,Infosys,6,3–7 yrs,"Bengaluru, Pune","python, microsoft azure, machine learning, natural language processing"
+Machine Learning / AI Engineer,Reuters News Agency,6,4–8 yrs,"Bengaluru, Mumbai","Networking, Machine learning, Diversity and Inclusion, Python"
+Machine Learning / AI Engineer,Boomi Software,5,4–9 yrs,Chennai,"Automation, Unit testing, Unix, Backend"
+Software Engineer / Developer,Accenture,5346,5–8 yrs,"Bengaluru, Hyderabad","sap, css, software development, python"
+Software Engineer / Developer,Diverse Lynx,1138,2–7 yrs,"Bengaluru, Chennai","Javascript, Java, Java Development, Coding"
+Software Engineer / Developer,Coders Brain Pvt Ltd,655,4–8 yrs,"Bengaluru, Chennai","Javascript, Business solutions, Debugging, GIT"
+Software Engineer / Developer,IBM,407,4–8 yrs,"Bengaluru, Kochi","kubernetes, software development, continuous integration, python"
+Software Engineer / Developer,Alp Consulting Limited,346,3–7 yrs,"Bengaluru, India","css, java, c++, continuous integration"
+Software Engineer / Developer,Fusion Plus Solutions,345,3–6 yrs,"Hyderabad, Nizamabad","Javascript, SQL, css, Java"
+Software Engineer / Developer,Oracle,336,6–10 yrs,"Bengaluru, India","java, software development, kubernetes, rest"
+Software Engineer / Developer,RGB Webtech,292,1–3 yrs,Chandigarh,"Javascript, HTML, Coding, MySQL"
+Software Engineer / Developer,UST,231,5–7 yrs,"Bengaluru, Trivandrum","Coding, Application development, Configuration management, Test cases"
+Software Engineer / Developer,Pradeepit Consulting Services,221,4–7 yrs,"Bengaluru, India","SAP, Javascript, Open source, Debugging"
+Software Engineer / Developer,Photon,203,5–8 yrs,"Chennai, Bengaluru","Javascript, Front end, Backend, GIT"
+Software Engineer / Developer,Virtusa,191,3–6 yrs,"Chennai, Hyderabad","Javascript, Agile, GIT, Coding"
+Software Engineer / Developer,Capgemini,188,4–6 yrs,"Bengaluru, Pune","software development, software design, Java, c++"
+Software Engineer / Developer,Response Informatics,182,3–6 yrs,"Chennai, Bengaluru","Javascript, Backend, css, Oracle"
+Software Engineer / Developer,Cognizant,179,5–10 yrs,"Chennai, Bhubaneshwar","Spring Boot, Hiring, Java, AWS"
+Software Engineer / Developer,Walmart,178,4–9 yrs,"Bengaluru, Chennai","Networking, Information technology, Data structures, Coding"
+Software Engineer / Developer,IDESLABS,168,4–8 yrs,"Chennai, Hyderabad","Payroll, Consulting, Javascript, Backend"
+Software Engineer / Developer,Infosys,167,3–8 yrs,"Bengaluru, Chennai","agile methodology, python, java, debugging"
+Software Engineer / Developer,Finite HR Consulting Private Limited,127,3–6 yrs,"Hyderabad, Mumbai","JavaScript, HTML, MySQL, Technical product configuration"
+Software Engineer / Developer,Pleasant Inc.,126,1–5 yrs,"Surat, Vadodara","JAVA, Manager Technology, Leadership training, Software development life cycle"
+Software Engineer / Developer,JPMorgan Chase Bank,120,3–8 yrs,"Bengaluru, Mumbai","Agile, Application development, Coding, System design"
+Software Engineer / Developer,Quest Global Technologies,115,4–7 yrs,"Bengaluru, Trivandrum","Debugging, Coding, C++, Healthcare"
+Software Engineer / Developer,Siemens,115,4–8 yrs,"Pune, Bengaluru","Siemens, Consulting, HTML, Agile"
+Software Engineer / Developer,Coventine Digital,112,4–8 yrs,"Pune, Kochi","Spring Boot, Java, Microservices, Spring"
+Software Engineer / Developer,Taurus Hard Soft Solutions,111,2–5 yrs,"Bengaluru, India","com, mca, analytical, defence"

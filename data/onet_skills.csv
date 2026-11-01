@@ -1,0 +1,561 @@
+code,occupation,skill,importance,level
+11-3021.00,Computer and Information Systems Managers,Active Learning,3.38,3.88
+11-3021.00,Computer and Information Systems Managers,Complex Problem Solving,3.75,3.88
+11-3021.00,Computer and Information Systems Managers,Critical Thinking,4.12,4.0
+11-3021.00,Computer and Information Systems Managers,Instructing,3.12,3.88
+11-3021.00,Computer and Information Systems Managers,Judgment and Decision Making,3.88,3.75
+11-3021.00,Computer and Information Systems Managers,Management of Personnel Resources,3.62,3.75
+11-3021.00,Computer and Information Systems Managers,Mathematics,3.12,3.12
+11-3021.00,Computer and Information Systems Managers,Monitoring,3.88,4.38
+11-3021.00,Computer and Information Systems Managers,Operations Analysis,3.12,3.38
+11-3021.00,Computer and Information Systems Managers,Persuasion,3.12,3.5
+11-3021.00,Computer and Information Systems Managers,Programming,2.75,2.62
+11-3021.00,Computer and Information Systems Managers,Reading Comprehension,4.0,4.0
+11-3021.00,Computer and Information Systems Managers,Systems Analysis,3.62,3.5
+11-3021.00,Computer and Information Systems Managers,Systems Evaluation,3.62,3.88
+13-1111.00,Management Analysts,Active Learning,3.25,3.88
+13-1111.00,Management Analysts,Complex Problem Solving,4.0,4.0
+13-1111.00,Management Analysts,Critical Thinking,4.12,4.12
+13-1111.00,Management Analysts,Instructing,3.25,3.5
+13-1111.00,Management Analysts,Judgment and Decision Making,4.0,4.12
+13-1111.00,Management Analysts,Management of Personnel Resources,3.0,3.12
+13-1111.00,Management Analysts,Mathematics,3.0,3.25
+13-1111.00,Management Analysts,Monitoring,3.88,4.12
+13-1111.00,Management Analysts,Operations Analysis,3.0,3.88
+13-1111.00,Management Analysts,Persuasion,3.5,3.88
+13-1111.00,Management Analysts,Programming,1.88,1.25
+13-1111.00,Management Analysts,Reading Comprehension,4.12,4.12
+13-1111.00,Management Analysts,Systems Analysis,3.75,3.88
+13-1111.00,Management Analysts,Systems Evaluation,3.88,3.88
+13-1161.00,Market Research Analysts and Marketing Specialists,Active Learning,3.75,3.75
+13-1161.00,Market Research Analysts and Marketing Specialists,Complex Problem Solving,3.75,3.75
+13-1161.00,Market Research Analysts and Marketing Specialists,Critical Thinking,4.0,4.0
+13-1161.00,Market Research Analysts and Marketing Specialists,Instructing,2.5,2.88
+13-1161.00,Market Research Analysts and Marketing Specialists,Judgment and Decision Making,3.75,4.0
+13-1161.00,Market Research Analysts and Marketing Specialists,Management of Personnel Resources,2.62,2.75
+13-1161.00,Market Research Analysts and Marketing Specialists,Mathematics,3.12,3.12
+13-1161.00,Market Research Analysts and Marketing Specialists,Monitoring,3.12,3.75
+13-1161.00,Market Research Analysts and Marketing Specialists,Operations Analysis,2.62,2.75
+13-1161.00,Market Research Analysts and Marketing Specialists,Persuasion,3.12,3.25
+13-1161.00,Market Research Analysts and Marketing Specialists,Programming,2.0,2.0
+13-1161.00,Market Research Analysts and Marketing Specialists,Reading Comprehension,4.0,4.75
+13-1161.00,Market Research Analysts and Marketing Specialists,Systems Analysis,3.0,3.62
+13-1161.00,Market Research Analysts and Marketing Specialists,Systems Evaluation,3.12,3.75
+13-2099.01,Financial Quantitative Analysts,Active Learning,3.75,3.88
+13-2099.01,Financial Quantitative Analysts,Complex Problem Solving,3.88,4.12
+13-2099.01,Financial Quantitative Analysts,Critical Thinking,4.12,4.75
+13-2099.01,Financial Quantitative Analysts,Instructing,3.0,3.25
+13-2099.01,Financial Quantitative Analysts,Judgment and Decision Making,3.75,4.25
+13-2099.01,Financial Quantitative Analysts,Management of Personnel Resources,2.62,2.62
+13-2099.01,Financial Quantitative Analysts,Mathematics,4.38,5.0
+13-2099.01,Financial Quantitative Analysts,Monitoring,3.0,3.12
+13-2099.01,Financial Quantitative Analysts,Operations Analysis,2.0,1.88
+13-2099.01,Financial Quantitative Analysts,Persuasion,3.12,3.38
+13-2099.01,Financial Quantitative Analysts,Programming,2.62,2.62
+13-2099.01,Financial Quantitative Analysts,Reading Comprehension,4.0,4.75
+13-2099.01,Financial Quantitative Analysts,Systems Analysis,3.25,3.75
+13-2099.01,Financial Quantitative Analysts,Systems Evaluation,3.25,3.88
+15-1211.00,Computer Systems Analysts,Active Learning,3.62,4.0
+15-1211.00,Computer Systems Analysts,Complex Problem Solving,3.38,4.0
+15-1211.00,Computer Systems Analysts,Critical Thinking,3.75,4.0
+15-1211.00,Computer Systems Analysts,Instructing,2.88,3.62
+15-1211.00,Computer Systems Analysts,Judgment and Decision Making,3.62,4.12
+15-1211.00,Computer Systems Analysts,Management of Personnel Resources,2.88,3.0
+15-1211.00,Computer Systems Analysts,Mathematics,3.0,3.38
+15-1211.00,Computer Systems Analysts,Monitoring,3.38,4.0
+15-1211.00,Computer Systems Analysts,Operations Analysis,3.0,3.75
+15-1211.00,Computer Systems Analysts,Persuasion,2.75,3.0
+15-1211.00,Computer Systems Analysts,Programming,3.25,4.0
+15-1211.00,Computer Systems Analysts,Reading Comprehension,3.88,4.5
+15-1211.00,Computer Systems Analysts,Systems Analysis,3.75,4.0
+15-1211.00,Computer Systems Analysts,Systems Evaluation,3.75,4.12
+15-1211.01,Health Informatics Specialists,Active Learning,3.75,4.75
+15-1211.01,Health Informatics Specialists,Complex Problem Solving,4.12,4.12
+15-1211.01,Health Informatics Specialists,Critical Thinking,4.0,4.12
+15-1211.01,Health Informatics Specialists,Instructing,3.38,3.88
+15-1211.01,Health Informatics Specialists,Judgment and Decision Making,3.88,4.0
+15-1211.01,Health Informatics Specialists,Management of Personnel Resources,3.12,3.0
+15-1211.01,Health Informatics Specialists,Mathematics,3.0,3.0
+15-1211.01,Health Informatics Specialists,Monitoring,3.62,4.0
+15-1211.01,Health Informatics Specialists,Operations Analysis,2.75,2.88
+15-1211.01,Health Informatics Specialists,Persuasion,3.0,3.62
+15-1211.01,Health Informatics Specialists,Programming,2.88,3.12
+15-1211.01,Health Informatics Specialists,Reading Comprehension,4.38,4.88
+15-1211.01,Health Informatics Specialists,Systems Analysis,3.75,4.0
+15-1211.01,Health Informatics Specialists,Systems Evaluation,3.75,4.25
+15-1212.00,Information Security Analysts,Active Learning,3.25,3.88
+15-1212.00,Information Security Analysts,Complex Problem Solving,3.75,3.62
+15-1212.00,Information Security Analysts,Critical Thinking,3.88,4.12
+15-1212.00,Information Security Analysts,Instructing,2.88,3.12
+15-1212.00,Information Security Analysts,Judgment and Decision Making,3.38,3.62
+15-1212.00,Information Security Analysts,Management of Personnel Resources,2.88,2.88
+15-1212.00,Information Security Analysts,Mathematics,2.25,2.38
+15-1212.00,Information Security Analysts,Monitoring,3.38,3.88
+15-1212.00,Information Security Analysts,Operations Analysis,2.5,2.5
+15-1212.00,Information Security Analysts,Persuasion,2.62,2.88
+15-1212.00,Information Security Analysts,Programming,2.62,2.25
+15-1212.00,Information Security Analysts,Reading Comprehension,4.0,4.12
+15-1212.00,Information Security Analysts,Systems Analysis,3.38,3.38
+15-1212.00,Information Security Analysts,Systems Evaluation,3.0,3.38
+15-1221.00,Computer and Information Research Scientists,Active Learning,3.5,4.88
+15-1221.00,Computer and Information Research Scientists,Complex Problem Solving,4.0,4.38
+15-1221.00,Computer and Information Research Scientists,Critical Thinking,4.0,4.25
+15-1221.00,Computer and Information Research Scientists,Instructing,3.0,3.38
+15-1221.00,Computer and Information Research Scientists,Judgment and Decision Making,4.0,4.62
+15-1221.00,Computer and Information Research Scientists,Management of Personnel Resources,2.88,3.62
+15-1221.00,Computer and Information Research Scientists,Mathematics,3.38,4.38
+15-1221.00,Computer and Information Research Scientists,Monitoring,3.12,4.0
+15-1221.00,Computer and Information Research Scientists,Operations Analysis,3.12,3.88
+15-1221.00,Computer and Information Research Scientists,Persuasion,2.75,3.5
+15-1221.00,Computer and Information Research Scientists,Programming,3.62,4.5
+15-1221.00,Computer and Information Research Scientists,Reading Comprehension,3.75,4.5
+15-1221.00,Computer and Information Research Scientists,Systems Analysis,3.75,4.38
+15-1221.00,Computer and Information Research Scientists,Systems Evaluation,3.62,4.88
+15-1231.00,Computer Network Support Specialists,Active Learning,3.25,3.38
+15-1231.00,Computer Network Support Specialists,Complex Problem Solving,3.25,3.25
+15-1231.00,Computer Network Support Specialists,Critical Thinking,3.75,3.75
+15-1231.00,Computer Network Support Specialists,Instructing,2.62,3.25
+15-1231.00,Computer Network Support Specialists,Judgment and Decision Making,3.38,3.38
+15-1231.00,Computer Network Support Specialists,Management of Personnel Resources,2.25,2.25
+15-1231.00,Computer Network Support Specialists,Mathematics,2.12,2.62
+15-1231.00,Computer Network Support Specialists,Monitoring,3.25,3.62
+15-1231.00,Computer Network Support Specialists,Operations Analysis,1.88,1.88
+15-1231.00,Computer Network Support Specialists,Persuasion,2.25,2.62
+15-1231.00,Computer Network Support Specialists,Programming,2.25,1.75
+15-1231.00,Computer Network Support Specialists,Reading Comprehension,3.38,3.88
+15-1231.00,Computer Network Support Specialists,Systems Analysis,3.12,3.38
+15-1231.00,Computer Network Support Specialists,Systems Evaluation,3.0,3.25
+15-1232.00,Computer User Support Specialists,Active Learning,3.12,3.25
+15-1232.00,Computer User Support Specialists,Complex Problem Solving,3.62,3.25
+15-1232.00,Computer User Support Specialists,Critical Thinking,3.75,3.88
+15-1232.00,Computer User Support Specialists,Instructing,3.0,3.62
+15-1232.00,Computer User Support Specialists,Judgment and Decision Making,3.25,3.0
+15-1232.00,Computer User Support Specialists,Management of Personnel Resources,2.38,2.38
+15-1232.00,Computer User Support Specialists,Mathematics,2.25,2.0
+15-1232.00,Computer User Support Specialists,Monitoring,3.12,3.0
+15-1232.00,Computer User Support Specialists,Operations Analysis,2.38,2.62
+15-1232.00,Computer User Support Specialists,Persuasion,2.62,2.38
+15-1232.00,Computer User Support Specialists,Programming,2.25,2.0
+15-1232.00,Computer User Support Specialists,Reading Comprehension,4.0,4.0
+15-1232.00,Computer User Support Specialists,Systems Analysis,3.0,3.0
+15-1232.00,Computer User Support Specialists,Systems Evaluation,2.88,3.0
+15-1241.00,Computer Network Architects,Active Learning,3.25,3.88
+15-1241.00,Computer Network Architects,Complex Problem Solving,3.88,4.12
+15-1241.00,Computer Network Architects,Critical Thinking,4.12,4.12
+15-1241.00,Computer Network Architects,Instructing,3.0,3.75
+15-1241.00,Computer Network Architects,Judgment and Decision Making,3.75,4.0
+15-1241.00,Computer Network Architects,Management of Personnel Resources,2.75,3.0
+15-1241.00,Computer Network Architects,Mathematics,3.0,3.5
+15-1241.00,Computer Network Architects,Monitoring,3.12,3.38
+15-1241.00,Computer Network Architects,Operations Analysis,2.88,3.25
+15-1241.00,Computer Network Architects,Persuasion,3.0,3.25
+15-1241.00,Computer Network Architects,Programming,3.88,3.62
+15-1241.00,Computer Network Architects,Reading Comprehension,4.0,4.12
+15-1241.00,Computer Network Architects,Systems Analysis,3.75,3.88
+15-1241.00,Computer Network Architects,Systems Evaluation,3.88,3.88
+15-1241.01,Telecommunications Engineering Specialists,Active Learning,3.25,3.88
+15-1241.01,Telecommunications Engineering Specialists,Complex Problem Solving,3.38,3.62
+15-1241.01,Telecommunications Engineering Specialists,Critical Thinking,3.88,3.88
+15-1241.01,Telecommunications Engineering Specialists,Instructing,3.0,3.12
+15-1241.01,Telecommunications Engineering Specialists,Judgment and Decision Making,3.25,3.38
+15-1241.01,Telecommunications Engineering Specialists,Management of Personnel Resources,2.5,2.75
+15-1241.01,Telecommunications Engineering Specialists,Mathematics,2.88,3.0
+15-1241.01,Telecommunications Engineering Specialists,Monitoring,3.25,3.5
+15-1241.01,Telecommunications Engineering Specialists,Operations Analysis,2.5,2.75
+15-1241.01,Telecommunications Engineering Specialists,Persuasion,3.0,3.12
+15-1241.01,Telecommunications Engineering Specialists,Programming,2.12,2.0
+15-1241.01,Telecommunications Engineering Specialists,Reading Comprehension,3.88,4.0
+15-1241.01,Telecommunications Engineering Specialists,Systems Analysis,3.25,3.62
+15-1241.01,Telecommunications Engineering Specialists,Systems Evaluation,3.12,3.5
+15-1242.00,Database Administrators,Active Learning,3.5,4.12
+15-1242.00,Database Administrators,Complex Problem Solving,3.88,4.12
+15-1242.00,Database Administrators,Critical Thinking,3.88,4.0
+15-1242.00,Database Administrators,Instructing,3.0,3.75
+15-1242.00,Database Administrators,Judgment and Decision Making,3.75,4.0
+15-1242.00,Database Administrators,Management of Personnel Resources,2.75,3.0
+15-1242.00,Database Administrators,Mathematics,3.0,3.5
+15-1242.00,Database Administrators,Monitoring,3.25,3.88
+15-1242.00,Database Administrators,Operations Analysis,3.12,3.25
+15-1242.00,Database Administrators,Persuasion,2.62,2.75
+15-1242.00,Database Administrators,Programming,3.38,3.88
+15-1242.00,Database Administrators,Reading Comprehension,3.75,4.25
+15-1242.00,Database Administrators,Systems Analysis,3.12,3.88
+15-1242.00,Database Administrators,Systems Evaluation,3.12,4.0
+15-1243.00,Database Architects,Active Learning,3.25,3.62
+15-1243.00,Database Architects,Complex Problem Solving,3.88,4.0
+15-1243.00,Database Architects,Critical Thinking,3.88,3.88
+15-1243.00,Database Architects,Instructing,2.88,3.62
+15-1243.00,Database Architects,Judgment and Decision Making,3.88,3.88
+15-1243.00,Database Architects,Management of Personnel Resources,2.5,2.75
+15-1243.00,Database Architects,Mathematics,3.0,3.12
+15-1243.00,Database Architects,Monitoring,3.12,3.62
+15-1243.00,Database Architects,Operations Analysis,3.12,3.38
+15-1243.00,Database Architects,Persuasion,2.88,3.0
+15-1243.00,Database Architects,Programming,3.38,4.12
+15-1243.00,Database Architects,Reading Comprehension,3.88,4.12
+15-1243.00,Database Architects,Systems Analysis,3.75,3.75
+15-1243.00,Database Architects,Systems Evaluation,3.25,3.75
+15-1243.01,Data Warehousing Specialists,Active Learning,3.0,3.25
+15-1243.01,Data Warehousing Specialists,Complex Problem Solving,3.62,3.5
+15-1243.01,Data Warehousing Specialists,Critical Thinking,3.88,3.88
+15-1243.01,Data Warehousing Specialists,Instructing,2.62,3.38
+15-1243.01,Data Warehousing Specialists,Judgment and Decision Making,3.38,3.62
+15-1243.01,Data Warehousing Specialists,Management of Personnel Resources,2.12,2.0
+15-1243.01,Data Warehousing Specialists,Mathematics,3.0,3.25
+15-1243.01,Data Warehousing Specialists,Monitoring,2.88,3.12
+15-1243.01,Data Warehousing Specialists,Operations Analysis,2.75,3.38
+15-1243.01,Data Warehousing Specialists,Persuasion,2.75,3.12
+15-1243.01,Data Warehousing Specialists,Programming,3.75,3.75
+15-1243.01,Data Warehousing Specialists,Reading Comprehension,3.88,4.0
+15-1243.01,Data Warehousing Specialists,Systems Analysis,3.5,3.5
+15-1243.01,Data Warehousing Specialists,Systems Evaluation,3.25,3.5
+15-1244.00,Network and Computer Systems Administrators,Active Learning,3.12,3.88
+15-1244.00,Network and Computer Systems Administrators,Complex Problem Solving,3.88,4.0
+15-1244.00,Network and Computer Systems Administrators,Critical Thinking,3.88,4.0
+15-1244.00,Network and Computer Systems Administrators,Instructing,3.0,3.75
+15-1244.00,Network and Computer Systems Administrators,Judgment and Decision Making,4.0,4.12
+15-1244.00,Network and Computer Systems Administrators,Management of Personnel Resources,2.88,3.0
+15-1244.00,Network and Computer Systems Administrators,Mathematics,2.75,2.75
+15-1244.00,Network and Computer Systems Administrators,Monitoring,3.88,4.0
+15-1244.00,Network and Computer Systems Administrators,Operations Analysis,3.0,3.62
+15-1244.00,Network and Computer Systems Administrators,Persuasion,2.5,2.88
+15-1244.00,Network and Computer Systems Administrators,Programming,3.5,3.75
+15-1244.00,Network and Computer Systems Administrators,Reading Comprehension,3.88,4.0
+15-1244.00,Network and Computer Systems Administrators,Systems Analysis,4.0,4.0
+15-1244.00,Network and Computer Systems Administrators,Systems Evaluation,4.0,4.38
+15-1251.00,Computer Programmers,Active Learning,3.12,3.25
+15-1251.00,Computer Programmers,Complex Problem Solving,3.75,3.88
+15-1251.00,Computer Programmers,Critical Thinking,3.75,3.88
+15-1251.00,Computer Programmers,Instructing,2.5,3.12
+15-1251.00,Computer Programmers,Judgment and Decision Making,3.25,3.25
+15-1251.00,Computer Programmers,Management of Personnel Resources,2.62,2.75
+15-1251.00,Computer Programmers,Mathematics,3.12,3.12
+15-1251.00,Computer Programmers,Monitoring,3.0,3.12
+15-1251.00,Computer Programmers,Operations Analysis,3.12,3.75
+15-1251.00,Computer Programmers,Persuasion,2.62,2.75
+15-1251.00,Computer Programmers,Programming,4.75,4.88
+15-1251.00,Computer Programmers,Reading Comprehension,3.38,3.5
+15-1251.00,Computer Programmers,Systems Analysis,3.38,3.25
+15-1251.00,Computer Programmers,Systems Evaluation,3.12,3.62
+15-1252.00,Software Developers,Active Learning,3.5,3.62
+15-1252.00,Software Developers,Complex Problem Solving,3.38,3.5
+15-1252.00,Software Developers,Critical Thinking,3.88,4.12
+15-1252.00,Software Developers,Instructing,2.88,3.12
+15-1252.00,Software Developers,Judgment and Decision Making,3.62,3.75
+15-1252.00,Software Developers,Management of Personnel Resources,2.25,2.62
+15-1252.00,Software Developers,Mathematics,2.75,3.25
+15-1252.00,Software Developers,Monitoring,3.0,3.5
+15-1252.00,Software Developers,Operations Analysis,3.25,3.12
+15-1252.00,Software Developers,Persuasion,2.75,3.12
+15-1252.00,Software Developers,Programming,4.0,4.12
+15-1252.00,Software Developers,Reading Comprehension,3.5,4.25
+15-1252.00,Software Developers,Systems Analysis,3.5,3.88
+15-1252.00,Software Developers,Systems Evaluation,3.38,4.12
+15-1253.00,Software Quality Assurance Analysts and Testers,Active Learning,3.12,3.12
+15-1253.00,Software Quality Assurance Analysts and Testers,Complex Problem Solving,3.38,3.12
+15-1253.00,Software Quality Assurance Analysts and Testers,Critical Thinking,3.88,3.88
+15-1253.00,Software Quality Assurance Analysts and Testers,Instructing,2.62,2.88
+15-1253.00,Software Quality Assurance Analysts and Testers,Judgment and Decision Making,3.12,3.62
+15-1253.00,Software Quality Assurance Analysts and Testers,Management of Personnel Resources,2.12,2.0
+15-1253.00,Software Quality Assurance Analysts and Testers,Mathematics,2.75,2.75
+15-1253.00,Software Quality Assurance Analysts and Testers,Monitoring,3.62,3.75
+15-1253.00,Software Quality Assurance Analysts and Testers,Operations Analysis,3.12,3.38
+15-1253.00,Software Quality Assurance Analysts and Testers,Persuasion,2.5,2.62
+15-1253.00,Software Quality Assurance Analysts and Testers,Programming,3.62,3.75
+15-1253.00,Software Quality Assurance Analysts and Testers,Reading Comprehension,4.0,4.12
+15-1253.00,Software Quality Assurance Analysts and Testers,Systems Analysis,3.12,3.0
+15-1253.00,Software Quality Assurance Analysts and Testers,Systems Evaluation,3.25,3.5
+15-1254.00,Web Developers,Active Learning,3.5,3.62
+15-1254.00,Web Developers,Complex Problem Solving,3.62,3.62
+15-1254.00,Web Developers,Critical Thinking,3.75,3.88
+15-1254.00,Web Developers,Instructing,2.75,3.25
+15-1254.00,Web Developers,Judgment and Decision Making,3.38,3.38
+15-1254.00,Web Developers,Management of Personnel Resources,2.38,2.25
+15-1254.00,Web Developers,Mathematics,2.75,2.88
+15-1254.00,Web Developers,Monitoring,3.0,3.38
+15-1254.00,Web Developers,Operations Analysis,3.62,4.0
+15-1254.00,Web Developers,Persuasion,2.88,3.12
+15-1254.00,Web Developers,Programming,4.12,4.25
+15-1254.00,Web Developers,Reading Comprehension,3.62,4.0
+15-1254.00,Web Developers,Systems Analysis,3.12,3.38
+15-1254.00,Web Developers,Systems Evaluation,3.0,3.25
+15-1255.00,Web and Digital Interface Designers,Active Learning,3.38,3.38
+15-1255.00,Web and Digital Interface Designers,Complex Problem Solving,3.38,3.5
+15-1255.00,Web and Digital Interface Designers,Critical Thinking,3.5,3.5
+15-1255.00,Web and Digital Interface Designers,Instructing,2.62,2.5
+15-1255.00,Web and Digital Interface Designers,Judgment and Decision Making,3.5,3.38
+15-1255.00,Web and Digital Interface Designers,Management of Personnel Resources,2.25,2.12
+15-1255.00,Web and Digital Interface Designers,Mathematics,2.38,2.5
+15-1255.00,Web and Digital Interface Designers,Monitoring,3.12,3.38
+15-1255.00,Web and Digital Interface Designers,Operations Analysis,3.0,2.75
+15-1255.00,Web and Digital Interface Designers,Persuasion,2.75,2.62
+15-1255.00,Web and Digital Interface Designers,Programming,3.25,2.62
+15-1255.00,Web and Digital Interface Designers,Reading Comprehension,3.75,3.75
+15-1255.00,Web and Digital Interface Designers,Systems Analysis,2.75,3.12
+15-1255.00,Web and Digital Interface Designers,Systems Evaluation,2.88,3.38
+15-1255.01,Video Game Designers,Active Learning,3.5,3.62
+15-1255.01,Video Game Designers,Complex Problem Solving,3.62,3.88
+15-1255.01,Video Game Designers,Critical Thinking,3.75,3.88
+15-1255.01,Video Game Designers,Instructing,2.88,3.25
+15-1255.01,Video Game Designers,Judgment and Decision Making,3.62,3.62
+15-1255.01,Video Game Designers,Management of Personnel Resources,2.75,3.0
+15-1255.01,Video Game Designers,Mathematics,2.88,3.12
+15-1255.01,Video Game Designers,Monitoring,3.12,3.62
+15-1255.01,Video Game Designers,Operations Analysis,3.0,3.0
+15-1255.01,Video Game Designers,Persuasion,3.0,3.12
+15-1255.01,Video Game Designers,Programming,4.0,3.88
+15-1255.01,Video Game Designers,Reading Comprehension,3.75,4.0
+15-1255.01,Video Game Designers,Systems Analysis,3.38,3.25
+15-1255.01,Video Game Designers,Systems Evaluation,3.25,3.62
+15-1299.01,Web Administrators,Active Learning,3.12,3.75
+15-1299.01,Web Administrators,Complex Problem Solving,3.75,3.88
+15-1299.01,Web Administrators,Critical Thinking,4.0,4.12
+15-1299.01,Web Administrators,Instructing,3.0,3.62
+15-1299.01,Web Administrators,Judgment and Decision Making,3.38,3.38
+15-1299.01,Web Administrators,Management of Personnel Resources,2.62,2.12
+15-1299.01,Web Administrators,Mathematics,2.12,2.12
+15-1299.01,Web Administrators,Monitoring,3.38,3.5
+15-1299.01,Web Administrators,Operations Analysis,2.75,3.5
+15-1299.01,Web Administrators,Persuasion,2.5,2.62
+15-1299.01,Web Administrators,Programming,3.12,2.88
+15-1299.01,Web Administrators,Reading Comprehension,3.88,4.12
+15-1299.01,Web Administrators,Systems Analysis,3.25,3.38
+15-1299.01,Web Administrators,Systems Evaluation,3.38,3.38
+15-1299.02,Geographic Information Systems Technologists and Technicians,Active Learning,3.12,3.5
+15-1299.02,Geographic Information Systems Technologists and Technicians,Complex Problem Solving,3.62,3.62
+15-1299.02,Geographic Information Systems Technologists and Technicians,Critical Thinking,3.62,4.0
+15-1299.02,Geographic Information Systems Technologists and Technicians,Instructing,2.5,3.0
+15-1299.02,Geographic Information Systems Technologists and Technicians,Judgment and Decision Making,3.12,3.38
+15-1299.02,Geographic Information Systems Technologists and Technicians,Management of Personnel Resources,2.38,2.25
+15-1299.02,Geographic Information Systems Technologists and Technicians,Mathematics,2.62,3.0
+15-1299.02,Geographic Information Systems Technologists and Technicians,Monitoring,3.38,3.62
+15-1299.02,Geographic Information Systems Technologists and Technicians,Operations Analysis,2.62,2.5
+15-1299.02,Geographic Information Systems Technologists and Technicians,Persuasion,2.38,2.38
+15-1299.02,Geographic Information Systems Technologists and Technicians,Programming,2.88,2.88
+15-1299.02,Geographic Information Systems Technologists and Technicians,Reading Comprehension,3.88,4.0
+15-1299.02,Geographic Information Systems Technologists and Technicians,Systems Analysis,2.88,3.0
+15-1299.02,Geographic Information Systems Technologists and Technicians,Systems Evaluation,2.88,3.12
+15-1299.03,Document Management Specialists,Active Learning,3.25,3.25
+15-1299.03,Document Management Specialists,Complex Problem Solving,3.62,3.62
+15-1299.03,Document Management Specialists,Critical Thinking,3.75,3.75
+15-1299.03,Document Management Specialists,Instructing,3.0,3.0
+15-1299.03,Document Management Specialists,Judgment and Decision Making,3.12,3.38
+15-1299.03,Document Management Specialists,Management of Personnel Resources,2.75,2.88
+15-1299.03,Document Management Specialists,Mathematics,2.25,2.25
+15-1299.03,Document Management Specialists,Monitoring,3.62,3.12
+15-1299.03,Document Management Specialists,Operations Analysis,2.25,2.25
+15-1299.03,Document Management Specialists,Persuasion,2.88,2.88
+15-1299.03,Document Management Specialists,Programming,2.5,1.88
+15-1299.03,Document Management Specialists,Reading Comprehension,3.88,3.88
+15-1299.03,Document Management Specialists,Systems Analysis,3.62,3.38
+15-1299.03,Document Management Specialists,Systems Evaluation,3.25,3.25
+15-1299.04,Penetration Testers,Active Learning,3.62,4.12
+15-1299.04,Penetration Testers,Complex Problem Solving,3.88,3.88
+15-1299.04,Penetration Testers,Critical Thinking,4.38,4.38
+15-1299.04,Penetration Testers,Instructing,2.62,2.62
+15-1299.04,Penetration Testers,Judgment and Decision Making,3.5,4.12
+15-1299.04,Penetration Testers,Management of Personnel Resources,2.0,2.0
+15-1299.04,Penetration Testers,Mathematics,2.5,2.75
+15-1299.04,Penetration Testers,Monitoring,3.5,3.88
+15-1299.04,Penetration Testers,Operations Analysis,2.12,1.75
+15-1299.04,Penetration Testers,Persuasion,2.75,3.0
+15-1299.04,Penetration Testers,Programming,3.88,4.12
+15-1299.04,Penetration Testers,Reading Comprehension,4.0,4.5
+15-1299.04,Penetration Testers,Systems Analysis,3.5,3.75
+15-1299.04,Penetration Testers,Systems Evaluation,3.62,4.12
+15-1299.05,Information Security Engineers,Active Learning,3.25,3.62
+15-1299.05,Information Security Engineers,Complex Problem Solving,3.25,3.75
+15-1299.05,Information Security Engineers,Critical Thinking,4.0,4.12
+15-1299.05,Information Security Engineers,Instructing,3.12,3.5
+15-1299.05,Information Security Engineers,Judgment and Decision Making,3.25,3.5
+15-1299.05,Information Security Engineers,Management of Personnel Resources,2.62,2.62
+15-1299.05,Information Security Engineers,Mathematics,2.38,2.62
+15-1299.05,Information Security Engineers,Monitoring,3.62,3.88
+15-1299.05,Information Security Engineers,Operations Analysis,2.0,1.88
+15-1299.05,Information Security Engineers,Persuasion,2.88,3.25
+15-1299.05,Information Security Engineers,Programming,3.12,3.38
+15-1299.05,Information Security Engineers,Reading Comprehension,4.12,4.38
+15-1299.05,Information Security Engineers,Systems Analysis,3.38,3.62
+15-1299.05,Information Security Engineers,Systems Evaluation,3.38,3.75
+15-1299.06,Digital Forensics Analysts,Active Learning,3.38,3.25
+15-1299.06,Digital Forensics Analysts,Complex Problem Solving,3.38,3.25
+15-1299.06,Digital Forensics Analysts,Critical Thinking,3.25,3.38
+15-1299.06,Digital Forensics Analysts,Instructing,2.62,2.75
+15-1299.06,Digital Forensics Analysts,Judgment and Decision Making,3.5,3.38
+15-1299.06,Digital Forensics Analysts,Management of Personnel Resources,2.5,2.25
+15-1299.06,Digital Forensics Analysts,Mathematics,2.5,2.75
+15-1299.06,Digital Forensics Analysts,Monitoring,3.25,3.62
+15-1299.06,Digital Forensics Analysts,Operations Analysis,1.5,0.88
+15-1299.06,Digital Forensics Analysts,Persuasion,2.88,3.0
+15-1299.06,Digital Forensics Analysts,Programming,2.12,1.5
+15-1299.06,Digital Forensics Analysts,Reading Comprehension,3.75,3.75
+15-1299.06,Digital Forensics Analysts,Systems Analysis,3.12,3.12
+15-1299.06,Digital Forensics Analysts,Systems Evaluation,3.0,2.75
+15-1299.07,Blockchain Engineers,Active Learning,3.5,3.62
+15-1299.07,Blockchain Engineers,Complex Problem Solving,3.62,4.0
+15-1299.07,Blockchain Engineers,Critical Thinking,3.75,4.0
+15-1299.07,Blockchain Engineers,Instructing,2.5,2.75
+15-1299.07,Blockchain Engineers,Judgment and Decision Making,3.5,3.75
+15-1299.07,Blockchain Engineers,Management of Personnel Resources,2.5,2.5
+15-1299.07,Blockchain Engineers,Mathematics,3.12,3.38
+15-1299.07,Blockchain Engineers,Monitoring,3.12,3.38
+15-1299.07,Blockchain Engineers,Operations Analysis,3.0,3.0
+15-1299.07,Blockchain Engineers,Persuasion,2.75,2.75
+15-1299.07,Blockchain Engineers,Programming,3.38,3.5
+15-1299.07,Blockchain Engineers,Reading Comprehension,4.0,4.12
+15-1299.07,Blockchain Engineers,Systems Analysis,3.38,3.25
+15-1299.07,Blockchain Engineers,Systems Evaluation,3.25,3.75
+15-1299.08,Computer Systems Engineers/Architects,Active Learning,3.62,4.12
+15-1299.08,Computer Systems Engineers/Architects,Complex Problem Solving,3.75,4.0
+15-1299.08,Computer Systems Engineers/Architects,Critical Thinking,4.0,4.0
+15-1299.08,Computer Systems Engineers/Architects,Instructing,3.0,3.12
+15-1299.08,Computer Systems Engineers/Architects,Judgment and Decision Making,3.38,4.0
+15-1299.08,Computer Systems Engineers/Architects,Management of Personnel Resources,3.0,3.0
+15-1299.08,Computer Systems Engineers/Architects,Mathematics,3.0,3.12
+15-1299.08,Computer Systems Engineers/Architects,Monitoring,3.5,3.88
+15-1299.08,Computer Systems Engineers/Architects,Operations Analysis,3.75,4.38
+15-1299.08,Computer Systems Engineers/Architects,Persuasion,2.88,3.0
+15-1299.08,Computer Systems Engineers/Architects,Programming,3.5,4.25
+15-1299.08,Computer Systems Engineers/Architects,Reading Comprehension,4.0,4.0
+15-1299.08,Computer Systems Engineers/Architects,Systems Analysis,3.88,4.0
+15-1299.08,Computer Systems Engineers/Architects,Systems Evaluation,3.88,4.12
+15-1299.09,Information Technology Project Managers,Active Learning,3.38,3.88
+15-1299.09,Information Technology Project Managers,Complex Problem Solving,3.38,4.0
+15-1299.09,Information Technology Project Managers,Critical Thinking,4.12,4.25
+15-1299.09,Information Technology Project Managers,Instructing,3.12,3.25
+15-1299.09,Information Technology Project Managers,Judgment and Decision Making,3.62,3.75
+15-1299.09,Information Technology Project Managers,Management of Personnel Resources,3.88,4.0
+15-1299.09,Information Technology Project Managers,Mathematics,2.88,3.12
+15-1299.09,Information Technology Project Managers,Monitoring,3.62,4.5
+15-1299.09,Information Technology Project Managers,Operations Analysis,2.38,2.5
+15-1299.09,Information Technology Project Managers,Persuasion,3.12,3.62
+15-1299.09,Information Technology Project Managers,Programming,2.25,1.62
+15-1299.09,Information Technology Project Managers,Reading Comprehension,4.0,4.0
+15-1299.09,Information Technology Project Managers,Systems Analysis,3.75,3.75
+15-1299.09,Information Technology Project Managers,Systems Evaluation,3.5,3.75
+15-2011.00,Actuaries,Active Learning,3.38,3.88
+15-2011.00,Actuaries,Complex Problem Solving,4.0,4.88
+15-2011.00,Actuaries,Critical Thinking,4.0,4.88
+15-2011.00,Actuaries,Instructing,2.75,3.0
+15-2011.00,Actuaries,Judgment and Decision Making,4.0,4.75
+15-2011.00,Actuaries,Management of Personnel Resources,2.75,2.88
+15-2011.00,Actuaries,Mathematics,4.38,5.0
+15-2011.00,Actuaries,Monitoring,3.0,3.5
+15-2011.00,Actuaries,Operations Analysis,3.12,3.0
+15-2011.00,Actuaries,Persuasion,2.88,3.5
+15-2011.00,Actuaries,Programming,2.0,2.0
+15-2011.00,Actuaries,Reading Comprehension,4.12,4.88
+15-2011.00,Actuaries,Systems Analysis,3.75,4.75
+15-2011.00,Actuaries,Systems Evaluation,3.88,4.62
+15-2021.00,Mathematicians,Active Learning,4.0,5.12
+15-2021.00,Mathematicians,Complex Problem Solving,4.0,4.88
+15-2021.00,Mathematicians,Critical Thinking,4.12,5.0
+15-2021.00,Mathematicians,Instructing,3.0,3.88
+15-2021.00,Mathematicians,Judgment and Decision Making,3.75,4.0
+15-2021.00,Mathematicians,Management of Personnel Resources,2.0,2.12
+15-2021.00,Mathematicians,Mathematics,5.0,6.0
+15-2021.00,Mathematicians,Monitoring,3.0,3.0
+15-2021.00,Mathematicians,Operations Analysis,2.5,2.62
+15-2021.00,Mathematicians,Persuasion,2.75,2.88
+15-2021.00,Mathematicians,Programming,2.5,2.75
+15-2021.00,Mathematicians,Reading Comprehension,4.0,5.0
+15-2021.00,Mathematicians,Systems Analysis,3.0,3.75
+15-2021.00,Mathematicians,Systems Evaluation,3.0,3.62
+15-2031.00,Operations Research Analysts,Active Learning,3.88,4.12
+15-2031.00,Operations Research Analysts,Complex Problem Solving,4.12,4.5
+15-2031.00,Operations Research Analysts,Critical Thinking,4.0,4.12
+15-2031.00,Operations Research Analysts,Instructing,3.0,3.0
+15-2031.00,Operations Research Analysts,Judgment and Decision Making,3.88,4.38
+15-2031.00,Operations Research Analysts,Management of Personnel Resources,2.62,2.62
+15-2031.00,Operations Research Analysts,Mathematics,4.5,4.88
+15-2031.00,Operations Research Analysts,Monitoring,2.88,3.12
+15-2031.00,Operations Research Analysts,Operations Analysis,3.75,4.25
+15-2031.00,Operations Research Analysts,Persuasion,2.88,3.12
+15-2031.00,Operations Research Analysts,Programming,2.62,2.75
+15-2031.00,Operations Research Analysts,Reading Comprehension,4.0,4.25
+15-2031.00,Operations Research Analysts,Systems Analysis,3.88,3.88
+15-2031.00,Operations Research Analysts,Systems Evaluation,3.88,4.25
+15-2041.00,Statisticians,Active Learning,3.75,3.88
+15-2041.00,Statisticians,Complex Problem Solving,3.88,4.12
+15-2041.00,Statisticians,Critical Thinking,4.0,4.5
+15-2041.00,Statisticians,Instructing,2.88,3.12
+15-2041.00,Statisticians,Judgment and Decision Making,3.38,3.88
+15-2041.00,Statisticians,Management of Personnel Resources,2.25,2.38
+15-2041.00,Statisticians,Mathematics,4.88,5.38
+15-2041.00,Statisticians,Monitoring,3.0,3.0
+15-2041.00,Statisticians,Operations Analysis,2.88,3.5
+15-2041.00,Statisticians,Persuasion,2.5,2.62
+15-2041.00,Statisticians,Programming,3.0,3.12
+15-2041.00,Statisticians,Reading Comprehension,4.0,4.88
+15-2041.00,Statisticians,Systems Analysis,3.0,3.12
+15-2041.00,Statisticians,Systems Evaluation,3.0,3.12
+15-2041.01,Biostatisticians,Active Learning,4.0,4.88
+15-2041.01,Biostatisticians,Complex Problem Solving,4.0,4.5
+15-2041.01,Biostatisticians,Critical Thinking,4.0,4.88
+15-2041.01,Biostatisticians,Instructing,3.12,4.0
+15-2041.01,Biostatisticians,Judgment and Decision Making,4.0,4.38
+15-2041.01,Biostatisticians,Management of Personnel Resources,2.75,3.12
+15-2041.01,Biostatisticians,Mathematics,4.62,5.12
+15-2041.01,Biostatisticians,Monitoring,3.0,3.62
+15-2041.01,Biostatisticians,Operations Analysis,3.0,3.38
+15-2041.01,Biostatisticians,Persuasion,2.75,2.88
+15-2041.01,Biostatisticians,Programming,3.38,4.0
+15-2041.01,Biostatisticians,Reading Comprehension,4.0,5.12
+15-2041.01,Biostatisticians,Systems Analysis,3.12,3.88
+15-2041.01,Biostatisticians,Systems Evaluation,3.12,3.75
+15-2051.00,Data Scientists,Active Learning,3.62,4.38
+15-2051.00,Data Scientists,Complex Problem Solving,3.75,4.12
+15-2051.00,Data Scientists,Critical Thinking,4.25,4.62
+15-2051.00,Data Scientists,Instructing,2.75,3.12
+15-2051.00,Data Scientists,Judgment and Decision Making,3.38,4.0
+15-2051.00,Data Scientists,Management of Personnel Resources,2.38,2.38
+15-2051.00,Data Scientists,Mathematics,4.38,5.0
+15-2051.00,Data Scientists,Monitoring,3.25,3.62
+15-2051.00,Data Scientists,Operations Analysis,1.5,0.75
+15-2051.00,Data Scientists,Persuasion,2.75,3.0
+15-2051.00,Data Scientists,Programming,3.75,3.88
+15-2051.00,Data Scientists,Reading Comprehension,3.88,4.62
+15-2051.00,Data Scientists,Systems Analysis,2.75,2.88
+15-2051.00,Data Scientists,Systems Evaluation,2.75,3.0
+15-2051.01,Business Intelligence Analysts,Active Learning,3.88,4.12
+15-2051.01,Business Intelligence Analysts,Complex Problem Solving,3.38,3.75
+15-2051.01,Business Intelligence Analysts,Critical Thinking,3.88,4.25
+15-2051.01,Business Intelligence Analysts,Instructing,3.0,3.0
+15-2051.01,Business Intelligence Analysts,Judgment and Decision Making,3.62,4.0
+15-2051.01,Business Intelligence Analysts,Management of Personnel Resources,2.12,2.0
+15-2051.01,Business Intelligence Analysts,Mathematics,3.5,3.88
+15-2051.01,Business Intelligence Analysts,Monitoring,3.12,3.25
+15-2051.01,Business Intelligence Analysts,Operations Analysis,1.88,1.62
+15-2051.01,Business Intelligence Analysts,Persuasion,2.88,3.0
+15-2051.01,Business Intelligence Analysts,Programming,2.5,2.5
+15-2051.01,Business Intelligence Analysts,Reading Comprehension,4.0,4.25
+15-2051.01,Business Intelligence Analysts,Systems Analysis,3.12,3.75
+15-2051.01,Business Intelligence Analysts,Systems Evaluation,3.12,3.75
+15-2051.02,Clinical Data Managers,Active Learning,3.62,4.0
+15-2051.02,Clinical Data Managers,Complex Problem Solving,3.5,3.62
+15-2051.02,Clinical Data Managers,Critical Thinking,4.0,4.25
+15-2051.02,Clinical Data Managers,Instructing,3.0,3.75
+15-2051.02,Clinical Data Managers,Judgment and Decision Making,3.25,3.62
+15-2051.02,Clinical Data Managers,Management of Personnel Resources,3.0,3.38
+15-2051.02,Clinical Data Managers,Mathematics,3.5,3.88
+15-2051.02,Clinical Data Managers,Monitoring,3.62,4.12
+15-2051.02,Clinical Data Managers,Operations Analysis,2.75,3.38
+15-2051.02,Clinical Data Managers,Persuasion,2.75,2.62
+15-2051.02,Clinical Data Managers,Programming,3.25,3.62
+15-2051.02,Clinical Data Managers,Reading Comprehension,3.88,4.25
+15-2051.02,Clinical Data Managers,Systems Analysis,3.25,3.38
+15-2051.02,Clinical Data Managers,Systems Evaluation,3.12,3.38
+15-2099.01,Bioinformatics Technicians,Active Learning,3.5,3.88
+15-2099.01,Bioinformatics Technicians,Complex Problem Solving,3.5,3.38
+15-2099.01,Bioinformatics Technicians,Critical Thinking,3.5,3.75
+15-2099.01,Bioinformatics Technicians,Instructing,2.88,3.25
+15-2099.01,Bioinformatics Technicians,Judgment and Decision Making,3.5,3.5
+15-2099.01,Bioinformatics Technicians,Management of Personnel Resources,2.62,2.38
+15-2099.01,Bioinformatics Technicians,Mathematics,3.38,3.88
+15-2099.01,Bioinformatics Technicians,Monitoring,3.25,3.5
+15-2099.01,Bioinformatics Technicians,Operations Analysis,2.12,2.12
+15-2099.01,Bioinformatics Technicians,Persuasion,2.75,2.88
+15-2099.01,Bioinformatics Technicians,Programming,3.12,3.0
+15-2099.01,Bioinformatics Technicians,Reading Comprehension,3.75,4.25
+15-2099.01,Bioinformatics Technicians,Systems Analysis,3.25,3.5
+15-2099.01,Bioinformatics Technicians,Systems Evaluation,3.0,3.5

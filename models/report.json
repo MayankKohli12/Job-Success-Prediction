@@ -1,0 +1,57 @@
+{
+  "salary": {
+    "n": 5104,
+    "results": {
+      "median_baseline_mae_lpa": 7.82851324828263,
+      "experience_only": {
+        "mae_lpa": 5.266047969185915,
+        "r2_log": 0.5502667305311078,
+        "within_30pct": 0.535819430814524,
+        "range80_coverage": 0.8086359175662414,
+        "range80_median_width_x": 3.334351978653028
+      },
+      "full_model": {
+        "mae_lpa": 4.992752842301062,
+        "r2_log": 0.5973537276792086,
+        "within_30pct": 0.5417075564278705,
+        "range80_coverage": 0.7870461236506379,
+        "range80_median_width_x": 2.8533824975843607
+      }
+    },
+    "exp_max_trained": 30.0,
+    "exp_min_trained": 20.0,
+    "locations": [
+      "bengaluru",
+      "hyderabad",
+      "pune",
+      "chennai",
+      "",
+      "mumbai (all areas)",
+      "gurgaon",
+      "noida",
+      "delhi ncr",
+      "mumbai",
+      "ahmedabad",
+      "kolkata",
+      "navi mumbai",
+      "bangalore rural",
+      "kochi"
+    ]
+  },
+  "success": {
+    "results": {
+      "n": 16297,
+      "majority_baseline_acc": 0.5134687365772841,
+      "country_exp_only": {
+        "auc": 0.5405603239100915,
+        "acc": 0.5291164815885033
+      },
+      "full_model": {
+        "auc": 0.7386582765188837,
+        "acc": 0.6725770259611421
+      }
+    },
+    "countries": 17,
+    "n_survey_rows": 20212
+  }
+}

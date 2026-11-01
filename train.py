@@ -1,13 +1,10 @@
-"""Train the salary-range model (Naukri postings) and the career-fit model (CareerMap).
+"""Train the India salary-range model (Naukri postings) and the global above-peer-pay model (Stack Overflow survey).
 Run: python train.py     (needs data/*.csv, produced by prepare_data.py and committed)"""
 import json, joblib, warnings
 from pathlib import Path
 import numpy as np, pandas as pd
 from sklearn.ensemble import HistGradientBoostingRegressor
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GroupShuffleSplit, cross_val_score, StratifiedKFold
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import GroupShuffleSplit, cross_val_score
 from salary_lib import build_vocab, featurize, mono_vector
 
 warnings.filterwarnings("ignore")
@@ -54,14 +51,36 @@ joblib.dump({"models": {q: fit(F, y, cols, q) for q in (0.1, 0.5, 0.9)}, "vocab"
 report["salary"] = {"n": len(a), "results": res, "exp_max_trained": float(a.exp_max.max()), "exp_min_trained": float(a.exp_min.max()),
                     "locations": vocab["locs"]}
 
-# ------------------------------------------------------------------ 2. career-fit model (synthetic dataset!)
-cm = pd.read_csv(D / "careermap.csv")
-skills = cm.columns[:17].tolist()
-pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=3000))
-cv = cross_val_score(pipe, cm[skills], cm.Role, cv=StratifiedKFold(5, shuffle=True, random_state=RS)).mean()
-pipe.fit(cm[skills], cm.Role)
-joblib.dump(pipe, OUT / "career_fit.joblib")
-report["career"] = {"n": len(cm), "cv_accuracy": float(cv), "skills": skills, "roles": sorted(cm.Role.unique().tolist())}
-print("career fit CV acc", round(cv, 4))
+# ------------------------------------------------------------------ 2. above-peer-pay model (Stack Overflow survey, global)
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.model_selection import StratifiedKFold
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OrdinalEncoder
+
+so = pd.read_csv(D / "so_success.csv.gz")
+SO_CAT = ["country", "education", "role", "org_size", "manager", "work_mode"]
+SO_TOOLS = [c for c in so.columns if c.startswith("tool_")]
+SO_NUM = ["exp"] + SO_TOOLS
+pay = so[so.high_pay.notna()].reset_index(drop=True)
+yp = pay.high_pay.astype(int)
+
+def so_pipe(cats, nums):
+    ct = ColumnTransformer([("c", OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=np.nan), cats), ("n", "passthrough", nums)])
+    return Pipeline([("ct", ct), ("m", HistGradientBoostingClassifier(max_depth=4, learning_rate=0.05, max_iter=200, min_samples_leaf=40,
+                                                                       l2_regularization=1.0, categorical_features=list(range(len(cats))), random_state=RS))])
+
+cv = StratifiedKFold(5, shuffle=True, random_state=RS)
+def cvs(cats, nums, scoring):
+    return float(cross_val_score(so_pipe(cats, nums), pay[cats + nums], yp, cv=cv, scoring=scoring).mean())
+so_res = {"n": len(pay), "majority_baseline_acc": float(max(yp.mean(), 1 - yp.mean())),
+          "country_exp_only": {"auc": cvs(["country"], ["exp"], "roc_auc"), "acc": cvs(["country"], ["exp"], "accuracy")},
+          "full_model": {"auc": cvs(SO_CAT, SO_NUM, "roc_auc"), "acc": cvs(SO_CAT, SO_NUM, "accuracy")}}
+print(json.dumps(so_res, indent=1))
+final = so_pipe(SO_CAT, SO_NUM).fit(pay[SO_CAT + SO_NUM], yp)
+cats = {c: sorted(pay[c].dropna().unique().tolist()) for c in SO_CAT}
+joblib.dump({"model": final, "cat": SO_CAT, "num": SO_NUM, "tools": SO_TOOLS, "categories": cats}, OUT / "so_pay.joblib", compress=3)
+report["success"] = {"results": so_res, "countries": int(so.country.nunique()), "n_survey_rows": int(len(so))}
+
 json.dump(report, open(OUT / "report.json", "w"), indent=2)
 print("saved")

@@ -1,46 +1,46 @@
 ,n
-data,1399
-processing,66
-languages,92
-natural language processing,768
 data science,1079
 science,254
+natural language processing,768
+processing,66
+languages,92
 deep learning,555
+data,1399
+go,30
 tensorflow,274
 sas,328
-go,30
-python,7595
-cuda,12
-github,1444
 scikit-learn,103
+mathematics,138
 data security,456
 neural networks,249
-mathematics,138
-pytorch,224
-pandas,142
+cuda,12
+python,7595
+github,1444
 eda tools,14
-tools,564
+pandas,142
 keras,26
-data scientist,92
+pytorch,224
+tools,564
 llm,108
-nltk,10
-numpy,120
-scipy,19
+data scientist,92
 azure,705
-version control,3337
-computer science,6623
-financial services,503
-construction equipment,17
-analytics,2361
-coding,9291
-machine learning,3810
+numpy,120
+nltk,10
+scipy,19
 automotive,327
-production,260
-data analysis,2859
+financial services,503
+version control,3337
+coding,9291
+analytics,2361
+computer science,6623
+machine learning,3810
+construction equipment,17
 sql,7210
-time management,455
-data analyst,330
 data analytics,773
+data analysis,2859
+production,260
+data analyst,330
+time management,455
 debugging,6837
 analytical skills,1256
 artificial intelligence,1254
@@ -50,107 +50,107 @@ analysis,379
 genai,45
 nlp,152
 tableau,392
-ml,155
 hive,590
 algorithms,949
+ml,155
+analytical,5572
+database design,1376
+automation,6375
 consulting,2643
 apache,1107
-analytical,5572
-automation,6375
-database design,1376
 ai,56
 statistical modeling,84
 optimization,89
 data mining,524
 machine,269
 aws,2941
-rest,2332
 postgresql,2369
-spring boot,2086
+rest,2332
 software development,3960
+spring boot,2086
 salesforce,838
-logistic regression,80
 predictive modeling,184
-ai algorithms,13
 time series,19
-huggingface,15
+ai algorithms,13
+logistic regression,80
 r,156
+huggingface,15
 usage,1210
 basic,472
 training,1133
 management,3406
-data management,1445
-hadoop,466
 advanced analytics,112
+data management,1445
 german,95
-git,6838
+hadoop,466
 data processing,1070
 computer vision,401
+git,6838
 pyspark,741
-docker,1181
-sqlite,718
-intelligence,120
 rabbitmq,78
-demand forecasting,26
-forecasting,256
-equity,218
+docker,1181
+intelligence,120
+sqlite,718
 health insurance,551
 sap,4810
+equity,218
+demand forecasting,26
+forecasting,256
 data integrity,268
 quantitative research,13
 ml algorithms,21
-image processing,224
 c++,5574
-content management,422
 monitoring,1918
+content management,422
 text mining,32
+image processing,224
 statistical analysis,103
-performance testing,850
 data collection,374
 model development,81
+performance testing,850
 data manipulation,115
 predictive analytics,41
-networking,2991
 data structures,3015
 information technology,2421
-oracle,3563
+networking,2991
 business process management,107
+oracle,3563
 operations research,98
 business analysis,1454
 business analyst,1196
+product management,1325
 shell scripting,1014
 cloud computing,1048
 linux,5511
-product management,1325
 application development,4584
-gen,56
 gen ai,71
+gen,56
+gcp cloud,47
 aiml,91
 bigquery,205
-gcp cloud,47
 pattern recognition,37
 data modeling,2170
 matplotlib,23
 power bi,962
-cloud,3341
 manager technology,2558
+cloud,3341
 engineering services,118
 research,731
 generative ai,77
-engineering,736
 prompt engineering,11
-customer analytics,27
+engineering,736
 marketing analytics,28
+customer analytics,27
 text analytics,11
 random forest,12
 machine learning algorithms,297
 econometrics,21
-conceptualization,183
 supply chain,717
 project delivery,310
+conceptualization,183
 matlab,275
-microsoft,1809
 workflow,1067
+microsoft,1809
 javascript,17920
 business intelligence,924
 statistics,423
@@ -158,25 +158,25 @@ market research,225
 calculus,12
 information retrieval,52
 transformers,37
-architecture,2795
-supervision,138
 healthcare,1866
+supervision,138
+architecture,2795
 pipeline,61
 data bricks,221
 modeling,234
 gcp,1976
 managed services,175
 prototype,474
-regression analysis,16
-investment banking,225
 project management,4103
 venture capital,35
+regression analysis,16
+investment banking,225
 private equity,36
 diversity and inclusion,516
 rag,26
 predictive,30
-governance,32
 data governance,364
+governance,32
 product owner,11
 project,199
 aws sagemaker,33
@@ -186,38 +186,38 @@ decision tree,12
 electronic trading,24
 career development,243
 moodle,51
-e-learning,176
 lotus,13
+e-learning,176
 azure synapse,80
 azure analytics,28
 process,170
+product engineering,526
 wellness,263
 hypothesis testing,57
-product engineering,526
-e-commerce,663
-open source,1818
-microsoft azure,1424
-qlikview,109
 deployment,1536
+microsoft azure,1424
+e-commerce,663
+qlikview,109
+open source,1818
 social media,944
 sql database,353
 uat,128
 mlops,67
 senior,1134
-dns,467
-healthcare domain,15
 bricks,57
+healthcare domain,15
+dns,467
 customer engagement,103
 bfsi,138
 regression,29
 telecommunication,142
-network services,23
 test design,70
 data privacy,129
+network services,23
 product analysis,49
 procurement,290
-agile,8578
 data quality,1171
+agile,8578
 operational risk,18
 market risk,14
 risk,20
@@ -229,97 +229,97 @@ generation,19
 scala,871
 framework,393
 building,72
-microsoft sql server database,13
 microsoft power bi,35
-pdf,1217
+microsoft sql server database,13
 mongodb,1424
-oracle sql,212
+pdf,1217
 mysql,8294
+oracle sql,212
 risk management,576
 ai/ml,22
 operations,1090
-react.js,1599
 node.js,720
+react.js,1599
 problem solving,295
 cnn,32
 data extraction,81
 data modelling,32
 rnn,14
 business case,18
-software design,1915
-scrum,2339
-time series analysis,28
 technical management,32
-client servicing,33
+scrum,2339
+software design,1915
+time series analysis,28
 trend analysis,22
+client servicing,33
 individual contributor,121
-tdd,659
 test driven development,467
-memory management,274
+tdd,659
 stored procedures,925
-distribution system,658
+memory management,274
 genetics,139
-information security,518
 cyber security,163
+distribution system,658
+information security,518
 aws glue,66
 fintech,26
 databricks,82
-b2b sales,11
 paas,266
+customer support,425
+relationship building,105
+b2b sales,11
 relationship management,137
 sales,649
-relationship building,105
-customer support,425
-confluence,135
 openshift,102
+confluence,135
 testing,1432
 packaging,473
-support services,67
 content development,38
-olap,140
+support services,67
 oltp,37
 performance tuning,2200
+olap,140
 interpersonal skills,961
 software architecture,159
 database,1377
-snowflake,342
 continuous integration,2054
-jira,1403
+snowflake,342
 agile project management,36
+jira,1403
 delivery management,28
-development,10746
 delivery,22
+development,10746
 presentation skills,447
 linear regression,44
 big data,676
 cloud technologies,132
-middleware,371
 firmware,317
 downstream,51
-apigee,37
-data engineering,1023
+middleware,371
 api,660
+data engineering,1023
+apigee,37
 software quality,348
+merchandising,38
 business solutions,497
 web analytics,111
-merchandising,38
 deep learning frameworks,17
-manager quality assurance,1662
 business process,605
+manager quality assurance,1662
 portfolio management,31
 business rules,161
-retail,180
-written communication,52
 communication skills,471
 transportation,28
+written communication,52
+retail,180
 simulation,446
-bpo,113
 budgeting,349
-process documentation,37
 analyst,178
+bpo,113
+process documentation,37
 dbms,961
-pharma,245
 pharmaceutical,25
+pharma,245
 telecom,461
 solution architecture,215
 spark,793
@@ -338,8 +338,8 @@ azure databricks,285
 java,5028
 rdbms,1355
 azure cloud services,20
-web development,3753
 orchestration,716
+web development,3753
 php,6120
 spotfire,17
 quality,248
@@ -348,39 +348,39 @@ system architecture,683
 writing,137
 stakeholder management,268
 leadership,324
-network analysis,11
 social networking,110
+network analysis,11
 business strategy,203
-medical devices,72
-devices,16
-web technologies,4861
-it services,878
 application software,405
+web technologies,4861
+devices,16
+medical devices,72
+it services,878
 langchain,17
 claims,124
 life sciences,203
 vision,25
 computer,133
 assurance,212
-statistical programming,30
 program,554
+statistical programming,30
 continuous improvement,926
 mining,142
 troubleshooting,5381
-computer hardware,27
 ms office,257
+computer hardware,27
 costing,117
 business analytics,223
-elixir,24
 intranet,40
+elixir,24
 analytical skill,39
-resource allocation,83
 project planning,393
+resource allocation,83
 financial products,36
 erp,1487
-spss,49
-perl,692
 unix,1790
+perl,692
+spss,49
 telematics,46
 digital marketing,445
 c#,3155
@@ -416,17 +416,17 @@ loans,159
 finance,485
 excel,501
 microbiology,14
+user acceptance testing,167
 clinical trials,33
 nursing,16
 reconciliation,125
-user acceptance testing,167
+soa,885
 jsp,817
 hibernate,2600
 jdbc,531
-soa,885
 react,234
-teradata,102
 windows,1841
+teradata,102
 mobile applications,873
 agile methodology,985
 front end,7555
@@ -439,91 +439,91 @@ process control,78
 vb,237
 semiconductor,133
 fabrication,69
-clinical research,30
 infrastructure,715
+clinical research,30
 vendor,134
-head business development,215
 crm,583
+head business development,215
 warehouse,163
 data warehousing,859
-hr,521
 hrsd,206
+hr,521
 algorithm development,93
 test cases,1424
 report writing,36
 administration,548
-banking,285
-banking products,11
 sas sql,11
+banking products,11
+banking,285
 wifi,87
 production planning,88
 base sas,10
 business objects,100
 spanish,35
 software testing,2353
-quality testing,25
 high performance computing,28
-inside sales,22
+quality testing,25
 telesales,21
+inside sales,22
 sms,319
 software implementation,79
 technology solutions,196
 r programming,12
 collections,39
 functional safety,11
-french,212
-object oriented programming,571
 manager quality control,194
+object oriented programming,571
+french,212
 stock exchange,22
 ms word,33
 medical insurance,270
 performance management,268
-http,1021
 information management,80
+http,1021
 graphics,617
-process automation,271
 manufacturing process,32
-operational excellence,247
+process automation,271
 renewable energy,54
-business applications,83
-solution architect,51
+operational excellence,247
 development testing,236
+solution architect,51
+business applications,83
 enterprise applications,453
-vendor management,81
+access controls,13
+asset management,244
 help desk,13
+information,12
+vendor management,81
 telephony support,13
 customer relationship,81
-information,12
-asset management,244
-access controls,13
 ms sql,1477
 sage,23
-cassandra,235
-big data analytics,52
 script writing,29
+big data analytics,52
+cassandra,235
 recruitment,256
 order management,213
-workday,199
 workday functional,105
+workday,199
 staffing,206
 technical writing,181
 preventive maintenance,18
-risk assessment,132
 siem,48
+risk assessment,132
 event management,66
 process improvement,431
 team building,86
 focus,412
-change management,647
 mis,254
+change management,647
 team management,719
 backend,5914
 autocad,257
 service excellence,41
 powertrain,37
 sensors,176
-principal,81
 marketing operations,31
+principal,81
 customer retention,34
 process optimization,55
 agile scrum,414
@@ -536,12 +536,12 @@ c2h,37
 sagemaker,14
 powerbi,25
 algorithm,19
-informatica,583
 reporting tools,74
-design,1351
+informatica,583
 integration php,412
-c,3412
+design,1351
 technical product configuration,393
+c,3412
 industry research,29
 market data,54
 relational databases,92
@@ -567,13 +567,13 @@ parking,34
 technology leadership,21
 computer languages,18
 clustering,16
-wealth management,120
 fixed income,83
+wealth management,120
 full stack,530
 stack,319
 simulink,124
-advocate,51
 translation,222
+advocate,51
 it operations,129
 actuarial,18
 operations manager,17
@@ -585,13 +585,13 @@ sales operations,38
 ai techniques,18
 manual,100
 publishing,447
-togaf,25
 data migration,779
+togaf,25
 revenue generation,15
 etl,525
 relationship,140
-3d,198
 supervisor,44
+3d,198
 oops,886
 consumer goods,20
 policies,16
@@ -615,11 +615,11 @@ signal processing,38
 system administrator,15
 powerpoint,101
 hardware,274
-hospitality,88
 advanced excel,72
-integration testing,612
-senior management,61
+hospitality,88
 pricing strategy,13
+senior management,61
+integration testing,612
 industrial engineering,11
 rf,150
 system integration,413
@@ -628,10 +628,10 @@ medical imaging,11
 technology,439
 sds,11
 nutrition,21
-microstrategy,73
-unit testing,3163
 ssrs,427
+unit testing,3163
 ssis,438
+microstrategy,73
 evaluation,19
 talent acquisition,225
 system development,55
@@ -639,32 +639,32 @@ data services,237
 manager internal audit,26
 compliance,477
 professional,534
-photoshop,670
-ticketing,122
 internet marketing,87
+ticketing,122
+photoshop,670
 skills,47
 solid,132
-corporate finance,36
 business administration,126
+corporate finance,36
 financial planning,115
 instrumentation,227
-it training,13
 side,585
+it training,13
 revenue,12
-cosmos,108
 infrastructure services,40
 plsql,929
+cosmos,108
 logistics,85
 underwriting,62
 network operations,21
 infrastructure management,295
-ios,1652
 routing,75
+ios,1652
 html5,1389
 digital transformation,94
 fmcg,46
-qa,315
 siemens,96
+qa,315
 technical training,52
 subject matter expert,108
 integration services,27
@@ -672,13 +672,13 @@ reporting services,20
 biometrics,13
 gis,174
 ict,35
-aws cloud,201
 data transformation,42
-data pipeline,119
+aws cloud,201
 ai solutions,14
+data pipeline,119
 cvs,210
-apache spark,17
 big data technologies,63
+apache spark,17
 architectural design,433
 product service,32
 quicksight,16
@@ -687,8 +687,8 @@ insurance,67
 intellectual property,71
 data validation,282
 user support,51
-serverless,17
 architecting,118
+serverless,17
 people management,60
 campaign management,36
 azure machine learning,17
@@ -697,14 +697,14 @@ angular,1033
 management skills,241
 business research,25
 presales,297
-eda,17
 cloud deployment,20
+eda,17
 quality systems,63
 sdlc,1094
 market intelligence,50
 mutual funds,21
-biotechnology,25
 qc,25
+biotechnology,25
 analysis tools,11
 linguistics,24
 selection process,67
@@ -715,9 +715,9 @@ engineering design,126
 full stack developer,61
 economics,25
 iam,56
-amazon rds,29
 amazon cloudwatch,15
 aws lambda,92
+amazon rds,29
 google cloud,32
 employee engagement,62
 enterprise architecture,142
@@ -730,8 +730,8 @@ chemical engineering,20
 design patterns,436
 cognos,73
 sap bi,54
-apache flink,18
 redis,139
+apache flink,18
 financial analysis,135
 kafka,430
 sr,394
@@ -743,13 +743,13 @@ customer acquisition,42
 due diligence,93
 ruby,563
 global strategy,14
+strategic partnerships,23
 competitive analysis,51
 product marketing,32
-strategic partnerships,23
 saas,277
 director,34
-outbound,122
 process design,169
+outbound,122
 video conferencing,53
 cost,251
 legal,196
@@ -770,17 +770,17 @@ smb,15
 report generation,59
 sql scripting,64
 asr,11
-web application development,421
 dms,70
-dashboards,55
+web application development,421
 charts,22
+dashboards,55
 graph,14
 corporate security,16
 thermal,53
 financial inclusion,41
 service engineering,22
-supply chain management,156
 business planning,50
+supply chain management,156
 design development,683
 mentoring,58
 data structures and algorithms,43
@@ -791,8 +791,8 @@ telco,12
 selenium,1155
 metadata,347
 system programming,114
-us healthcare,56
 radiology,14
+us healthcare,56
 maya,39
 security management,43
 python developer,45
@@ -808,8 +808,8 @@ aws s3,12
 solar energy,14
 development manager,186
 application,1329
-ab initio,76
 unix shell scripting,92
+ab initio,76
 assistant vice president,29
 mobile marketing,12
 android sdk,732
@@ -817,9 +817,9 @@ cloud security,179
 pytest,30
 application programming,456
 frameworks,30
-prototyping,54
 test,18
 level,263
+prototyping,54
 alteryx,15
 monitoring tools,155
 ui development,995
@@ -829,31 +829,31 @@ system,185
 word,15
 ieee,11
 emr,57
-ci/cd,951
 eks,62
+ci/cd,951
 diagnostics,158
 mechanical,102
-android application development,662
-developer,701
 android,2423
+developer,701
+android application development,662
 corporate governance,42
 iss,22
-sharepoint,253
 professional services,73
+sharepoint,253
 talend,64
-design principles,116
 security compliance,116
+design principles,116
 environmental science,11
 jrss,44
-rest api,165
 fast api,23
+rest api,165
 microservices,1638
-mis reporting,34
 reporting,86
 pivot table,19
+mis reporting,34
 configuration,348
-master data management,75
 root cause analysis,285
+master data management,75
 japanese,63
 api gateway,66
 sql coding,15
@@ -862,15 +862,15 @@ engineering projects,44
 balance sheet,31
 development management,49
 market analysis,48
-software development life cycle,1992
 project development,269
+software development life cycle,1992
 project coordinator,31
 senior analyst,146
 outsourcing,122
 business transformation,138
-sql azure,123
 azure functions,51
 azure data factory,354
+sql azure,123
 data engineer,136
 data warehouse,20
 stock market,24
@@ -881,22 +881,22 @@ business process improvement,18
 incident management,393
 leadership development,56
 plm,185
-patient care,25
 technology management,234
-human capital,51
+patient care,25
 sales process,43
 service delivery,46
+human capital,51
 management systems,175
-business modeling,38
 data profiling,22
+business modeling,38
 quality standards,241
 sap hana,766
 adb,18
-hlookup,14
 dashboard development,10
-apache pig,29
-sqoop,37
+hlookup,14
 cloudera,82
+sqoop,37
+apache pig,29
 db2,326
 control-m,49
 access,23
@@ -908,8 +908,8 @@ documentation,329
 capital market,46
 oil,32
 remediation,133
-front office,62
 bloomberg,43
+front office,62
 data reporting,20
 ecs,73
 pentaho,22
@@ -918,39 +918,39 @@ beam,19
 gts,43
 handling,32
 claims processing,15
-slas,23
 transition,97
+slas,23
 records management,11
 english,108
 operations analyst,11
-litigation,14
 business development executive,48
+litigation,14
 client interaction,76
-editor,18
 adobe acrobat,20
 adobe,452
+editor,18
 data mapping,101
 mapping,31
 master data,43
-leasing,27
+taxation,88
 matrix,44
 cre,34
-taxation,88
-hp data protector,439
+leasing,27
 visio,118
+hp data protector,439
 intern,122
 nosql databases,43
 program management,83
+database development,33
 etl tool,46
 ms sql serve,10
-database development,33
 migration,62
-css,7601
 frontend development,492
+css,7601
 product quality,330
 sql development,165
-oracle data integrator,26
 sql server integration services,31
+oracle data integrator,26
 stakeholder engagement,24
 data dictionary,233
 etl process,75
@@ -962,11 +962,11 @@ azure app service,16
 project documentation,96
 functional testing,366
 azure data warehouse,20
-business process modeling,68
-rpa,195
 bpmn,24
-amazon redshift,104
+rpa,195
+business process modeling,68
 scripting languages,98
+amazon redshift,104
 software engineering,2032
 airflow,179
 cmmi,113
@@ -979,17 +979,17 @@ labview,57
 rest api development,76
 application support,344
 continuous delivery,29
-devsecops,49
 cloud development,31
+devsecops,49
 business development,326
 financial statements,41
 good communication,31
 vlookup,35
-datafactory,43
 azure devops,340
+datafactory,43
 cd,259
-fivetran,11
 dbt,39
+fivetran,11
 lambda expressions,42
 project execution,25
 m&a,10
@@ -999,13 +999,13 @@ web scraping,15
 informatica powercenter,62
 splunk,237
 workflow analysis,38
-catalog,23
 dataproc,34
+catalog,23
 configuration management,1174
 database creation,156
 database management system,49
-system software,138
 data munging,217
+system software,138
 requirement analysis,66
 adf,42
 inventory management,53
@@ -1018,9 +1018,9 @@ lims,11
 enterprise,38
 ms access,75
 ehs,21
-security audit,21
 security,97
 vulnerability,113
+security audit,21
 sas macros,12
 base,13
 international clients,43
@@ -1029,24 +1029,24 @@ pmp,366
 data lake,94
 distributed computing,34
 cds,26
-ec2,29
 s3,79
-technical,1335
+ec2,29
 quality management,58
+technical,1335
 azure data,11
 redshift,14
 athena,20
-catia,99
 estimation,11
 coordination,20
-resource management,114
+catia,99
 yarn,36
+resource management,114
 service level,83
 oracle adf,43
-gke,10
 maven,1131
-apache airflow,16
+gke,10
 jenkins,779
+apache airflow,16
 operational support,118
 ftp,112
 xslt,279
@@ -1054,20 +1054,20 @@ data integration,161
 powercenter,12
 pubsub,27
 microsoft asp.net,22
-svn,197
 .net,2277
+svn,197
 scala programming,16
 data architecture principles,13
-streaming,17
 mapreduce,12
+streaming,17
 python data,11
 ssi,85
 etl development,41
 sql programming,29
 celonis,11
-ssas,51
-azure infrastructure,18
 sql dw,11
+azure infrastructure,18
+ssas,51
 ce,14
 multithreading,761
 filenet,33
@@ -1082,21 +1082,21 @@ redhat linux,81
 aws redshift,10
 skill development,53
 software development methodologies,330
-data conversion,87
 core banking,27
-struts,341
+data conversion,87
 cobol,193
-database security,50
+struts,341
 database maintenance,35
+database security,50
 synthesis,17
-regression testing,327
-database testing,39
 manual testing,528
 selenium webdriver,34
+database testing,39
 automation testing,1048
+regression testing,327
+it architecture,14
 ites,64
 rfp,49
-it architecture,14
 commercial banking,10
 sas programming,21
 active directory,279
@@ -1105,13 +1105,13 @@ google,138
 performance optimization,346
 hiring,272
 cgi,81
-creative writing,16
-content creation,10
-blog writing,10
-content editing,23
 creative,17
-editing,30
 content writing,68
+blog writing,10
+creative writing,16
+content editing,23
+content creation,10
+editing,30
 big query,24
 sap ecc,108
 sap bw,126
@@ -1120,8 +1120,8 @@ devops tools,63
 java fullstack,98
 release management,304
 digital strategy,15
-data flow,42
 cloud storage,76
+data flow,42
 virtualization,265
 ibm cloud,30
 cataloguing,12
@@ -1130,9 +1130,9 @@ oracle procedural language,19
 platform architecture,37
 incharge,37
 hdfs,42
-jmeter,38
 verification,15
 etl testing,38
+jmeter,38
 postman,43
 technical analysis,104
 oracle database,143
@@ -1155,8 +1155,8 @@ dml,32
 cloud sql,29
 cloud orchestration,13
 unix linux,10
-fastapi,31
 ci cd pipeline,70
+fastapi,31
 t-sql,133
 collaboration,17
 interviewing,57
@@ -1172,17 +1172,17 @@ business consulting,63
 solution architecting,12
 software quality assurance,129
 technical design,273
-device drivers,75
 design engineering,88
+device drivers,75
 recovery,70
 project life cycle,51
 sap erp,114
 embedded systems,275
 wireless,207
-mdm,63
 erwin,17
-abap,742
+mdm,63
 sap hcm,98
+abap,742
 analytics services,27
 microsoft - robotic process automation,36
 power platform,84
@@ -1205,10 +1205,10 @@ advance sql,14
 engineering manager,58
 information architecture,18
 high level design,66
-test reporting,21
 test scripts,503
-issue resolution,126
 automation tools,218
+test reporting,21
+issue resolution,126
 marketing,296
 access control,63
 regulatory reporting,16
@@ -1223,11 +1223,11 @@ human resource management,24
 data vault,19
 j2ee,1121
 application architecture,212
-linux system,14
 golang,389
+linux system,14
+sap ariba,27
 sap mdg,58
 kinaxis,18
-sap ariba,27
 cloud applications,90
 agile principles,17
 conflict resolution,37
@@ -1242,10 +1242,10 @@ access management,229
 hvac,27
 redhat,145
 impala,13
-successfactors,50
 onboarding,16
-employee central,24
+successfactors,50
 sap successfactors recruiting,10
+employee central,24
 electronic data interchange,11
 business requirement analysis,151
 integration,280
@@ -1261,8 +1261,8 @@ design analysis,10
 control system,183
 senior data analyst,11
 cost optimization,24
-kpi,25
 source,50
+kpi,25
 pricing analysis,10
 ssa,19
 contracts,62
@@ -1291,9 +1291,9 @@ embedded c,282
 openwrt,20
 terraform,469
 analog,122
-lambda,29
-rds,36
 dynamodb,26
+rds,36
+lambda,29
 transformation,18
 resource utilization,26
 design review,79
@@ -1307,8 +1307,8 @@ lead software,153
 agile development methodology,17
 visualforce,406
 rca,99
-ci/cd pipelines,24
 asp.net core,115
+ci/cd pipelines,24
 entity framework,783
 bash scripting,57
 windows os,62
@@ -1318,25 +1318,25 @@ core,552
 etl pipelines,34
 german language,11
 production engineering,25
-delmia,11
 manufacturing engineering,15
+delmia,11
 marketing campaigns,79
-cloud migration,46
 sourcing,26
+cloud migration,46
 representative,10
 autodesk,51
-link building,78
 seo,808
+link building,78
 e commerce,19
-material science,13
 materials,31
+material science,13
 manufacturing,29
 content,42
 interaction design,96
 counselling,22
 chemical,35
-ptp,18
 process modeling,17
+ptp,18
 dimensional modeling,15
 flow,21
 business requirements,29
@@ -1346,8 +1346,8 @@ linux system administration,34
 electricals,90
 azure services,13
 al,40
-project estimation,20
 primavera,13
+project estimation,20
 project engineering,18
 graphql,103
 engineering lead,20
@@ -1359,12 +1359,12 @@ snowflake db,10
 oozie,21
 dts,17
 serv,134
-reliability,34
-equipment,21
 asset,14
-interfaces,215
-oracle apps technical,64
+equipment,21
+reliability,34
 augmented reality,55
+oracle apps technical,64
+interfaces,215
 gl,20
 pan,72
 solution integration,12
@@ -1397,11 +1397,11 @@ google cloud platforms,20
 lambdas,11
 accessories,34
 nbfc,11
-life cycle,113
 product life cycle,99
+life cycle,113
 sap sd,329
-technical architecture,152
 cloud architecture,85
+technical architecture,152
 redshift aws,16
 maintenance,39
 lamda,22
@@ -1423,8 +1423,8 @@ training and development,67
 sales engineering,16
 driving,17
 web crawling,10
-google sheets,11
 zoho crm,12
+google sheets,11
 java j2ee developer,257
 service assurance,11
 rbac,13
@@ -1435,8 +1435,8 @@ digital,83
 variance analysis,19
 process integration,21
 reports,16
-be,125
 good communication skills,30
+be,125
 back office,140
 it skills,31
 automobile,21
@@ -1446,8 +1446,8 @@ quality check,27
 financial reporting,100
 business reporting,13
 post production,42
-email,111
 problem,21
+email,111
 saml,74
 kaizen,22
 process orientation,11
@@ -1462,10 +1462,10 @@ drs,26
 vmware vsphere,14
 rtos,403
 azure sql,13
-team handling,58
 team,85
-web designing,601
+team handling,58
 search engine optimization,71
+web designing,601
 module lead,15
 advanced java,46
 investment,31
@@ -1499,18 +1499,18 @@ hr generalist activities,19
 resource,20
 account management,106
 public relations,24
-lead generation,69
-hubspot,13
 salesforce crm,55
+hubspot,13
+lead generation,69
 excellent verbal and written communication skills,12
 signalling,13
 data factory,11
-microservices architecture,37
 grafana,86
+microservices architecture,37
 kibana,30
 etl developer,11
-.net core,425
 restful api,114
+.net core,425
 erp system,28
 apache nifi,12
 executive,120
@@ -1518,8 +1518,8 @@ hr executive,92
 oops programming,18
 quality improvement,27
 bigtable,11
-process monitoring,13
 ansi,18
+process monitoring,13
 troubleshooting skills,12
 it management,18
 database architecture,39
@@ -1542,8 +1542,8 @@ positioning,24
 plsql development,39
 stress testing,25
 desktop,32
-ms project,29
 infrastructure design,21
+ms project,29
 techno functional,97
 isms,43
 room,28
@@ -1553,8 +1553,8 @@ gi,21
 cook,40
 defect tracking,74
 software services,150
-ppc,123
 linux kernel,174
+ppc,123
 equity research,11
 manager,17
 sdlc life cycle,23
@@ -1600,10 +1600,10 @@ aws devops,109
 snowflake sql,10
 exp,16
 s,36
-db,66
 sqa,45
-article writing,12
+db,66
 client solutions,14
+article writing,12
 banking operations,12
 contract management,45
 technical recruitment,22
@@ -1611,8 +1611,8 @@ it recruitment,46
 clinical development,10
 project implementation,70
 strategy consulting,14
-power automate,45
 hris,36
+power automate,45
 arcgis,39
 power query,17
 webmethods,37
@@ -1621,19 +1621,19 @@ trade,66
 ticketing tools,11
 quality tools,10
 author,23
-business finance,15
 financial planning and analysis,15
+business finance,15
 wordpress,2995
 internet research,10
-information system,23
 legal compliance,31
+information system,23
 compliance management,15
 asp . net,21
 as400,70
 reinsurance,16
 strong analytical skills,29
-cv,31
 msc,18
+cv,31
 asap,34
 technical expert,26
 client handling,40
@@ -1646,13 +1646,13 @@ hcm,158
 pharmacovigilance,10
 media,49
 soap,208
-drilling,34
 inventory,30
-pay,40
+drilling,34
 sponsorship,38
+pay,40
 dom,558
-use cases,34
 methods,33
+use cases,34
 engineering leadership,16
 software product development,83
 rfq,21
@@ -1660,8 +1660,8 @@ usability testing,21
 azure paas,18
 release engineering,12
 problem-solving,10
-backend development,236
 container networking,13
+backend development,236
 sql server reporting services,20
 it consulting,63
 ams,11
@@ -1703,10 +1703,10 @@ installation,41
 offshore,30
 restful,31
 archiving,42
-gis software,15
 cartography,11
-oracle e-business suite,46
+gis software,15
 oracle fusion,68
+oracle e-business suite,46
 cash,10
 production management,22
 hana database,60
@@ -1719,8 +1719,8 @@ application design,519
 pipeline management,14
 consultancy,49
 application engineering,57
-scada,41
 communication protocols,192
+scada,41
 bsc,20
 stores,34
 ms office tools,22
@@ -1731,8 +1731,8 @@ anti money laundering,17
 iis,328
 it support,41
 global operations,26
-siebel,56
 baan,18
+siebel,56
 server administration,17
 security systems,12
 internal audit,13
@@ -1770,8 +1770,8 @@ junior staff,25
 dot,466
 dec,29
 test scenarios,171
-devops engineer,31
 technical skills,25
+devops engineer,31
 development life cycle,59
 practice management,10
 fact,19
@@ -1781,8 +1781,8 @@ work management,10
 remote support,13
 chemistry,19
 sub,43
-ctrm,23
 erp implementation,69
+ctrm,23
 strategic sourcing,11
 cold calling,69
 inspection,40
@@ -1790,15 +1790,15 @@ hplc,11
 review,10
 customer complaints,12
 contract staffing,11
-debugging skills,15
 solr,15
+debugging skills,15
 teaching,76
 research associate,10
 mfc,68
 social media analytics,27
 cloud architect,19
-network engineering,40
 switching,47
+network engineering,40
 apex,445
 sales force development,223
 quotation,11
@@ -1806,27 +1806,27 @@ mendix,19
 biochemistry,15
 technical services,13
 user stories,96
-openlink endur,35
-etrm,19
 functional analysis,19
+etrm,19
+openlink endur,35
 emission,32
-assessment,13
 sip,75
+assessment,13
 software packages,21
 fresher,27
 general accounting,15
 vfx,10
-project coordination,33
 software project management,12
-dynamic,54
-fluid dynamics,14
+project coordination,33
 ansys,41
-searching,37
+fluid dynamics,14
+dynamic,54
 proof reading,30
+searching,37
 java script,48
+it development,11
 innovation,16
 product strategy,29
-it development,11
 technical architect,70
 client relationship management,19
 infotainment,38
@@ -1839,18 +1839,18 @@ map,16
 project support,19
 identity access management,37
 sso,12
-us gaap,17
 revenue recognition,20
+us gaap,17
 odata,135
 microsoft dynamics ax,56
 pos,11
 trello,51
 business process analysis,41
-trading,22
 ms azure,20
+trading,22
 guidewire,57
-hyperion financial management,11
 process analysis,38
+hyperion financial management,11
 frd,55
 brd,78
 financial accounting,130
@@ -1861,19 +1861,19 @@ system maintenance,35
 product implementation,15
 product roadmap,17
 financial modelling,19
+bootstrap,1498
 vb.net,325
 asp.net,1533
-bootstrap,1498
 international,11
 financial analyst,15
 technical analyst,10
-user acceptance,15
 gui testing,22
+user acceptance,15
 test management,139
 civil,55
 product testing,15
-business process mapping,18
 business system,16
+business process mapping,18
 microsoft applications,29
 interpersonal skill,35
 negotiation,25
@@ -1885,10 +1885,10 @@ wireframing,52
 benefits,19
 client satisfaction,44
 revenue cycle management,16
-google adwords,54
 branding,19
-open,56
+google adwords,54
 tracking,74
+open,56
 wireframe,18
 ms visio,15
 case,34
@@ -1905,31 +1905,31 @@ fullstack development,233
 job portals,19
 ajax,1597
 software associate,68
-user experience design,41
 life insurance,32
-controllership,10
+user experience design,41
 blackline,11
-retail banking,15
+controllership,10
 ms dynamics crm,172
+retail banking,15
 talent development,12
-talent management,56
 training management,33
-technology integration,13
+talent management,56
 requirements management,10
+technology integration,13
 fico,218
 sap plant maintenance,67
 sap s hana,390
-salesforce platform,66
 salesforce administration,12
+salesforce platform,66
+lean,10
 kanban,42
 six sigma,327
-lean,10
-apo,12
 demand planning,39
+apo,12
 technical hiring,10
-swift,532
-payments,44
 payment systems,21
+payments,44
+swift,532
 sap abap development,611
 messaging,16
 endpoint security,22
@@ -1937,8 +1937,8 @@ network administration,31
 management reporting,12
 standard operating procedures,64
 management accounting,40
-sales executive,23
 salesforce.com,108
+sales executive,23
 okta,10
 o2c,25
 communication,11
@@ -1955,8 +1955,8 @@ b2b,79
 dreamweaver,172
 adobe after effects,10
 large,12
-finacle,22
 accounts payable,110
+finacle,22
 asp.net core mvc,48
 campaigns,20
 marketing cloud,19
@@ -1966,8 +1966,8 @@ project leadership,15
 chip design,40
 software engineer iii,40
 jpa,250
-software configuration,44
 software configuration management,106
+software configuration,44
 ms sql server administration,19
 antivirus,17
 ado.net,386
@@ -1993,8 +1993,8 @@ order to cash,12
 robotic process automation,33
 sap warehouse management,65
 tcae,11
-sap co management,27
 sap fi,228
+sap co management,27
 avaloq,11
 business continuity,20
 ansi x2,16
@@ -2004,8 +2004,8 @@ nessus,13
 code review,143
 clinical,10
 sql server development,37
-software support executive,12
 software sales,24
+software support executive,12
 financial sector,12
 as,15
 test strategy,99
@@ -2026,14 +2026,14 @@ duck creek,19
 business central,14
 microsoft dynamics crm technical,88
 ariba,24
-oracle financials,48
-ledger,13
 general ledger,23
-illustration,11
+ledger,13
+oracle financials,48
 client engagement,18
+illustration,11
 engagement,15
-it business analyst,11
 email marketing,101
+it business analyst,11
 test case creation,12
 epc,32
 project finance,11
@@ -2053,9 +2053,9 @@ user research,49
 assistance,28
 agile methodologies,22
 web applications,51
+mechanical design,19
 dfx,21
 quality control,45
-mechanical design,19
 dft,31
 soft skills,19
 html;javascript,333
@@ -2066,14 +2066,14 @@ commercial vehicle,10
 gmp,14
 infrastructure support,20
 application lifecycle management,15
-l2,37
 l1,14
+l2,37
 rest api design,36
 vue.js,228
 succession planning,11
 implementation,60
-encryption,13
 mvp,44
+encryption,13
 object,50
 fpa,17
 adobe xd,30
@@ -2082,9 +2082,9 @@ multitasking,24
 mechatronics,55
 typesetting,12
 security testing,92
+arc map,12
 qgis,11
 google earth,10
-arc map,12
 srs,13
 hrms,23
 techno,10
@@ -2101,8 +2101,8 @@ ppm,15
 cloud operations,12
 express,94
 value engineering,12
-nodejs,62
 reactjs,92
+nodejs,62
 azure cloud platform,11
 anaplan,15
 tool design,81
@@ -2129,8 +2129,8 @@ container,149
 hadoop administration,11
 end,643
 aws cloud microservices,18
-udp,19
 broadcasting,17
+udp,19
 online marketing,70
 xsd,29
 container orchestration,34
@@ -2144,9 +2144,9 @@ rhel,45
 sabre,11
 prometheus,73
 travis,10
-rpa automation,19
 blue prism,44
 rpa development,58
+rpa automation,19
 bi development,11
 customer interaction,19
 graph databases,11
@@ -2163,8 +2163,8 @@ infrastructure security,11
 sailpoint,63
 azure active directory,14
 oracle cloud,100
-oracle apps,61
 emerging technologies,80
+oracle apps,61
 saas applications,13
 nestjs,20
 typescript,484
@@ -2173,8 +2173,8 @@ log analysis,27
 marketing automation,16
 sap implementation,126
 sre,61
-ror,25
 rails,42
+ror,25
 ruby rails,57
 django framework,26
 weblogic,248
@@ -2189,8 +2189,8 @@ security operations,52
 product portfolio,21
 salesforce marketing cloud,32
 sap application,33
-spring mvc,244
 redux,493
+spring mvc,244
 code versioning tools,43
 software development engineer ii,63
 java support,12
@@ -2199,8 +2199,8 @@ configuring,51
 end to end recruitment,11
 project manager,23
 content strategy,23
-ivr,44
 cti,17
+ivr,44
 gsm,90
 agile framework,16
 hardware design,104
@@ -2210,9 +2210,9 @@ api testing,163
 ticketing management,22
 rtr,12
 nexus,90
-channel sales,22
 corporate sales,15
 retail sales,23
+channel sales,22
 waste management,10
 training delivery,17
 iaas,18
@@ -2236,11 +2236,11 @@ sprint planning,11
 finite element analysis,10
 peoplesoft hcm,12
 order processing,14
-timing closure,23
-rtl design,13
-static timing analysis,13
-sta,18
 physical design,18
+static timing analysis,13
+timing closure,23
+sta,18
+rtl design,13
 socket programming,145
 dm,10
 improvement,11
@@ -2249,8 +2249,8 @@ jd edwards,18
 rpg,54
 iseries,17
 client server applications,21
-loop,16
 industrial automation,47
+loop,16
 hardware support,11
 technical staff,30
 risk analysis,18
@@ -2281,9 +2281,9 @@ smoke testing,12
 object-oriented programming,14
 asp.net web api,25
 injection moulding,10
-sales cloud,21
-cpq,73
 sfdc development,16
+cpq,73
+sales cloud,21
 crud,22
 alm,21
 research analysis,11
@@ -2305,17 +2305,17 @@ light weight architecture,36
 java coding,15
 jwt,26
 activemq,52
-vue,11
 scss,11
 sass,34
+vue,11
 abinitio,11
 initio,13
 pyspark developer,15
 audio visual,10
 forex,14
 lld,11
-test automation,20
 automation engineering,62
+test automation,20
 mqtt,28
 enterprise business,11
 quality assurance engineering,22
@@ -2334,8 +2334,8 @@ rss,13
 veeva,19
 oracle bi,18
 web api,289
-nextjs,110
 material ui,27
+nextjs,110
 3ds max,15
 3d modeling,53
 rest api services,27
@@ -2364,8 +2364,8 @@ networking products,11
 boot,426
 essbase,12
 embedded programming,15
-code,882
 developing,718
+code,882
 sap fiori,328
 power apps,18
 selenium ide,10
@@ -2379,47 +2379,47 @@ mobile phones,92
 concept design,88
 qms,30
 firewall,47
-cs,424
 front,369
+cs,424
 uft,19
-usb,235
 xilinx,16
+usb,235
 vhdl,83
 verilog,92
 adaptability,13
 javascript frameworks,44
-employee relations,16
 application packaging,43
+employee relations,16
 intune,19
 ui technologies,15
-node js,70
 api design,12
+node js,70
 technology lead,13
 lead architect,16
 aws administration,21
 database administrator,13
 debt,47
 payment gateways,102
-application management,28
 app support,12
+application management,28
 shopify,93
 ccna,56
 penetration testing,17
 sap sales and distribution,32
 blockchain,45
-voip,94
 telephony,14
+voip,94
 project analysis,11
 csr,12
 networking protocols,131
-service cloud,43
 salesforce sales cloud,62
+service cloud,43
 fea,12
 hard working,12
 computer application,31
 manager client servicing,18
-website,247
 assembly language,569
+website,247
 commodities,18
 web,530
 system support,13
@@ -2437,8 +2437,8 @@ web content management,20
 counsellor,15
 pop,18
 real time operating systems,305
-team player,25
 strong,10
+team player,25
 esic,16
 office administration,10
 appliances,14
@@ -2446,8 +2446,8 @@ brand awareness,21
 digital content,20
 mercurial,63
 drupal,769
-organizational development,15
 hr policies,11
+organizational development,15
 service industry,23
 project tracking,10
 service marketing,20
@@ -2462,8 +2462,8 @@ basis,44
 solutions,17
 working,20
 linq,546
-smo,43
 social media marketing,69
+smo,43
 vc++,28
 market,10
 transaction processing,19
@@ -2474,8 +2474,8 @@ visual,28
 defect management,15
 internet,12
 oracle fusion middleware,43
-applications,48
 mobile,593
+applications,48
 sap plm,14
 appian bpm,23
 appian,56
@@ -2485,10 +2485,10 @@ talend development,11
 linkedin,11
 xamarin,43
 xhtml,298
-pega platform,42
 ccsa,33
 pega prpc,42
 prpc,43
+pega platform,42
 functions,104
 ms sql server,39
 mts,21
@@ -2499,8 +2499,8 @@ pumps,15
 system configuration,15
 datadog,33
 api automation,67
-zabbix,17
 linux administration,45
+zabbix,17
 ccie,16
 data processor,19
 google app engine,10
@@ -2509,12 +2509,12 @@ nginx,155
 asp,167
 full stack development,19
 kronos,27
-floor planning,10
 layout,47
+floor planning,10
 dynamics,54
 cryptography,76
-billing center,15
 gosu,17
+billing center,15
 full stack application development,10
 celery,11
 css/css3,21
@@ -2528,8 +2528,8 @@ orm,43
 turbine,22
 curriculum development,19
 unreal engine,19
-playwright,34
 ui automation,41
+playwright,34
 cypress,44
 fpga,129
 data structure,19
@@ -2550,8 +2550,8 @@ ms sql database,17
 sap apo,27
 java spring boot,146
 customer focus,12
-react native,428
 python flask,10
+react native,428
 azure iaas,12
 test engineering,40
 sap project management,57
@@ -2565,16 +2565,16 @@ snp,16
 dot net,76
 platform development,28
 saps,100
-ricefw,13
 sd,79
+ricefw,13
 sap module,159
 flutter,304
 lan,61
 graphic designing,113
 react native js,19
 react developer,23
-windows server,17
 jvm,20
+windows server,17
 linux server,11
 software architect,36
 tutoring,12
@@ -2615,9 +2615,9 @@ mysql database,28
 web framework,15
 web developer,69
 native,208
-woocommerce,27
 wordpress cms,276
 plugin development,26
+woocommerce,27
 front end developer,21
 next.js,14
 java developer,177
@@ -2643,8 +2643,8 @@ joomla,461
 private cloud,18
 aws technologies,10
 microsoft technologies,104
-mobile application,19
 backend developer,15
+mobile application,19
 java web services,54
 product manager,12
 system troubleshooting,16
@@ -2656,10 +2656,10 @@ user experience,12
 itil framework,17
 application architect,17
 obiee,13
+co,29
+sap support,29
 sap b1,17
 sap pp module,17
-sap support,29
-co,29
 restful web api development,36
 jasmine,40
 mobile testing,47
@@ -2670,22 +2670,22 @@ pdm,12
 windows installation,10
 software support,77
 bgp,22
-isis,11
 mpls,41
+isis,11
 file system,13
-c programming language,28
 application testing,51
+c programming language,28
 api development,21
-texturing,19
 3dsmax,12
+texturing,19
 tfs,58
 ip,33
 mvvm,640
 ale,97
 c/c++,10
 multithread programming,15
-network programming,41
 sockets,17
+network programming,41
 salesforce administrator,35
 autosar,129
 webservices,26
@@ -2696,9 +2696,9 @@ teamcenter,52
 qt,32
 l3,14
 operating,35
-i2c,17
 rs232,32
 rs485,16
+i2c,17
 uart,30
 system analyst,16
 system performance,13
@@ -2712,8 +2712,8 @@ ibm mq,11
 enovia,18
 java programming,59
 mca,476
-arm processor,13
 embedded software,104
+arm processor,13
 btech,69
 vlan,21
 design verification,40
@@ -2734,8 +2734,8 @@ software troubleshooting,24
 crystal report,48
 silverlight,51
 express.js,20
-gui development,15
 embedded linux,124
+gui development,15
 home automation,13
 tcl,10
 do,24
@@ -2748,10 +2748,10 @@ mule esb,50
 power electronics,28
 jquery mobile,35
 core php,463
-mainframe,20
 servlets,34
-database handling,10
+mainframe,20
 it operations management,23
+database handling,10
 scsi,13
 iscsi,15
 network infrastructure,23
@@ -2791,15 +2791,15 @@ identity management,21
 software engineering team lead,15
 bluetooth,177
 rtc,13
-automotive electronics,17
 uds,58
+automotive electronics,17
 defence,49
 dedicated,29
 audit compliance,10
 bca,90
 m c a,24
-microprocessors,11
 gdb,28
+microprocessors,11
 experience,92
 x++,35
 biztalk,32
@@ -2814,20 +2814,20 @@ modbus,11
 micro services,16
 nx,14
 mobile app,99
+yii,25
 php laravel,88
 laravel,440
-yii,25
 asterisk,13
 angular.js,14
-nat,25
 performance engineering,21
+nat,25
 oscilloscope,27
 embedded system design,28
 android studio,484
 webapi,12
 java software engineer,29
-game development,103
 webgl,33
+game development,103
 development team lead,11
 tcp/ip,49
 software engineer 1,14
@@ -2852,8 +2852,8 @@ product,14
 dhtml,65
 windows mobile,27
 dsl,10
-vfd,10
 wincc,16
+vfd,10
 digital asset management,10
 robot,13
 3g,27
@@ -2878,12 +2878,12 @@ g,17
 standards,11
 ling,10
 tware development,20
-angular 8,10
 angular development,170
+angular 8,10
 conga,12
 lwc,112
-embedded development,71
 linux system programming,10
+embedded development,71
 sap cpi,64
 cpi,25
 jest,40
@@ -2892,22 +2892,22 @@ engineer,44
 application maintenance,28
 python testing,16
 knockoutjs,17
+mean stack,118
 sse,14
 software developer,111
-mean stack,118
 elasticsearch,12
 collection framework,13
 client server,12
-embedded software development,70
 ada,10
-xcode,166
+embedded software development,70
 visual studio code,12
 intellij idea,27
+xcode,166
 java8,16
 sr. software engineer,12
 revenue management,18
-suitescript,18
 stlc,10
+suitescript,18
 oracle inventory,15
 x12,22
 spring security,55
@@ -2933,13 +2933,13 @@ embedded firmware,14
 opencart,63
 tekla,12
 entity,29
-powershell scripting,24
 microsoft flow,11
-aspice,14
+powershell scripting,24
 can,12
-software project,30
+aspice,14
 flux,34
 webpack,33
+software project,30
 microservices development,51
 core java development,57
 springboot java,28
@@ -2960,8 +2960,8 @@ valves,22
 core java programming,35
 google maps,42
 devops ci cd,14
-tso,14
 ispf,12
+tso,14
 remedy,13
 adc,10
 magento,76
@@ -2984,14 +2984,14 @@ embedded,47
 design architect,23
 sitecore,42
 dot net core,20
-performance appraisal,22
 core hr,24
+performance appraisal,22
 digital signal processing,22
 salesforce dx,24
 android application,101
 mws,13
-sap scripts,24
 lsmw,28
+sap scripts,24
 ecc,74
 restful apis,72
 c # . net,11
@@ -3002,8 +3002,8 @@ embedded c++,41
 bios,27
 service now,10
 bmc remedy,11
-vsphere,10
 windows server administration,14
+vsphere,10
 java 8,25
 cmdb,44
 multimedia,37
@@ -3022,16 +3022,16 @@ dynatrace,30
 sap grc,66
 bw,49
 ci / cd tools,12
-interface builder,68
 ios framework,27
+interface builder,68
 linux development,11
 software validation,11
 creative designing,30
 qnx,33
 device driver development,27
 warehouse management system,45
-board support package,15
 android architecture,12
+board support package,15
 automated testing,13
 hdl,32
 symfony,181
@@ -3045,10 +3045,10 @@ rest assured,50
 java selenium,25
 lectora,16
 aspnet framework,17
-entity framework core,20
 net framework web services,11
-lightning components,41
+entity framework core,20
 salesforce lightning,224
+lightning components,41
 angular js,41
 webforms,30
 atmel,10
@@ -3139,14 +3139,14 @@ sap analytics cloud,40
 mcal,11
 software asset management,14
 hosting,11
-construction management,12
 microstation,25
+construction management,12
 instruments,12
 certified,27
 trainee,11
 iac,51
-rap,16
 cds views,25
+rap,16
 ngrx,28
 rxjs,41
 internet applications,93
@@ -3158,80 +3158,80 @@ cloud testing,13
 hl7,12
 azure pipelines,16
 iv,11
-abap on hana,64
 sap abap hana,58
+abap on hana,64
 backbone.js,35
 ibatis,14
-cocoa,32
 cocoa framework,13
+cocoa,32
 function modules,48
 java api,12
 threat modeling,12
-security software development,10
 security coding,10
+security software development,10
 enterprise application integration,21
 failure analysis,15
-bootloader,18
 device driver,11
 adas,14
+bootloader,18
 rexx,26
 adobe forms,167
 mocha,39
 ant,12
+ece,16
+civil engineering,37
 networking skills,11
 eee,17
-civil engineering,37
-ece,16
 linux administrator,16
 seo analyst,22
 mac,18
 java beans,11
 project / program management,16
 software analysis,17
-oracle hcm cloud,52
-oracle hcm,40
 oracle core hr,37
+oracle hcm,40
+oracle hcm cloud,52
 gitlab ci,14
 oracle service bus,15
 abap programming,161
 sapui5,172
 abap dictionary,137
-sap netweaver,87
 sap basis administration,167
 sap configuration,32
-mdg,103
+sap netweaver,87
 sap master data governance,85
+mdg,103
 sap data migration,19
 java standard edition,34
 java collections,43
 siebel eai,14
 salesforce integration,74
 hana db,24
-pi,68
-seeburger,43
-sap cloud platform,166
 sap popi,33
-sharepoint framework,15
+seeburger,43
+pi,68
+sap cloud platform,166
 spfx,28
-server side,15
+sharepoint framework,15
 siemens teamcenter,15
+server side,15
 oracle scm,15
 umts,27
 bods,20
 apple ios application development,26
-sap pm,26
 bapis,62
-aspnet programming languages,16
+sap pm,26
 sap presales,165
+aspnet programming languages,16
 core hcm,59
-sap inventory management,19
 sap testing,13
 sap mm materials management,77
+sap inventory management,19
 technical specifications,35
 sap business planning and consolidation,27
 ibp,17
-hana implementation,15
 sap cpq,10
+hana implementation,15
 desktop support,14
 sap business objects data services,27
 soql,78
@@ -3241,8 +3241,8 @@ uikit,24
 sap hybris commerce,23
 hybris,35
 api management,84
-sap netweaver gateway,26
 odata services,28
+sap netweaver gateway,26
 sap native hana,10
 mobile automation,12
 hibernate framework,12
@@ -3257,27 +3257,27 @@ salesforce cpq,42
 servicenow it service management,42
 sap quality management,35
 enterprise architecture framework,18
-sap integration,69
 sap upgrade,92
+sap integration,69
 sap abap development for hana,27
 sap hana administration,21
 supply network planning,16
 sap cloud,127
 siebel crm,12
-fscm,69
 sap fico implementation,43
 sap trm,47
+fscm,69
 robotic process,33
 sap co product cost controlling,22
-adm,16
 sap bods,36
+adm,16
 sap transportation management,42
-oracle order management,16
 oracle peoplesoft financials,33
+oracle order management,16
 oracle procurement cloud,10
 fi,79
-sap development,44
 sap procurement,24
+sap development,44
 sap co,74
 sap success factor,47
 soap web services,14
@@ -3420,8 +3420,8 @@ act,11
 unix administration,16
 wordpress development,159
 jscript,15
-ado,12
 windows forms,11
+ado,12
 rest web api,19
 javascript and jquery,10
 hypervisor,10
@@ -3576,9 +3576,9 @@ iphone sdk,23
 jd,11
 mern stack developer,12
 prestashop,10
+badi,12
 smartforms,24
 bapi,33
-badi,12
 drupal 8,20
 sitecore development,12
 ewm,24
@@ -3586,8 +3586,8 @@ sap wm,26
 saas sales,13
 mainframe production support,45
 node js framework,17
-game testing,12
 games,51
+game testing,12
 instructing,11
 vision plus,10
 oracle reports,12
@@ -3597,8 +3597,8 @@ attendance management,10
 on-page optimization,18
 oracle workflows,10
 sap workflow,37
-guidewire development,20
 policy center,30
+guidewire development,20
 sap master data,21
 sap bpc,26
 bod,17
@@ -3638,8 +3638,8 @@ osgi,12
 doc,12
 dr,10
 web design,25
-search engine marketing,24
 web marketing,14
+search engine marketing,24
 wfc,10
 change,10
 camunda bpm,16
